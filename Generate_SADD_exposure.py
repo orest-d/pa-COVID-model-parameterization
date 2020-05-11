@@ -15,8 +15,11 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 api_url = "https://api.worldpop.org/v1/services/stats"
 runasync='false'
 year='2020'
+# dataset='wpgppop'
 dataset='wpgpas'
 tolerance=0.01
+
+# some districts don't have sadd data from api
 
 def send_request(url,dataset,year,geojson,runasync):
     try:
@@ -29,12 +32,17 @@ def send_request(url,dataset,year,geojson,runasync):
                 "runasync": runasync,
             },
         )
-        print('Response HTTP Status Code: {status_code}'.format(
-            status_code=response.status_code))
+        print('Response HTTP Status Code: {status_code}'.format(status_code=response.status_code))
+        
         print('{}?dataset={}&year={}&geojson={}&runasync={}'.format(url,dataset,year,geojson,runasync))
         # print('Response HTTP Response Body: {content}'.format(
             # content=response.content))
+        
+        # if response code=200 but empty use national aggregate
+
+        # add difference between total pop and aggregated
         return response.json().get('data').get('agesexpyramid')
+    
     except requests.exceptions.RequestException:
         print('HTTP Request failed')
     except Exception as e:
@@ -42,7 +50,7 @@ def send_request(url,dataset,year,geojson,runasync):
 
 boundaries=gpd.read_file('{}/{}'.format(dir_path,INPUT_SHP))
 boundaries['ageclasses']=''
-# boundaries=boundaries[boundaries['ADM2_EN']=='Jalalabad']
+boundaries=boundaries[boundaries['ADM2_EN']=='Chahab']
 # plotting map
 fig_map, ax_map = plt.subplots(1, 1)
 # using this package to avoid gaps in the simplified geometry
@@ -50,8 +58,8 @@ fig_map, ax_map = plt.subplots(1, 1)
 # needs fiona > 1.8.5. Update package using 'conda update fiona'
 topo = tp.Topology(boundaries, prequantize=False)
 boundaries_simplified=topo.toposimplify(tolerance).to_gdf()
-boundaries.boundary.plot(ax=ax_map)
-boundaries_simplified.boundary.plot(ax=ax_map)
+boundaries.boundary.plot(ax=ax_map,color='b')
+boundaries_simplified.boundary.plot(ax=ax_map,color='r')
 plt.show()
 
 for i, row in boundaries_simplified.iterrows():
@@ -61,6 +69,13 @@ for i, row in boundaries_simplified.iterrows():
     ADM2geojson=gpd.GeoSeries([row.geometry]).to_json()
     content = send_request(api_url,dataset,year,ADM2geojson,runasync)
     boundaries.loc[i,'ageclasses']=str(content)
+    for ageclass in content:
+        print(ageclass)
+        boundaries.loc[i,'{}-male'.format(ageclass['age'].replace(' ','-'))]=ageclass['male']
+        boundaries.loc[i,'{}-female'.format(ageclass['age'].replace(' ','-'))]=ageclass['female']
+
+
+    # print(type(content))
     print('\n\n')
-    break
+    # break
 boundaries.to_file('{}/{}'.format(dir_path,OUTPUT_SHP))
