@@ -3,3 +3,4 @@ topojson==1.0rc9
 matplotlib==3.2.1
 requests
 rasterio==1.1.4
+xlrd==1.2.0
