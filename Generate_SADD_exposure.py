@@ -45,7 +45,8 @@ def send_request(dataset,year,geojson,runasync):
                     "runasync": runasync,
                 },
             )
-            # print('  {}?dataset={}&year={}&geojson={}&runasync={}'.format(wp_api_url,dataset,year,geojson,runasync))
+            print('  {}?dataset={}&year={}&geojson={}&runasync={}'.format(wp_api_url,dataset,year,geojson,runasync))
+            
             # if the response is taking too long the API automatically switches to async.
             # See documentation https://www.worldpop.org/sdi/advancedapi
             # We wait and query the api_url_async endpoint
@@ -148,12 +149,15 @@ ADM2boundaries_simplified=simplify_geodataframe(tolerance,ADM2boundaries)
 ADM2boundaries['totalwpgpas']=''
 ADM2boundaries['totalwpgppop']=''
 
-ADM2boundaries=ADM2boundaries[ADM2boundaries['ADM2_PCODE'].isin(['AF2702'])]
-print(ADM2boundaries)
+# ADM2boundaries=ADM2boundaries[ADM2boundaries['ADM2_PCODE'].isin(['AF2702'])]
+# print(ADM2boundaries)
 
 for row_index, row in ADM2boundaries.iterrows():
     ADM2name=row['ADM2_EN']
     ADM2pcode=row['ADM2_PCODE']
+    
+    # if(ADM2pcode!='AF1816'):
+        # continue
     print('ADMIN2 name : {} (pcode {})'.format(ADM2name,ADM2pcode))
     # get corresponding simplified geometry using ADM2_EN as key
     ADM2geometry_simplified=ADM2boundaries_simplified[ADM2boundaries_simplified['ADM2_PCODE']==ADM2pcode].geometry
@@ -183,5 +187,5 @@ for row_index, row in ADM2boundaries.iterrows():
 # TODO requirements
 ADM2boundaries['created_at']=str(datetime.datetime.now()) 
 ADM2boundaries['created_by']=getpass.getuser()
-print(ADM2boundaries.columns)
+# print(ADM2boundaries.columns)
 ADM2boundaries.to_file('{}/{}'.format(dir_path,OUTPUT_SHP))
