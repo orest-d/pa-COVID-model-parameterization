@@ -4,13 +4,16 @@
 
 ### Methodology
 
-Data is taken from [GHS](https://ghsl.jrc.ec.europa.eu/). We use the GHS-SMOD raster at 1 km resolution
+Urban / rural data is taken from [GHS](https://ghsl.jrc.ec.europa.eu/). We use the GHS-SMOD raster at 1 km resolution
 to determine which cells within a province are urban vs rural. The description of the 
 classifcations can be found [here](https://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2019.pdf).
 We take anything denser than suburban (class 21 or above) to be urban, and the rest to be rural.
 
 Then we use the GHS-POP raster to calculate the number of people per urban or rural cell,
 and compute the fraction of the population residing in urban cells. 
+
+Food security data was download from [IPC](http://www.ipcinfo.org/ipc-country-analysis/population-tracking-tool/en/),
+by selecting Afghanistan and only data from 2020. 
 
 ## Running 
 
