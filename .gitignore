@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -147,3 +148,10 @@ Outputs/Exposure_SADD/AFG_SADD.shp
 Outputs/Exposure_SADD/AFG_SADD.shx
 
 
+=======
+Outputs/Exposure_SADD/AFG_Exposure.cpg
+Outputs/Exposure_SADD/AFG_Exposure.dbf
+Outputs/Exposure_SADD/AFG_Exposure.prj
+Outputs/Exposure_SADD/AFG_Exposure.shp
+Outputs/Exposure_SADD/AFG_Exposure.shx
+>>>>>>> first working version of exposure script - still to be tested to for exceptions
