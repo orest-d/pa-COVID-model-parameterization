@@ -1,5 +1,10 @@
 # COVID model parameterization
 
+[Input description (Google slides)](https://docs.google.com/presentation/d/16hplfTHyJtXoAXTLgNp3LHWP2Upig0eofGcufOsv3RY/edit?usp=sharing)
+
+[Status tracking sheet (Google sheets)](https://docs.google.com/spreadsheets/d/1F-15iyDf_v7hBtr-jdCQMptt5bSFY52YivYRyLFVFBQ/edit?usp=sharing)
+
+
 ## Urban Rural disagregation
 
 ### Methodology

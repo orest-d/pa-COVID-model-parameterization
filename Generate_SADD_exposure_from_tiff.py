@@ -38,7 +38,8 @@ ADM2boundaries['tot_ppp']=total_pop
 
 # total from disaggregated
 columns_to_sum=['{}_{}'.format(gender_age_group[0],gender_age_group[1]) for gender_age_group in gender_age_groups]
-ADM2boundaries['tot_sad']=ADM2boundaries.loc[:,columns_to_sum].sum()
+ADM2boundaries['tot_sad']=ADM2boundaries.loc[:,columns_to_sum].sum(axis=1)
+# ADM2boundaries['tot_sad']=ADM2boundaries.loc[:,'f_0'].sum(axis=1)
 
 # relative difference
 ADM2boundaries['pop_difference']=ADM2boundaries['tot_ppp']-ADM2boundaries['tot_sad']
