@@ -8,6 +8,12 @@ import json
 import datetime
 import getpass
 
+# dismissed as the API has several bugs and limitations:
+# MultiPolygons are not accepted
+# no long URL accepted
+# some populated areas return no data
+# limited number of requests to the sever (1000/day)
+
 # script that pulls data from the WorldPop API https://www.worldpop.org/sdi/advancedapi and populates the exposure file
 country_iso3='AFG'
 
@@ -45,7 +51,7 @@ def send_request(dataset,year,geojson,runasync):
                     "runasync": runasync,
                 },
             )
-            print('  {}?dataset={}&year={}&geojson={}&runasync={}'.format(wp_api_url,dataset,year,geojson,runasync))
+            # print('  {}?dataset={}&year={}&geojson={}&runasync={}'.format(wp_api_url,dataset,year,geojson,runasync))
             
             # if the response is taking too long the API automatically switches to async.
             # See documentation https://www.worldpop.org/sdi/advancedapi
@@ -153,6 +159,9 @@ ADM2boundaries['totalwpgppop']=''
 # print(ADM2boundaries)
 
 for row_index, row in ADM2boundaries.iterrows():
+    irow=1
+    print('{} out of {} done'.format(irow,len(ADM2boundaries)))
+    irow+=1
     ADM2name=row['ADM2_EN']
     ADM2pcode=row['ADM2_PCODE']
     
