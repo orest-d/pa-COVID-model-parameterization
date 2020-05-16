@@ -28,31 +28,43 @@ gender_age_groups=list(itertools.product(gender_classes,age_classes))
 for gender_age_group in gender_age_groups:
     gender_age_group_name='{}_{}'.format(gender_age_group[0],gender_age_group[1])
     print('analyising gender age ',gender_age_group_name)
-    zs = zonal_stats(dir_path+INPUT_SHP,dir_path+INPUT_TIFF_SADD.format(gender_age_group[0],gender_age_group[1]),stats='sum')
+    input_tif_file=INPUT_TIFF_SADD.format(gender_age_group[0],gender_age_group[1])
+    zs = zonal_stats('{}/{}'.format(dir_path,INPUT_SHP),'{}/{}'.format(dir_path,input_tif_file),stats='sum')
     total_pop=[district_zs.get('sum') for district_zs in zs]
     ADM2boundaries[gender_age_group_name]=total_pop
 
 # total population for cross check
-zs = zonal_stats(dir_path+INPUT_SHP,dir_path+INPUT_TIFF_POP,stats='sum')
+zs = zonal_stats('{}/{}'.format(dir_path,INPUT_SHP),'{}/{}'.format(dir_path,INPUT_TIFF_POP),stats='sum')
 total_pop=[district_zs.get('sum') for district_zs in zs]
 ADM2boundaries['tot_pop']=total_pop
 
 # total population UNadj for cross check
-zs = zonal_stats(dir_path+INPUT_SHP,dir_path+INPUT_TIFF_POP_UNadj,stats='sum')
+zs = zonal_stats('{}/{}'.format(dir_path,INPUT_SHP),'{}/{}'.format(dir_path,INPUT_TIFF_POP_UNadj),stats='sum')
 total_pop=[district_zs.get('sum') for district_zs in zs]
 ADM2boundaries['tot_pop_UNadj']=total_pop
 
 # total from disaggregated
 columns_to_sum=['{}_{}'.format(gender_age_group[0],gender_age_group[1]) for gender_age_group in gender_age_groups]
 ADM2boundaries['tot_sad']=ADM2boundaries.loc[:,columns_to_sum].sum(axis=1)
-# ADM2boundaries['tot_sad']=ADM2boundaries.loc[:,'f_0'].sum(axis=1)
 
-# relative difference
-ADM2boundaries['pop_difference']=ADM2boundaries['tot_pop']-ADM2boundaries['tot_sad']
-ADM2boundaries['pop_difference_rel']=ADM2boundaries['pop_difference']/ADM2boundaries['tot_pop']
-# relative difference UNadj
-ADM2boundaries['pop_difference_UNadj']=ADM2boundaries['tot_pop_UNadj']-ADM2boundaries['tot_sad']
-ADM2boundaries['pop_difference_UNadj_rel']=ADM2boundaries['pop_difference_UNadj']/ADM2boundaries['tot_pop_UNadj']
+# adding manually Kochi nomads
+if country_iso3=='AFG':
+    total_kuchi_in_afg=2000000
+    # East/South of country
+    ADM1_kuchi = ["AF26","AF25","AF18","AF20","AF03","AF08","AF13","AF12","AF16","AF06","AF04","AF05","AF07","AF19","AF15","AF14","AF02","AF27","AF01","AF11","AF24","AF10","AF09","AF17"]
+    # total population in these provinces
+    pop_in_kuchi_ADM1=ADM2boundaries[ADM2boundaries['ADM1_PCODE'].isin(ADM1_kuchi)]['tot_sad'].sum()
+    for row_index, row in ADM2boundaries.iterrows():
+        if(row['ADM1_PCODE'] in ADM1_kuchi):
+            tot_kuchi_in_ADM2=0
+            for gender_age_group in gender_age_groups:
+                # population weighted
+                gender_age_group_name='{}_{}'.format(gender_age_group[0],gender_age_group[1])
+                kuchi_pp=total_kuchi_in_afg*(row[gender_age_group_name]/pop_in_kuchi_ADM1)            
+                ADM2boundaries.loc[row_index,gender_age_group_name]=row[gender_age_group_name]+kuchi_pp
+                tot_kuchi_in_ADM2+=kuchi_pp
+            ADM2boundaries.loc[row_index,'kuchi']=tot_kuchi_in_ADM2
+            ADM2boundaries.loc[row_index,'comment']='Added in total {} Kuchi nomads to WorldPop estimates'.format(tot_kuchi_in_ADM2)
 
 ADM2boundaries['created_at']=str(datetime.datetime.now()) 
 ADM2boundaries['created_by']=getpass.getuser()
