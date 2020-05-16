@@ -4,6 +4,8 @@
 
 [Status tracking sheet (Google sheets)](https://docs.google.com/spreadsheets/d/1F-15iyDf_v7hBtr-jdCQMptt5bSFY52YivYRyLFVFBQ/edit?usp=sharing)
 
+[Latest input file (zip)](https://drive.google.com/file/d/1gK3opqhwCc4BRu5PvnYagi0sSI6qnyxn/view)
+
 
 ## Urban Rural disagregation
 
