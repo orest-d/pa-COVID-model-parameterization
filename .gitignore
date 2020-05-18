@@ -140,5 +140,8 @@ cython_debug/
 # PyCharm
 .idea/*
 
+# PyCharm
+.vscode/*
+
 # output zip file for JHU
 /Outputs/AFG_COVID_inputs.zip
