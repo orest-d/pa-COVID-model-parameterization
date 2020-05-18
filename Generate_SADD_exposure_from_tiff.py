@@ -51,7 +51,8 @@ ADM2boundaries['tot_sad']=ADM2boundaries.loc[:,columns_to_sum].sum(axis=1)
 if country_iso3=='AFG':
     total_kuchi_in_afg=2000000
     # East/South of country
-    ADM1_kuchi = ["AF26","AF25","AF18","AF20","AF03","AF08","AF13","AF12","AF16","AF06","AF04","AF05","AF07","AF19","AF15","AF14","AF02","AF27","AF01","AF11","AF24","AF10","AF09","AF17"]
+    # from CO: The main focus would be in east as the Kuchis spend winter primarily Kunar, Laghman, Nuristan, Nangahar
+    ADM1_kuchi = ["AF15","AF07","AF16","AF06"]
     # total population in these provinces
     pop_in_kuchi_ADM1=ADM2boundaries[ADM2boundaries['ADM1_PCODE'].isin(ADM1_kuchi)]['tot_sad'].sum()
     for row_index, row in ADM2boundaries.iterrows():
