@@ -140,5 +140,7 @@ cython_debug/
 # PyCharm
 .idea/*
 
-# output zip file for JHU
-/Outputs/AFG_COVID_inputs.zip
+Inputs/*/GHS/*
+Inputs/*/WorldPop/*
+Outputs/*
+

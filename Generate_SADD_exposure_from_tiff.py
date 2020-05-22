@@ -21,11 +21,14 @@ OUTPUT_SHP = os.path.join(DIR_PATH, 'Outputs', '{0}', 'Exposure_SADD', '{0}_Expo
 
 GENDER_CLASSES = ["f","m"]
 AGE_CLASSES = [0,1,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80]
+WORLDPOP_URL = {
+    'age_sex': 'ftp://ftp.worldpop.org.uk/GIS/AgeSex_structures/Global_2000_2020/2020/{0}/{1}_{2}_{3}_2020.tif',
+    'pop': 'ftp://ftp.worldpop.org.uk/GIS/Population/Global_2000_2020/2020/{0}/{1}_ppp_2020.tif',
+    'unadj': 'ftp://ftp.worldpop.org.uk/GIS/Population/Global_2000_2020/2020/{0}/{1}_ppp_2020_UNadj.tif'
+}
 
-logging.basicConfig(
-    format='%(asctime)s %(levelname)s %(name)s %(message)s',
-    level=logging.INFO,
-    datefmt='%Y-%m-%d %H:%M:%S')
+
+utils.config_logger()
 logger = logging.getLogger(__name__)
 
 
@@ -33,10 +36,13 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('country_iso3',
                         help='Country ISO3. Options are: afg')
+    parser.add_argument('-d', '--download', action='store_true',
+                        help='Download the WorldPop data -- required upon first run')
     return parser.parse_args()
 
 
-def main(country_iso3):
+def main(country_iso3, download_worldpop=False):
+
     # Get config file
     config = utils.parse_yaml(CONFIG_FILE)[country_iso3]
 
@@ -44,6 +50,10 @@ def main(country_iso3):
     input_dir = os.path.join(DIR_PATH, INPUT_DIR, country_iso3)
     input_shp = os.path.join(input_dir, SHAPEFILE_DIR, config['admin']['directory'], config['admin']['filename'])
     ADM2boundaries = gpd.read_file(input_shp)
+
+    # Download the worldpop data
+    if download_worldpop:
+        get_worldpop_data(country_iso3, input_dir)
 
     # gender and age groups
     gender_age_groups = list(itertools.product(GENDER_CLASSES, AGE_CLASSES))
@@ -102,6 +112,17 @@ def main(country_iso3):
     ADM2boundaries.to_file(output_shp)
 
 
+def get_worldpop_data(country_iso3, input_dir):
+    output_dir = os.path.join(input_dir, WORLDPOP_DIR)
+    for age in AGE_CLASSES:
+        for gender in GENDER_CLASSES:
+            url = WORLDPOP_URL['age_sex'].format(country_iso3.upper(), country_iso3.lower(), gender, age)
+            utils.download_ftp(url, os.path.join(output_dir, url.split('/')[-1]))
+    for pop_type in ['pop', 'unadj']:
+        url = WORLDPOP_URL['pop_type'].format(country_iso3.upper(), country_iso3.lower())
+        utils.download_ftp(url, os.path.join(output_dir, url.split('/')[-1]))
+
+
 if __name__ == '__main__':
     args = parse_args()
-    main(args.country_iso3.upper())
+    main(args.country_iso3.upper(), download_worldpop=args.download)
