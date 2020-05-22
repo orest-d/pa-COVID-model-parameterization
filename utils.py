@@ -1,6 +1,7 @@
 import zipfile
 
 import requests
+import yaml
 
 
 def download_url(url, save_path, chunk_size=128):
@@ -15,3 +16,9 @@ def unzip(zip_file_path, save_path):
     print(f'Unzipping {zip_file_path}')
     with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
         zip_ref.extractall(save_path)
+
+
+def parse_yaml(filename):
+    with open(filename, 'r') as stream:
+        config = yaml.safe_load(stream)
+    return config
