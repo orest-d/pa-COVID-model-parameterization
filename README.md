@@ -12,7 +12,8 @@
 ### Setup
 
 Download the country boundaries shapefile from HDX and place in `Inputs/$COUNTRY_ISO3/Shapefile/`. Unzip the contents
-and record the directory and shapefile names in the config file.  Commit the shapefile to the repository.
+into a directory with the same name as the shapefile, and add this name to the config file.  
+Commit the shapefile to the repository.
 
 ### Running
 To run, execute:

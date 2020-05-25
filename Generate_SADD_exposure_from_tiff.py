@@ -58,7 +58,8 @@ def main(country_iso3, download_worldpop=False):
 
     # Get input boundary shape file
     input_dir = os.path.join(DIR_PATH, INPUT_DIR, country_iso3)
-    input_shp = os.path.join(input_dir, SHAPEFILE_DIR, config['admin']['directory'], config['admin']['filename'])
+    input_shp = os.path.join(input_dir, SHAPEFILE_DIR, config['admin']['directory'],
+                             f'{config["admin"]["directory"]}.shp')
     ADM2boundaries = gpd.read_file(input_shp)
 
     # Download the worldpop data
@@ -124,7 +125,6 @@ def main(country_iso3, download_worldpop=False):
             adm1_pcode = row['ADM1_PCODE']
             pop_co = tot_co_adm1.get(adm1_pcode)
             pop_sad = tot_sad_adm1.get(adm1_pcode)
-            print(adm1_pcode, pop_co, pop_sad)
             ADM2boundaries.loc[index, gender_age_group_names] *= pop_co / pop_sad
 
     ADM2boundaries['tot_sad'] = ADM2boundaries.loc[:, gender_age_group_names].sum(axis=1)
