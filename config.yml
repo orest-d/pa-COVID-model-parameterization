@@ -3,6 +3,15 @@ AFG:
   admin:
     directory: afg_admbnda_adm2_agcho_20180522
     filename: afg_admbnda_adm2_agcho_20180522.shp
+  pop_co:
+    filename: AFG_PopEstimatesOperationalPlanning.xlsx
+    province_names:
+      Helmand: Hilmand
+      Herat: Hirat
+      Nooristan: Nuristan
+      Sar-e-pul': Sar-e-Pul
+      'Urozgan': Uruzgan
+      Wardak': Maidan Wardak
   kochi:
     # East/South of country
     # from CO: The main focus would be in east as the Kuchis spend winter primarily Kunar, Laghman, Nuristan, Nangahar

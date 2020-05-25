@@ -137,10 +137,10 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# PyCharm
+# IDEs
 .idea/*
+.vscode/*
 
 Inputs/*/GHS/*
 Inputs/*/WorldPop/*
 Outputs/*
-
