@@ -39,7 +39,7 @@ for gender_age_group in gender_age_groups:
 print('adding total population ')
 zs = zonal_stats('{}/{}'.format(dir_path,INPUT_SHP),'{}/{}'.format(dir_path,INPUT_TIFF_POP),stats='sum')
 total_pop=[district_zs.get('sum') for district_zs in zs]
-ADM2boundaries['tot_pop']=total_pop
+ADM2boundaries['tot_pop_WP']=total_pop
 
 # total population UNadj for cross check
 print('adding total population UN adjusted')
