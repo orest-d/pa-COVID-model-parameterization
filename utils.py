@@ -1,6 +1,7 @@
 import zipfile
 from urllib.request import urlretrieve
 import logging
+import os
 
 import requests
 import yaml
@@ -39,3 +40,11 @@ def parse_yaml(filename):
     with open(filename, 'r') as stream:
         config = yaml.safe_load(stream)
     return config
+
+
+def write_to_geojson(filename, geodataframe):
+    try:
+        os.remove(filename)
+    except OSError:
+        pass
+    geodataframe.to_file(filename, driver='GeoJSON')

@@ -118,11 +118,9 @@ def main(country_iso3, download_worldpop=False):
     # Write to file
     ADM2boundaries['created_at'] = str(datetime.datetime.now())
     ADM2boundaries['created_by'] = getpass.getuser()
-    output_dir = OUTPUT_DIR.format(country_iso3)
-    Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
-    output_geojson = os.path.join(output_dir, OUTPUT_GEOJSON.format(country_iso3))
+    output_geojson = get_output_filename(country_iso3)
     logger.info(f'Writing to file {output_geojson}')
-    ADM2boundaries.to_file(output_geojson, driver='GeoJSON')
+    utils.write_to_geojson(output_geojson, ADM2boundaries)
 
 
 def get_worldpop_data(country_iso3, input_dir):
@@ -135,6 +133,12 @@ def get_worldpop_data(country_iso3, input_dir):
     for pop_type in ['pop', 'unadj']:
         url = WORLDPOP_URL[pop_type].format(country_iso3.upper(), country_iso3.lower())
         utils.download_ftp(url, os.path.join(output_dir, url.split('/')[-1]))
+
+
+def get_output_filename(country_iso3):
+    output_dir = OUTPUT_DIR.format(country_iso3)
+    Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
+    return os.path.join(output_dir, OUTPUT_GEOJSON.format(country_iso3))
 
 
 if __name__ == '__main__':

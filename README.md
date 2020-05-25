@@ -25,12 +25,19 @@ The `-d ` flag is for downloading the WolrdPop file the first time you run.
 
 ### Setup
 
-Perform the same setup with boundaries shapefile as for the exposure. 
+Make sure you have run the exposure script for the country. 
+
+Check [GHS](https://ghsl.jrc.ec.europa.eu/download.php) for the grid square numbers that cover the country
+and add these to the config file. 
 
 Download food security data from [IPC](http://www.ipcinfo.org/ipc-country-analysis/population-tracking-tool/en/).
 Select the country and only data from 2020, save the excel file to 'Inputs/$COUNTRY_ISO3/IPC'. 
 Add the filename to the config file, and commit the excel file to the repository. 
-. 
+
+Add [solid fuels](https://apps.who.int/gho/data/node.main.135?lang=en), 
+[raised blood pressure](https://www.who.int/nmh/countries), and
+[diabetes](https://www.who.int/nmh/countries) data to the config file, if available. 
+ 
 ## Running 
 
 To run, execute:
