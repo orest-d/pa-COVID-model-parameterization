@@ -137,7 +137,7 @@ def get_worldpop_data(country_iso3, input_dir):
 
 def get_output_filename(country_iso3):
     output_dir = OUTPUT_DIR.format(country_iso3)
-    Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
     return os.path.join(output_dir, OUTPUT_GEOJSON.format(country_iso3))
 
 
