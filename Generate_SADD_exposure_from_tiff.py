@@ -5,6 +5,7 @@ import itertools
 import getpass
 import argparse
 import logging
+from pathlib import Path
 
 import geopandas as gpd
 from rasterstats import zonal_stats
@@ -13,14 +14,20 @@ import utils
 
 INPUT_DIR = 'Inputs'
 SHAPEFILE_DIR = 'Shapefiles'
-WORLDPOP_DIR = 'WorldPop'
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 
 CONFIG_FILE = 'config.yml'
-OUTPUT_SHP = os.path.join(DIR_PATH, 'Outputs', '{0}', 'Exposure_SADD', '{0}_Exposure.shp')
+OUTPUT_DIR = os.path.join(DIR_PATH, 'Outputs', '{}', 'Exposure_SADD')
+OUTPUT_GEOJSON = '{}_Exposure.geojson'
 
 GENDER_CLASSES = ["f","m"]
 AGE_CLASSES = [0,1,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80]
+WORLDPOP_DIR = 'WorldPop'
+WORLDPOP_FILENAMES = {
+    'sadd':  '{country_iso3}_{gender}_{age}_2020.tif',
+    'pop': '{country_iso3}_ppp_2020.tif',
+    'unadj': '{country_iso3}_ppp_2020_UNadj.tif'
+}
 WORLDPOP_URL = {
     'age_sex': 'ftp://ftp.worldpop.org.uk/GIS/AgeSex_structures/Global_2000_2020/2020/{0}/{1}_{2}_{3}_2020.tif',
     'pop': 'ftp://ftp.worldpop.org.uk/GIS/Population/Global_2000_2020/2020/{0}/{1}_ppp_2020.tif',
@@ -61,21 +68,25 @@ def main(country_iso3, download_worldpop=False):
         gender_age_group_name = f'{gender_age_group[0]}_{gender_age_group[1]}'
         logger.info(f'analyising gender age {gender_age_group_name}')
         input_tif_file = os.path.join(input_dir, WORLDPOP_DIR,
-                                      config['worldpop']['sadd'].format(gender_age_group[0],gender_age_group[1]))
+                                      WORLDPOP_FILENAMES['sadd'].format(country_iso3=country_iso3.lower(),
+                                                                        gender=gender_age_group[0],
+                                                                        age=gender_age_group[1]))
         zs = zonal_stats(input_shp, input_tif_file, stats='sum')
         total_pop=[district_zs.get('sum') for district_zs in zs]
         ADM2boundaries[gender_age_group_name]=total_pop
 
     # total population for cross check
     logger.info('Cross-checking with total pop')
-    input_tiff_pop = os.path.join(input_dir, WORLDPOP_DIR, config['worldpop']['pop'])
+    input_tiff_pop = os.path.join(input_dir, WORLDPOP_DIR,
+                                  WORLDPOP_FILENAMES['pop'].format(country_iso3=country_iso3.lower()))
     zs = zonal_stats(input_shp, input_tiff_pop,stats='sum')
     total_pop=[district_zs.get('sum') for district_zs in zs]
     ADM2boundaries['tot_pop']=total_pop
 
     # total population UNadj for cross check
     logger.info('Cross-checking with UNadj total pop')
-    input_tiff_pop_unadj = os.path.join(input_dir, WORLDPOP_DIR, config['worldpop']['unadj'])
+    input_tiff_pop_unadj = os.path.join(input_dir, WORLDPOP_DIR,
+                                        WORLDPOP_FILENAMES['unadj'].format(country_iso3=country_iso3.lower()))
     zs = zonal_stats(input_shp, input_tiff_pop_unadj, stats='sum')
     total_pop=[district_zs.get('sum') for district_zs in zs]
     ADM2boundaries['tot_pop_UNadj']=total_pop
@@ -107,19 +118,22 @@ def main(country_iso3, download_worldpop=False):
     # Write to file
     ADM2boundaries['created_at'] = str(datetime.datetime.now())
     ADM2boundaries['created_by'] = getpass.getuser()
-    output_shp = OUTPUT_SHP.format(country_iso3)
-    logger.info(f'Writing to file {output_shp}')
-    ADM2boundaries.to_file(output_shp)
+    output_dir = OUTPUT_DIR.format(country_iso3)
+    Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
+    output_geojson = os.path.join(output_dir, OUTPUT_GEOJSON.format(country_iso3))
+    logger.info(f'Writing to file {output_geojson}')
+    ADM2boundaries.to_file(output_geojson, driver='GeoJSON')
 
 
 def get_worldpop_data(country_iso3, input_dir):
     output_dir = os.path.join(input_dir, WORLDPOP_DIR)
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
     for age in AGE_CLASSES:
         for gender in GENDER_CLASSES:
             url = WORLDPOP_URL['age_sex'].format(country_iso3.upper(), country_iso3.lower(), gender, age)
             utils.download_ftp(url, os.path.join(output_dir, url.split('/')[-1]))
     for pop_type in ['pop', 'unadj']:
-        url = WORLDPOP_URL['pop_type'].format(country_iso3.upper(), country_iso3.lower())
+        url = WORLDPOP_URL[pop_type].format(country_iso3.upper(), country_iso3.lower())
         utils.download_ftp(url, os.path.join(output_dir, url.split('/')[-1]))
 
 
