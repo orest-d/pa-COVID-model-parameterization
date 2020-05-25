@@ -29,5 +29,8 @@ print('latest covid data from {}'.format(df_covid['Date'].max()))
 df_covid=df_covid.rename(columns={'Province':'ADM1_EN','Cases':'cases','Recoveries':'recoveries',\
     'Active Cases':'active_cases','Date':'date'})
 df_covid['ADM1_PCODE']= df_covid['ADM1_EN'].map(ADM1_names)
+if(df_covid['ADM1_PCODE'].isnull().sum()>0):
+    print('missing PCODE for ',df_covid[df_covid['ADM1_PCODE'].isnull()])
+
 
 df_covid.to_excel(OUTPUT_XLSX)
