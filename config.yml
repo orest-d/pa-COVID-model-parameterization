@@ -1,0 +1,30 @@
+AFG:
+  # input shapefile downloaded from https://data.humdata.org/dataset/afg-admin-boundaries
+  admin:
+    directory: afg_admbnda_adm2_agcho_20180522
+    filename: afg_admbnda_adm2_agcho_20180522.shp
+  kochi:
+    # East/South of country
+    # from CO: The main focus would be in east as the Kuchis spend winter primarily Kunar, Laghman, Nuristan, Nangahar
+    total: 2000000
+    adm1:
+      - AF15
+      - AF07
+      - AF16
+      - AF06
+  ghs:
+    column_row_pairs:
+      - (23, 4)
+      - (23, 5)
+      - (24, 4)
+      - (24, 5)
+  ipc:
+    filename: Afghanistan - IPC Analysis 2020-2020.xlsx
+  solid_fuels:
+    # from https://apps.who.int/gho/data/node.main.135?lang=en
+    frac_urban: 28
+    frac_rural: 95
+  # https://www.who.int/nmh/countries/afg_en.pdf?ua=1
+  raised_blood_pressure: 0.23
+  # https://www.who.int/nmh/countries/afg_en.pdf?ua=1
+  diabetes: 0.08
