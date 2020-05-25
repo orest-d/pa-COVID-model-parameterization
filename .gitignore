@@ -137,11 +137,10 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# PyCharm
+# IDEs
 .idea/*
-
-# PyCharm
 .vscode/*
 
-# output zip file for JHU
-/Outputs/AFG_COVID_inputs.zip
+Inputs/*/GHS/*
+Inputs/*/WorldPop/*
+Outputs/*
