@@ -42,7 +42,7 @@ logger = logging.getLogger(__name__)
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('country_iso3',
-                        help='Country ISO3. Options are: afg')
+                        help='Country ISO3')
     parser.add_argument('-d', '--download', action='store_true',
                         help='Download the WorldPop data -- required upon first run')
     return parser.parse_args()

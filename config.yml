@@ -1,4 +1,5 @@
 AFG:
+  # input shapefile downloaded from https://data.humdata.org/dataset/afg-admin-boundaries
   admin:
     directory: afg_admbnda_adm2_agcho_20180522
     filename: afg_admbnda_adm2_agcho_20180522.shp
@@ -11,3 +12,11 @@ AFG:
       - AF07
       - AF16
       - AF06
+  ghs:
+    column_row_pairs:
+      - (23, 4)
+      - (23, 5)
+      - (24, 4)
+      - (24, 5)
+  ipc:
+    filename: Afghanistan - IPC Analysis 2020-2020.xlsx
