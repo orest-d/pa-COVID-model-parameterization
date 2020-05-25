@@ -124,7 +124,10 @@ def main(country_iso3, download_worldpop=False):
             adm1_pcode = row['ADM1_PCODE']
             pop_co = tot_co_adm1.get(adm1_pcode)
             pop_sad = tot_sad_adm1.get(adm1_pcode)
+            print(adm1_pcode, pop_co, pop_sad)
             ADM2boundaries.loc[index, gender_age_group_names] *= pop_co / pop_sad
+
+    ADM2boundaries['tot_sad'] = ADM2boundaries.loc[:, gender_age_group_names].sum(axis=1)
 
     # adding manually Kochi nomads
     if 'kochi' in config:
@@ -146,7 +149,6 @@ def main(country_iso3, download_worldpop=False):
                 ADM2boundaries.loc[row_index,'comment'] = comment
 
     # Write to file
-    ADM2boundaries['tot_sad'] = ADM2boundaries.loc[:, gender_age_group_names].sum(axis=1)
     ADM2boundaries['created_at'] = str(datetime.datetime.now())
     ADM2boundaries['created_by'] = getpass.getuser()
     output_geojson = get_output_filename(country_iso3)
