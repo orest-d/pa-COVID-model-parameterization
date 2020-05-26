@@ -110,3 +110,18 @@ HTI:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
     directory: hti_admbnda_adm3_cnigs_20181129
     language: EN
+  solid_fuels:
+    # from https://www.who.int/nmh/countries/2018/hti_en.pdf?ua=1
+    frac_urban: 0.95
+    frac_rural: 0.95
+  handwashing_facilities:
+    # from https://www.sdg6data.org/country-or-area/Haiti
+    frac_urban: 0.77
+    frac_rural: 0.77
+  # https://www.who.int/nmh/countries/2018/hti_en.pdf?ua=1
+  raised_blood_pressure: 0.20
+  # https://www.who.int/nmh/countries/2018/hti_en.pdf?ua=1 
+  diabetes: 0.07
+  # https://vizhub.healthdata.org/tobacco/
+  smoking: 0.052
+  
