@@ -31,18 +31,18 @@ AFG:
     filename: Afghanistan - IPC Analysis 2020-2020.xlsx
   solid_fuels:
     # from https://apps.who.int/gho/data/node.main.135?lang=en
-    frac_urban: 28
-    frac_rural: 95
+    frac_urban: 0.28
+    frac_rural: 0.95
   handwashing_facilities:
     # from https://washdata.org/data/downloads#WLD
-    frac_urban: 36
-    frac_rural: 71
+    frac_urban: 0.36
+    frac_rural: 0.71
   # https://www.who.int/nmh/countries/afg_en.pdf?ua=1
   raised_blood_pressure: 0.23
   # https://www.who.int/nmh/countries/afg_en.pdf?ua=1
   diabetes: 0.08
   # https://vizhub.healthdata.org/tobacco/
-  smoking: 0.08
+  smoking: 0.13
 
 COD:
   admin:
