@@ -29,6 +29,10 @@ AFG:
       - (24, 5)
   ipc:
     filename: Afghanistan - IPC Analysis 2020-2020.xlsx
+    last_row: 58
+    replace_dict:
+      Sari pul: Sar-e-Pul
+      Wardak: Maidan Warda
   solid_fuels:
     # from https://apps.who.int/gho/data/node.main.135?lang=en
     frac_urban: 28
@@ -68,6 +72,7 @@ SDN:
       - (21, 7)
   ipc:
     filename: Sudan - IPC Analysis 2019-2020.xlsx
+    last_row: 193
 
 SSD:
   admin:
