@@ -85,7 +85,7 @@ SDN:
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.01
 
-  SSD:
+SSD:
   admin:
     # https://data.humdata.org/dataset/south-sudan-administrative-boundaries
     directory: ssd_admbnda_adm2_imwg_nbs_20180817
