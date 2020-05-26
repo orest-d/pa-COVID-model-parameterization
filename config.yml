@@ -69,7 +69,21 @@ SDN:
     # https://data.humdata.org/dataset/sudan-administrative-boundaries-levels-0-2
     directory: sdn_admbnda_adm2_cbs_nic_ssa_20200317
     language: EN
-
+  solid_fuels:
+    # from https://www.who.int/nmh/countries/2018/sdn_en.pdf?ua=1
+    frac_urban: 0.59
+    frac_rural: 0.59
+  handwashing_facilities:
+    # from https://washdata.org/data/downloads#WLD
+    frac_urban: 0.93
+    frac_rural: 0.98
+  # Using Chad https://www.who.int/nmh/countries/2018/tcd_en.pdf?ua=1
+  # TODO replace with http://www.sho.gov.sd/controller/kn_hub_%20featured.php?sm_id=133&mid=110&lid=1
+  raised_blood_pressure: 0.24
+  # http://ghdx.healthdata.org/gbd-results-tool?params=gbd-api-2017-permalink/817c42c58dc6cb238e2d1eb03ef8babb
+  diabetes: 0.0853
+  # https://vizhub.healthdata.org/tobacco/
+  smoking: 0.01
 SSD:
   admin:
     # https://data.humdata.org/dataset/south-sudan-administrative-boundaries
