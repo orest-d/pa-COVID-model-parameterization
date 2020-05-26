@@ -41,6 +41,8 @@ AFG:
   raised_blood_pressure: 0.23
   # https://www.who.int/nmh/countries/afg_en.pdf?ua=1
   diabetes: 0.08
+  # https://vizhub.healthdata.org/tobacco/
+  smoking: 0.08
 
 COD:
   admin:
