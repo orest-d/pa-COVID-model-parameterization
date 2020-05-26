@@ -75,8 +75,8 @@ SDN:
     frac_rural: 0.59
   handwashing_facilities:
     # from https://washdata.org/data/downloads#WLD
-    frac_urban: 0.93
-    frac_rural: 0.98
+    frac_urban: 0.68
+    frac_rural: 0.51
   # Using Chad https://www.who.int/nmh/countries/2018/tcd_en.pdf?ua=1
   # TODO replace with http://www.sho.gov.sd/controller/kn_hub_%20featured.php?sm_id=133&mid=110&lid=1
   raised_blood_pressure: 0.24
@@ -84,11 +84,26 @@ SDN:
   diabetes: 0.0853
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.01
-SSD:
+
+  SSD:
   admin:
     # https://data.humdata.org/dataset/south-sudan-administrative-boundaries
     directory: ssd_admbnda_adm2_imwg_nbs_20180817
     language: EN
+  solid_fuels:
+    # from https://www.who.int/nmh/countries/2018/ssd_en.pdf?ua=1
+    frac_urban: 0.95
+    frac_rural: 0.95
+  handwashing_facilities:
+    # from https://washdata.org/data/downloads#WLD
+    frac_urban: 0.93
+    frac_rural: 0.98
+  # Using Chad https://www.who.int/nmh/countries/2018/tcd_en.pdf?ua=1
+  raised_blood_pressure: 0.24
+  # http://ghdx.healthdata.org/gbd-results-tool?params=gbd-api-2017-permalink/91c1bfad5bd48ffe4484ccdeca24e066 
+  diabetes: 0.0737
+  # https://vizhub.healthdata.org/tobacco/
+  smoking: 0.064
 
 HTI:
   admin:
