@@ -2,6 +2,7 @@ AFG:
   # input shapefile downloaded from https://data.humdata.org/dataset/afg-admin-boundaries
   admin:
     directory: afg_admbnda_adm2_agcho_20180522
+    language: EN
   pop_co:
     filename: AFG_PopEstimatesOperationalPlanning.xlsx
     province_names:
@@ -41,18 +42,22 @@ COD:
   admin:
     # https://data.humdata.org/dataset/drc-administrative-boundaries-levels-0-2
     directory: cod_admbnda_adm2_rgc_20190911
+    language: FR
 
 SDN:
   admin:
     # https://data.humdata.org/dataset/sudan-administrative-boundaries-levels-0-2
     directory: sdn_admbnda_adm2_cbs_nic_ssa_20200317
+    language: EN
 
 SSD:
   admin:
     # https://data.humdata.org/dataset/south-sudan-administrative-boundaries
     directory: ssd_admbnda_adm2_imwg_nbs_20180817
+    language: EN
 
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
     directory: hti_admbnda_adm3_cnigs_20181129
+    language: EN
