@@ -102,7 +102,11 @@ def main(country_iso3, download_worldpop=False):
     for index, row in ADM2boundaries.iterrows():
         tot_UN = row['tot_pop_UN']
         tot_sad = row[gender_age_group_names].sum()
-        ADM2boundaries.loc[index, gender_age_group_names] *= tot_UN / tot_sad
+        try:
+            ADM2boundaries.loc[index, gender_age_group_names] *= tot_UN / tot_sad
+        except ZeroDivisionError:
+            region_name = row[f'ADM2_{config["admin"]["language"]}']
+            logger.warning(f'The sum across all genders and ages for admin region {region_name} is 0')
 
     if 'pop_co' in config:
         print('Further scaling SADD data to match CO estimates')
