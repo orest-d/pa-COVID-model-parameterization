@@ -43,21 +43,50 @@ COD:
     # https://data.humdata.org/dataset/drc-administrative-boundaries-levels-0-2
     directory: cod_admbnda_adm2_rgc_20190911
     language: FR
+  ghs:
+    column_row_pairs:
+      - (19, 8)
+      - (19, 9)
+      - (19, 10)
+      - (20, 8)
+      - (20, 9)
+      - (20, 10)
+      - (21, 8)
+      - (21, 9)
+      - (21, 10)
 
 SDN:
   admin:
     # https://data.humdata.org/dataset/sudan-administrative-boundaries-levels-0-2
     directory: sdn_admbnda_adm2_cbs_nic_ssa_20200317
     language: EN
+  ghs:
+    column_row_pairs:
+      - (20, 6)
+      - (20, 7)
+      - (21, 6)
+      - (21, 7)
+  ipc:
+    filename: Sudan - IPC Analysis 2019-2020.xlsx
 
 SSD:
   admin:
     # https://data.humdata.org/dataset/south-sudan-administrative-boundaries
     directory: ssd_admbnda_adm2_imwg_nbs_20180817
     language: EN
+  ghs:
+    column_row_pairs:
+      - (20, 7)
+      - (20, 8)
+      - (21, 7)
+      - (21, 8)
 
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
     directory: hti_admbnda_adm3_cnigs_20181129
     language: EN
+  ghs:
+    column_row_pairs:
+      - (10, 6)
+      - (11, 6)
