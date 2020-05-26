@@ -30,6 +30,7 @@ AFG:
   ipc:
     filename: Afghanistan - IPC Analysis 2020-2020.xlsx
     last_row: 58
+    admin_level: 1
     replace_dict:
       Sari pul: Sar-e-Pul
       Wardak: Maidan Warda
@@ -58,7 +59,15 @@ COD:
       - (21, 8)
       - (21, 9)
       - (21, 10)
-
+  ipc:
+    filename: Congo, DRC - IPC Analysis 2019-2020.xlsx
+    last_row: 147
+    admin_level: 2
+    replace_dict:
+      Kabeya-kamwanga: Kabeya-Kamwanga
+      Katako-kombe: Katako-Kombe
+      Malemba-nkulu: Malemba-Nkulu
+      Mobayi-Mbongo: Mobayi-mbongo
 SDN:
   admin:
     # https://data.humdata.org/dataset/sudan-administrative-boundaries-levels-0-2
@@ -73,6 +82,7 @@ SDN:
   ipc:
     filename: Sudan - IPC Analysis 2019-2020.xlsx
     last_row: 193
+    admin_level: 2
 
 SSD:
   admin:
