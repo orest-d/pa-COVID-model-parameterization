@@ -2,6 +2,8 @@
 
 import argparse
 import utils
+import pandas as pd
+import geopandas as gpd
 from pathlib import Path
 import os
 import logging
@@ -11,6 +13,8 @@ DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 INPUT_DIR = 'Inputs'
 OUTPUT_GEOJSON = '{country_iso3}_covid.geojson'
 OUTPUT_DIR = os.path.join('Outputs', '{}', 'Covid')
+EXP_DIR = os.path.join('Outputs', '{}', 'Exposure_SADD')
+EXP_FILE = '{}_Exposure.geojson'
 
 # COVID
 COVID_DIR = 'COVID'
@@ -36,20 +40,31 @@ def main(country_iso3, download_covid=False):
    
     # Download latest covid file tiles and read them in
     if download_covid:
-        get_covid_data('SMOD', config['covid'], country_iso3, input_dir)
-        # get_covid_data('POP', config['ghs'], country_iso3, input_dir)
-    # ghs_smod = rasterio.open(os.path.join(input_dir, GHS_DIR,
-                                        #   OUTPUT_GHS['SMOD'].format(country_iso3=country_iso3)))
+        get_covid_data(config['covid'], country_iso3, input_dir)
+    df_covid = pd.read_csv('{}/{}'.format(os.path.join(input_dir, COVID_DIR),\
+                            config['covid']['filename']), header=[1], skiprows=0)
+    if 'replace_names' in config['covid']:
+        df_covid['#adm1+name']= df_covid['#adm1+name'].str.replace(' Province','')
+        df_covid['#adm1+name'] = df_covid['#adm1+name'].replace(config['covid']['replace_names'])
+    
+    exposure_file=f'{DIR_PATH}/{EXP_DIR.format(country_iso3)}/{EXP_FILE.format(country_iso3)}'
+    exposure_gdf=gpd.read_file(exposure_file)
+    ADM1_names = dict()
+    for k, v in exposure_gdf.groupby('ADM1_EN'):
+        ADM1_names[k] = v.iloc[0,:].ADM1_PCODE
 
-def get_covid_data(ghs_type, config, country_iso3, input_dir):
+# print('latest covid data from {}'.format(df_covid['Date'].max()))
+
+
+def get_covid_data(config, country_iso3, input_dir):
     logger.info(f'Getting COVID data for {country_iso3}')
     download_dir = os.path.join(input_dir, COVID_DIR)
-    print(download_dir)
     Path(download_dir).mkdir(parents=True, exist_ok=True)
-#     for column, row in [ast.literal_eval(x) for x in config['column_row_pairs']]:
-#         zip_filename = os.path.join(download_dir, f'{ghs_type}_2015_1km_{column}_{row}.zip')
-#         utils.download_url(f'{GHS_URL_BASE}/{GHS_URL[ghs_type].format(column=column, row=row)}', zip_filename)
-
+    covid_filename = os.path.join(download_dir,config['filename'])
+    try:
+        utils.download_url(config['url'], covid_filename)
+    except Exception:
+        logger.info(f'Cannot get COVID file from for {country_iso3}')
 
 if __name__ == '__main__':
     args = parse_args()
