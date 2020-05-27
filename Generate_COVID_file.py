@@ -25,6 +25,14 @@ EXP_FILE = '{}_Exposure.geojson'
 # COVID
 COVID_DIR = 'COVID'
 
+# maybe we can move this to the yml file?
+HLX_TAG_TOTAL_CASES='#affected+infected+confirmed+total'
+HLX_TAG_TOTAL_DEATHS='#affected+infected+dead+total'
+HLX_TAG_DATE='#date'
+HLX_TAG_ADM1_NAME='#adm1+name'
+HLX_TAG_ADM1_PCODE='#adm1+pcode'
+HLX_TAG_ADM2_PCODE='#adm2+pcode'
+
 utils.config_logger()
 logger = logging.getLogger(__name__)
 
@@ -47,24 +55,24 @@ def main(country_iso3, download_covid=False):
     if download_covid:
         get_covid_data(config['covid'], country_iso3, input_dir)
     df_covid = pd.read_csv('{}/{}'.format(os.path.join(input_dir, COVID_DIR),\
-                            config['covid']['filename']), header=[1], skiprows=0)
-    # convert to HLX
-
-    print(df_covid)
-    return
+                            config['covid']['filename']), header=config['covid']['header'],\
+                            skiprows=config['covid']['skiprows'])
+    # convert to standard HLX
+    if 'hlx_dict' in config['covid']:
+        df_covid=df_covid.rename(columns=config['covid']['hlx_dict'])
 
     # in some files we have province explicitely
-    df_covid['#adm1+name']= df_covid['#adm1+name'].str.replace(' Province','')
-    if 'replace_names' in config['covid']:
-        df_covid['#adm1+name'] = df_covid['#adm1+name'].replace(config['covid']['replace_dict'])
+    df_covid[HLX_TAG_ADM1_NAME]= df_covid[HLX_TAG_ADM1_NAME].str.replace(' Province','')
+    if 'replace_dict' in config['covid']:
+        df_covid[HLX_TAG_ADM1_NAME] = df_covid[HLX_TAG_ADM1_NAME].replace(config['covid']['replace_dict'])
     
     # convert to float
     # TODO check conversions
-    df_covid['#affected+infected+cases']=df_covid['#affected+infected+cases'].str.replace(',','')
-    df_covid['#affected+infected+cases']=pd.to_numeric(df_covid['#affected+infected+cases'],errors='coerce')
+    df_covid[HLX_TAG_TOTAL_CASES]=df_covid[HLX_TAG_TOTAL_CASES].str.replace(',','')
+    df_covid[HLX_TAG_TOTAL_CASES]=pd.to_numeric(df_covid[HLX_TAG_TOTAL_CASES],errors='coerce')
     
-    df_covid['#affected+infected+deaths']=df_covid['#affected+infected+deaths'].str.replace('-','')
-    df_covid['#affected+infected+deaths']=pd.to_numeric(df_covid['#affected+infected+deaths'],errors='coerce')
+    df_covid[HLX_TAG_TOTAL_DEATHS]=df_covid[HLX_TAG_TOTAL_DEATHS].str.replace('-','')
+    df_covid[HLX_TAG_TOTAL_DEATHS]=pd.to_numeric(df_covid[HLX_TAG_TOTAL_DEATHS],errors='coerce')
 
     df_covid.fillna(0,inplace=True)
     
@@ -80,9 +88,9 @@ def main(country_iso3, download_covid=False):
     ADM1_names = dict()
     for k, v in exposure_gdf.groupby('ADM1_EN'):
         ADM1_names[k] = v.iloc[0,:].ADM1_PCODE
-    df_covid['#adm1+pcode']= df_covid['#adm1+name'].map(ADM1_names)
-    if(df_covid['#adm1+pcode'].isnull().sum()>0):
-        logger.info('missing PCODE for the following admin units ',df_covid[df_covid['#adm1+pcode'].isnull()])
+    df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM1_NAME].map(ADM1_names)
+    if(df_covid[HLX_TAG_ADM1_PCODE].isnull().sum()>0):
+        logger.info('missing PCODE for the following admin units ',df_covid[df_covid[HLX_TAG_ADM1_PCODE].isnull()])
     
     #recalculate total for each ADM1 unit
     gender_age_groups = list(itertools.product(GENDER_CLASSES, AGE_CLASSES))
@@ -90,21 +98,21 @@ def main(country_iso3, download_covid=False):
                               gender_age_groups]
 
     # TODO fields should depend on country
-    output_df_covid=pd.DataFrame(columns=['#adm1+pcode','#adm2+pcode','#date','#affected+infected+cases',\
-                                        '#affected+infected+deaths'])
+    output_df_covid=pd.DataFrame(columns=[HLX_TAG_ADM1_PCODE,HLX_TAG_ADM2_PCODE,HLX_TAG_DATE,HLX_TAG_TOTAL_CASES,\
+                                        HLX_TAG_TOTAL_DEATHS])
 
     # make a loop over reported cases and downscale ADM1 to ADM2
     for _, row in df_covid.iterrows():
-        adm2_pop_fractions=get_adm2_to_adm1_pop_frac(row['#adm1+pcode'],exposure_gdf,gender_age_group_names)
-        adm1pcode=row['#adm1+pcode']
-        date=row['#date']
-        adm1cases=row['#affected+infected+cases']
-        adm1deaths=row['#affected+infected+deaths']
+        adm2_pop_fractions=get_adm2_to_adm1_pop_frac(row[HLX_TAG_ADM1_PCODE],exposure_gdf,gender_age_group_names)
+        adm1pcode=row[HLX_TAG_ADM1_PCODE]
+        date=row[HLX_TAG_DATE]
+        adm1cases=row[HLX_TAG_TOTAL_CASES]
+        adm1deaths=row[HLX_TAG_TOTAL_DEATHS]
         adm2cases=[v*adm1cases for v in adm2_pop_fractions.values()]
         adm2deaths=[v*adm1deaths for v in adm2_pop_fractions.values()]
         adm2pcodes=[v for v in adm2_pop_fractions.keys()]
-        raw_data = {'#adm1+pcode':adm1pcode,'#adm2+pcode':adm2pcodes,\
-                    '#date':date,'#affected+infected+cases':adm2cases,'#affected+infected+deaths':adm2deaths}
+        raw_data = {HLX_TAG_ADM1_PCODE:adm1pcode,HLX_TAG_ADM2_PCODE:adm2pcodes,\
+                    HLX_TAG_DATE:date,HLX_TAG_TOTAL_CASES:adm2cases,HLX_TAG_TOTAL_DEATHS:adm2deaths}
         output_df_covid=output_df_covid.append(pd.DataFrame(raw_data),ignore_index=True)
     
     # Write to file

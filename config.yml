@@ -51,6 +51,8 @@ AFG:
   covid:
     url: https://proxy.hxlstandard.org/data.csv?dest=data_view&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1F-AMEDtqK78EA6LYME2oOsWQsgJi4CT3V_G4Uo-47Rg%2Fedit%23gid%3D1539509351
     filename: covid_data.csv
+    header: 1
+    skiprows: 0
     replace_dict:
       Herat: Hirat
       Helmand: Hilmand
@@ -61,6 +63,10 @@ AFG:
       Sar-e Pol: Sar-e-Pul
       Nimruz: Nimroz
       Wardak: Maidan Wardak
+    hlx_dict:
+      "#affected+infected+cases": "#affected+infected+confirmed+total"
+      "#affected+infected+deaths": "#affected+infected+dead+total"
+
 COD:
   admin:
     # https://data.humdata.org/dataset/drc-administrative-boundaries-levels-0-2
@@ -111,8 +117,7 @@ COD:
   # https://www.who.int/nmh/countries/2018/cod_en.pdf?ua=1
   diabetes: 0.04
   # https://vizhub.healthdata.org/tobacco/
-  smoking: 0.063
-  
+  smoking: 0.063  
 SDN:
   admin:
     # https://data.humdata.org/dataset/sudan-administrative-boundaries-levels-0-2
@@ -158,7 +163,6 @@ SDN:
   diabetes: 0.0853
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.01
-
 SSD:
   admin:
     # https://data.humdata.org/dataset/south-sudan-administrative-boundaries
@@ -199,7 +203,6 @@ SSD:
   diabetes: 0.0737
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.064
-
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
