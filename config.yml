@@ -32,8 +32,8 @@ AFG:
     last_row: 58
     admin_level: 1
     replace_dict:
-      Sari pul: Sar-e-Pul
-      Wardak: Maidan Warda
+      Sari Pul: Sar-e-Pul
+      Wardak: Maidan Wardak
   solid_fuels:
     # from https://www.who.int/nmh/countries/afg_en.pdf?ua=1
     frac_urban: 0.28
@@ -70,10 +70,22 @@ COD:
     last_row: 147
     admin_level: 2
     replace_dict:
+      # Admin 2
       Kabeya-kamwanga: Kabeya-Kamwanga
       Katako-kombe: Katako-Kombe
       Malemba-nkulu: Malemba-Nkulu
-      Mobayi-Mbongo: Mobayi-mbongo
+      Mobayi-mbongo: Mobayi-Mbongo
+      # Admin 1
+      Bas Uélé: Bas-Uele
+      Haut Uélé: Haut-Uele
+      Kasai: Kasaï
+      Kasai Central: Kasaï-Central
+      Kasai Oriental: Kasaï-Oriental
+      Kongo Central: Kongo-Central
+      Nord Ubangi: Nord-Ubangi
+      Sud Ubangi: Sud-Ubangi
+      # Country name:
+      Congo, DRC:
   solid_fuels:
     # from https://www.who.int/nmh/countries/2018/cod_en.pdf?ua=1
     frac_urban: 0.95
@@ -104,6 +116,21 @@ SDN:
     filename: Sudan - IPC Analysis 2019-2020.xlsx
     last_row: 193
     admin_level: 2
+    replace_dict:
+      # Admin 2:
+      Abyei Pca Area: Abyei PCA area
+      As Salam - Sd: As Salam - SD
+      As Salam - Wk: As Salam - WK
+      At Tadamon - Bn: At Tadamon - BN
+      Galabat Ash-shargiah: Galabat Ash-Shargiah
+      Janub Aj Jazirah: Janub Al Jazirah
+      Sharg Aj Jazirah: Sharg Al Jazirah
+      # Country name:
+      Sudan:
+    replace_dict_boundaries:
+      North_Kordofan:
+        - Ar Rahad
+        - Ar Rahad (1)
   solid_fuels:
     # from https://www.who.int/nmh/countries/2018/sdn_en.pdf?ua=1
     frac_urban: 0.59
