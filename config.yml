@@ -191,7 +191,7 @@ SSD:
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
-    directory: hti_admbnda_adm3_cnigs_20181129
+    directory: hti_admbnda_adm2_cnigs_20181129
     language: EN
   ghs:
     column_row_pairs:
