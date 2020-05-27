@@ -7,6 +7,8 @@ import geopandas as gpd
 from pathlib import Path
 import os
 import logging
+import itertools
+from Generate_SADD_exposure_from_tiff import GENDER_CLASSES, AGE_CLASSES
 
 CONFIG_FILE = 'config.yml'
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))
@@ -46,17 +48,61 @@ def main(country_iso3, download_covid=False):
     if 'replace_names' in config['covid']:
         df_covid['#adm1+name']= df_covid['#adm1+name'].str.replace(' Province','')
         df_covid['#adm1+name'] = df_covid['#adm1+name'].replace(config['covid']['replace_names'])
+    # convert to float
+    df_covid['#affected+infected+cases']=df_covid['#affected+infected+cases'].str.replace(',','')
+    df_covid['#affected+infected+cases']=pd.to_numeric(df_covid['#affected+infected+cases'])
     
+    df_covid['#affected+infected+deaths']=df_covid['#affected+infected+deaths'].str.replace('-','')
+    df_covid['#affected+infected+deaths']=pd.to_numeric(df_covid['#affected+infected+deaths'])
+
+    # Get exposure file
     try:
         exposure_file=f'{DIR_PATH}/{EXP_DIR.format(country_iso3)}/{EXP_FILE.format(country_iso3)}'
         exposure_gdf=gpd.read_file(exposure_file)
     except:
         logger.info(f'Cannot get exposure file for {country_iso3}, COVID file not generate')
         return
+    
+    # add pcodes
     ADM1_names = dict()
     for k, v in exposure_gdf.groupby('ADM1_EN'):
         ADM1_names[k] = v.iloc[0,:].ADM1_PCODE
-    print('latest covid data from {}'.format(df_covid['#date'].max()))
+    df_covid['#adm1+pcode']= df_covid['#adm1+name'].map(ADM1_names)
+    if(df_covid['#adm1+pcode'].isnull().sum()>0):
+        logger.info('missing PCODE for the following admin units ',df_covid[df_covid['#adm1+pcode'].isnull()])
+    
+    #recalculate total for each ADM1 unit
+    gender_age_groups = list(itertools.product(GENDER_CLASSES, AGE_CLASSES))
+    gender_age_group_names = ['{}_{}'.format(gender_age_group[0], gender_age_group[1]) for gender_age_group in
+                              gender_age_groups]
+    
+    # TODO fields should depend on country
+    output_df_covid=pd.DataFrame(columns=['#adm2+pcode','#date','#affected+infected+cases',\
+                                        '#affected+infected+deaths'])
+    # make a loop over reported cases
+    # print(df_covid)
+    for index, row in df_covid.iterrows():
+        adm2_pop_fractions=get_adm2_to_adm1_pop_frac(row['#adm1+pcode'],exposure_gdf,gender_age_group_names)
+        adm2_cases=row['#affected+infected+cases']*adm2_pop_fractions.values
+        adm2_deaths=row['#affected+infected+deaths']*adm2_pop_fractions.values
+        output_df_covid.append({'#adm2+pcode':row['#adm2+pcode'],
+                                '#date':row['#date'],
+                                '#affected+infected+cases':adm2_cases,
+                                '#affected+infected+deaths':adm2_deaths})
+    print(output_df_covid) 
+
+def get_adm2_to_adm1_pop_frac(pcode,exposure_gdf,gender_age_group_names):
+    # filter ADM1
+    exp_adm1=exposure_gdf[exposure_gdf['ADM1_PCODE']==pcode]
+    adm2_pop=exp_adm1[gender_age_group_names].sum(axis=1)
+    adm2_pop_fractions=adm2_pop/adm2_pop.sum()
+    return adm2_pop_fractions
+
+
+    # print(tot_sad)
+ 
+    
+
 
 
 def get_covid_data(config, country_iso3, input_dir):

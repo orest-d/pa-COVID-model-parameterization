@@ -41,6 +41,7 @@ AFG:
     url: https://proxy.hxlstandard.org/data.csv?dest=data_view&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1F-AMEDtqK78EA6LYME2oOsWQsgJi4CT3V_G4Uo-47Rg%2Fedit%23gid%3D1539509351
     filename: covid_data.csv
     replace_names:
+      Herat: Hirat
       Helmand: Hilmand
       Paktia: Paktya
       Jowzjan: Jawzjan
