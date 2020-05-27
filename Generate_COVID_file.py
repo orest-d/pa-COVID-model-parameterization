@@ -47,13 +47,16 @@ def main(country_iso3, download_covid=False):
         df_covid['#adm1+name']= df_covid['#adm1+name'].str.replace(' Province','')
         df_covid['#adm1+name'] = df_covid['#adm1+name'].replace(config['covid']['replace_names'])
     
-    exposure_file=f'{DIR_PATH}/{EXP_DIR.format(country_iso3)}/{EXP_FILE.format(country_iso3)}'
-    exposure_gdf=gpd.read_file(exposure_file)
+    try:
+        exposure_file=f'{DIR_PATH}/{EXP_DIR.format(country_iso3)}/{EXP_FILE.format(country_iso3)}'
+        exposure_gdf=gpd.read_file(exposure_file)
+    except:
+        logger.info(f'Cannot get exposure file for {country_iso3}, COVID file not generate')
+        return
     ADM1_names = dict()
     for k, v in exposure_gdf.groupby('ADM1_EN'):
         ADM1_names[k] = v.iloc[0,:].ADM1_PCODE
-
-# print('latest covid data from {}'.format(df_covid['Date'].max()))
+    print('latest covid data from {}'.format(df_covid['#date'].max()))
 
 
 def get_covid_data(config, country_iso3, input_dir):
