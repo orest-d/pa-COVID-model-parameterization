@@ -97,10 +97,14 @@ def main(country_iso3, download_covid=False):
                               gender_age_groups]
 
     # TODO fields should depend on country
-    output_df_covid=pd.DataFrame(columns=[HLX_TAG_ADM1_PCODE,HLX_TAG_ADM2_PCODE,HLX_TAG_DATE,HLX_TAG_TOTAL_CASES,\
-                                        HLX_TAG_TOTAL_DEATHS])
+    output_df_covid=pd.DataFrame(columns=[HLX_TAG_ADM1_PCODE,
+                                          HLX_TAG_ADM2_PCODE,
+                                          HLX_TAG_DATE,
+                                          HLX_TAG_TOTAL_CASES,
+                                          HLX_TAG_TOTAL_DEATHS])
 
     # make a loop over reported cases and downscale ADM1 to ADM2
+    # print(df_covid.sum())
     for _, row in df_covid.iterrows():
         adm2_pop_fractions=get_adm2_to_adm1_pop_frac(row[HLX_TAG_ADM1_PCODE],exposure_gdf,gender_age_group_names)
         adm1pcode=row[HLX_TAG_ADM1_PCODE]
@@ -110,10 +114,18 @@ def main(country_iso3, download_covid=False):
         adm2cases=[v*adm1cases for v in adm2_pop_fractions.values()]
         adm2deaths=[v*adm1deaths for v in adm2_pop_fractions.values()]
         adm2pcodes=[v for v in adm2_pop_fractions.keys()]
-        raw_data = {HLX_TAG_ADM1_PCODE:adm1pcode,HLX_TAG_ADM2_PCODE:adm2pcodes,\
-                    HLX_TAG_DATE:date,HLX_TAG_TOTAL_CASES:adm2cases,HLX_TAG_TOTAL_DEATHS:adm2deaths}
+        raw_data = {HLX_TAG_ADM1_PCODE:adm1pcode,
+                    HLX_TAG_ADM2_PCODE:adm2pcodes,
+                    HLX_TAG_DATE:date,
+                    HLX_TAG_TOTAL_CASES:adm2cases,
+                    HLX_TAG_TOTAL_DEATHS:adm2deaths}
         output_df_covid=output_df_covid.append(pd.DataFrame(raw_data),ignore_index=True)
     
+    # cross-check: the total must match
+    if(abs((output_df_covid[HLX_TAG_TOTAL_CASES].sum()-\
+        df_covid[HLX_TAG_TOTAL_CASES].sum()))>10):
+        logger.info('WARNING The sum of input and output files don\'t match')
+
     # Write to file
     output_df_covid['created_at'] = str(datetime.datetime.now())
     output_df_covid['created_by'] = getpass.getuser()
