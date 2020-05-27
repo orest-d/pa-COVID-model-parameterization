@@ -30,34 +30,98 @@ AFG:
   ipc:
     filename: Afghanistan - IPC Analysis 2020-2020.xlsx
   solid_fuels:
-    # from https://apps.who.int/gho/data/node.main.135?lang=en
-    frac_urban: 28
-    frac_rural: 95
+    # from https://www.who.int/nmh/countries/afg_en.pdf?ua=1
+    frac_urban: 0.28
+    frac_rural: 0.95
+  handwashing_facilities:
+    # from https://washdata.org/data/downloads#WLD
+    frac_urban: 0.36
+    frac_rural: 0.71
   # https://www.who.int/nmh/countries/afg_en.pdf?ua=1
   raised_blood_pressure: 0.23
   # https://www.who.int/nmh/countries/afg_en.pdf?ua=1
   diabetes: 0.08
+  # https://vizhub.healthdata.org/tobacco/
+  smoking: 0.13
 
 COD:
   admin:
     # https://data.humdata.org/dataset/drc-administrative-boundaries-levels-0-2
     directory: cod_admbnda_adm2_rgc_20190911
     language: FR
-
+  solid_fuels:
+    # from https://www.who.int/nmh/countries/2018/cod_en.pdf?ua=1
+    frac_urban: 0.95
+    frac_rural: 0.95
+  handwashing_facilities:
+    # from https://washdata.org/data/downloads#WLD
+    frac_urban: 0.93
+    frac_rural: 0.98
+  # https://www.who.int/nmh/countries/2018/cod_en.pdf?ua=1
+  raised_blood_pressure: 0.22
+  # https://www.who.int/nmh/countries/2018/cod_en.pdf?ua=1
+  diabetes: 0.04
+  # https://vizhub.healthdata.org/tobacco/
+  smoking: 0.063
+  
 SDN:
   admin:
     # https://data.humdata.org/dataset/sudan-administrative-boundaries-levels-0-2
     directory: sdn_admbnda_adm2_cbs_nic_ssa_20200317
     language: EN
+  solid_fuels:
+    # from https://www.who.int/nmh/countries/2018/sdn_en.pdf?ua=1
+    frac_urban: 0.59
+    frac_rural: 0.59
+  handwashing_facilities:
+    # from https://washdata.org/data/downloads#WLD
+    frac_urban: 0.68
+    frac_rural: 0.51
+  # Using Chad https://www.who.int/nmh/countries/2018/tcd_en.pdf?ua=1
+  # TODO replace with http://www.sho.gov.sd/controller/kn_hub_%20featured.php?sm_id=133&mid=110&lid=1
+  raised_blood_pressure: 0.24
+  # http://ghdx.healthdata.org/gbd-results-tool?params=gbd-api-2017-permalink/817c42c58dc6cb238e2d1eb03ef8babb
+  diabetes: 0.0853
+  # https://vizhub.healthdata.org/tobacco/
+  smoking: 0.01
 
 SSD:
   admin:
     # https://data.humdata.org/dataset/south-sudan-administrative-boundaries
     directory: ssd_admbnda_adm2_imwg_nbs_20180817
     language: EN
+  solid_fuels:
+    # from https://www.who.int/nmh/countries/2018/ssd_en.pdf?ua=1
+    frac_urban: 0.95
+    frac_rural: 0.95
+  handwashing_facilities:
+    # from https://washdata.org/data/downloads#WLD
+    frac_urban: 0.93
+    frac_rural: 0.98
+  # Using Chad https://www.who.int/nmh/countries/2018/tcd_en.pdf?ua=1
+  raised_blood_pressure: 0.24
+  # http://ghdx.healthdata.org/gbd-results-tool?params=gbd-api-2017-permalink/91c1bfad5bd48ffe4484ccdeca24e066 
+  diabetes: 0.0737
+  # https://vizhub.healthdata.org/tobacco/
+  smoking: 0.064
 
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
     directory: hti_admbnda_adm3_cnigs_20181129
     language: EN
+  solid_fuels:
+    # from https://www.who.int/nmh/countries/2018/hti_en.pdf?ua=1
+    frac_urban: 0.95
+    frac_rural: 0.95
+  handwashing_facilities:
+    # from https://www.sdg6data.org/country-or-area/Haiti
+    frac_urban: 0.77
+    frac_rural: 0.77
+  # https://www.who.int/nmh/countries/2018/hti_en.pdf?ua=1
+  raised_blood_pressure: 0.20
+  # https://www.who.int/nmh/countries/2018/hti_en.pdf?ua=1 
+  diabetes: 0.07
+  # https://vizhub.healthdata.org/tobacco/
+  smoking: 0.052
+  
