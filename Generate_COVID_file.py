@@ -8,13 +8,14 @@ from pathlib import Path
 import os
 import logging
 import itertools
+import getpass
 from Generate_SADD_exposure_from_tiff import GENDER_CLASSES, AGE_CLASSES
 
 CONFIG_FILE = 'config.yml'
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 INPUT_DIR = 'Inputs'
-OUTPUT_GEOJSON = '{country_iso3}_covid.geojson'
-OUTPUT_DIR = os.path.join('Outputs', '{}', 'Covid')
+OUTPUT_GEOJSON = '{country_iso3}_covid.csv'
+OUTPUT_DIR = os.path.join('Outputs', '{}', 'COVID')
 EXP_DIR = os.path.join('Outputs', '{}', 'Exposure_SADD')
 EXP_FILE = '{}_Exposure.geojson'
 
@@ -49,12 +50,15 @@ def main(country_iso3, download_covid=False):
         df_covid['#adm1+name']= df_covid['#adm1+name'].str.replace(' Province','')
         df_covid['#adm1+name'] = df_covid['#adm1+name'].replace(config['covid']['replace_names'])
     # convert to float
+    # TODO check conversions
     df_covid['#affected+infected+cases']=df_covid['#affected+infected+cases'].str.replace(',','')
-    df_covid['#affected+infected+cases']=pd.to_numeric(df_covid['#affected+infected+cases'])
+    df_covid['#affected+infected+cases']=pd.to_numeric(df_covid['#affected+infected+cases'],errors='coerce')
     
     df_covid['#affected+infected+deaths']=df_covid['#affected+infected+deaths'].str.replace('-','')
-    df_covid['#affected+infected+deaths']=pd.to_numeric(df_covid['#affected+infected+deaths'])
+    df_covid['#affected+infected+deaths']=pd.to_numeric(df_covid['#affected+infected+deaths'],errors='coerce')
 
+    df_covid.fillna(0,inplace=True)
+    
     # Get exposure file
     try:
         exposure_file=f'{DIR_PATH}/{EXP_DIR.format(country_iso3)}/{EXP_FILE.format(country_iso3)}'
@@ -77,25 +81,39 @@ def main(country_iso3, download_covid=False):
                               gender_age_groups]
     
     # TODO fields should depend on country
-    output_df_covid=pd.DataFrame(columns=['#adm2+pcode','#date','#affected+infected+cases',\
+    output_df_covid=pd.DataFrame(columns=['#adm1+pcode','#adm2+pcode','#date','#affected+infected+cases',\
                                         '#affected+infected+deaths'])
     # make a loop over reported cases
-    # print(df_covid)
-    for index, row in df_covid.iterrows():
+    for _, row in df_covid.iterrows():
         adm2_pop_fractions=get_adm2_to_adm1_pop_frac(row['#adm1+pcode'],exposure_gdf,gender_age_group_names)
-        adm2_cases=row['#affected+infected+cases']*adm2_pop_fractions.values
-        adm2_deaths=row['#affected+infected+deaths']*adm2_pop_fractions.values
-        output_df_covid.append({'#adm2+pcode':row['#adm2+pcode'],
-                                '#date':row['#date'],
-                                '#affected+infected+cases':adm2_cases,
-                                '#affected+infected+deaths':adm2_deaths})
-    print(output_df_covid) 
+        adm1pcode=row['#adm1+pcode']
+        date=row['#date']
+        adm1cases=row['#affected+infected+cases']
+        adm1deaths=row['#affected+infected+deaths']
+        adm2pcodes=[v for v in adm2_pop_fractions.keys()]
+        adm2cases=[v*adm1cases for v in adm2_pop_fractions.values()]
+        adm2deaths=[v*adm1deaths for v in adm2_pop_fractions.values()]
+        raw_data = {'#adm1+pcode':adm1pcode,'#adm2+pcode':adm2pcodes,\
+                    '#date':date,'#affected+infected+cases':adm2cases,'#affected+infected+deaths':adm2cases}
+        output_df_covid=output_df_covid.append(pd.DataFrame(raw_data),ignore_index=True)
+    
+    # Write to file
+    output_df_covid['created_at'] = str(datetime.datetime.now())
+    output_df_covid['created_by'] = getpass.getuser()
+    output_csv = get_output_filename(country_iso3)
+    logger.info(f'Writing to file {output_geojson}')
+    utils.write_to_geojson(output_geojson, ADM2boundaries)
+
+def get_output_filename(country_iso3):
+    output_dir = OUTPUT_DIR.format(country_iso3)
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    return os.path.join(output_dir, OUTPUT_GEOJSON.format(country_iso3))
 
 def get_adm2_to_adm1_pop_frac(pcode,exposure_gdf,gender_age_group_names):
     # filter ADM1
     exp_adm1=exposure_gdf[exposure_gdf['ADM1_PCODE']==pcode]
     adm2_pop=exp_adm1[gender_age_group_names].sum(axis=1)
-    adm2_pop_fractions=adm2_pop/adm2_pop.sum()
+    adm2_pop_fractions=dict(zip(exp_adm1['ADM2_PCODE'],adm2_pop/adm2_pop.sum()))
     return adm2_pop_fractions
 
 
