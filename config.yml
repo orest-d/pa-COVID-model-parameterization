@@ -193,6 +193,21 @@ HTI:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
     directory: hti_admbnda_adm2_cnigs_20181129
     language: EN
+  ipc:
+    filename:  Haiti - IPC Analysis 2019-2020.xlsx
+    last_row: 69
+    admin_level: 2
+    replace_dict:
+      # Admin 1
+      Grand-anse: Grande'Anse
+      Nord: North
+      Nord-est: North-East
+      Nord-ouest: North-West
+      Ouest: West
+      Sud: South
+      Sud-est: South-East
+      # Country
+      Haiti:
   ghs:
     column_row_pairs:
       - (10, 6)
