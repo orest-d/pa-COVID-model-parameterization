@@ -50,10 +50,13 @@ def main(country_iso3, download_covid=False):
                             config['covid']['filename']), header=[1], skiprows=0)
     # convert to HLX
 
+    print(df_covid)
+    return
+
     # in some files we have province explicitely
     df_covid['#adm1+name']= df_covid['#adm1+name'].str.replace(' Province','')
     if 'replace_names' in config['covid']:
-        df_covid['#adm1+name'] = df_covid['#adm1+name'].replace(config['covid']['replace_names'])
+        df_covid['#adm1+name'] = df_covid['#adm1+name'].replace(config['covid']['replace_dict'])
     
     # convert to float
     # TODO check conversions

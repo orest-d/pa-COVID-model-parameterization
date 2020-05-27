@@ -1,0 +1,192 @@
+Date,Département,Cumulative cases,New cases (24h),Cumulative Deaths,New deaths (24h) Rate Of,Case fatality rate,Source
+#date,#adm1+name,#affected+infected+confirmed+total,#affected+infected+confirmed+new,#affected+infected+dead+total,#affected+infected+dead+new,,
+24-05-2020,Ouest,769,70,19,3,2.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_24-05-2020.pdf
+24-05-2020,Artibonite,84,7,5,0,6.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_24-05-2020.pdf
+24-05-2020,Nord,36,3,2,0,5.6%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_24-05-2020.pdf
+24-05-2020,Centre,33,10,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_24-05-2020.pdf
+24-05-2020,Sud-Est,33,2,2,0,6.1%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_24-05-2020.pdf
+24-05-2020,Sud,27,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_24-05-2020.pdf
+24-05-2020,Nord-Ouest,27,7,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_24-05-2020.pdf
+24-05-2020,Nord-Est,26,6,2,0,7.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_24-05-2020.pdf
+24-05-2020,Grand Anse,16,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_24-05-2020.pdf
+24-05-2020,Nippes,12,0,1,1,8.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_24-05-2020.pdf
+23-05-2020,Ouest,699,58,16,0,2.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_23-05-2020.pdf
+23-05-2020,Artibonite,77,3,5,0,6.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_23-05-2020.pdf
+23-05-2020,Nord,33,0,2,1,6.1%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_23-05-2020.pdf
+23-05-2020,Nord-Est,20,0,2,0,10.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_23-05-2020.pdf
+23-05-2020,Sud-Est,31,8,2,0,6.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_23-05-2020.pdf
+23-05-2020,Centre,23,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_23-05-2020.pdf
+23-05-2020,Nippes,12,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_23-05-2020.pdf
+23-05-2020,Nord-Ouest,20,10,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_23-05-2020.pdf
+23-05-2020,Sud,27,9,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_23-05-2020.pdf
+23-05-2020,Grand Anse,16,4,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_23-05-2020.pdf
+22-05-2020,Ouest,641,15,16,0,2.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_22-05-2020.pdf
+22-05-2020,Artibonite,74,0,5,0,6.8%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_22-05-2020.pdf
+22-05-2020,Nord,33,11,1,0,3.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_22-05-2020.pdf
+22-05-2020,Nord-Est,20,1,2,0,10.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_22-05-2020.pdf
+22-05-2020,Sud-Est,23,4,2,1,8.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_22-05-2020.pdf
+22-05-2020,Centre,23,5,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_22-05-2020.pdf
+22-05-2020,Nippes,11,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_22-05-2020.pdf
+22-05-2020,Nord-Ouest,10,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_22-05-2020.pdf
+22-05-2020,Sud,18,9,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_22-05-2020.pdf
+22-05-2020,Grand Anse,12,8,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_22-05-2020.pdf
+21-05-2020,Ouest,626,59,16,0,2.6%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_21-05-2020.pdf
+21-05-2020,Artibonite,74,12,5,0,6.8%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_21-05-2020.pdf
+21-05-2020,Nord,22,0,1,0,4.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_21-05-2020.pdf
+21-05-2020,Nord-Est,19,0,2,0,10.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_21-05-2020.pdf
+21-05-2020,Sud-Est,19,1,1,0,5.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_21-05-2020.pdf
+21-05-2020,Centre,18,4,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_21-05-2020.pdf
+21-05-2020,Nippes,11,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_21-05-2020.pdf
+21-05-2020,Nord-Ouest,10,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_21-05-2020.pdf
+21-05-2020,Sud,9,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_21-05-2020.pdf
+21-05-2020,Grand Anse,4,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_21-05-2020.pdf
+20-05-2020,Ouest,567,65,16,3,2.8%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_20-05-2020.pdf
+20-05-2020,Artibonite,62,2,5,0,8.1%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_20-05-2020.pdf
+20-05-2020,Nord,22,0,1,0,4.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_20-05-2020.pdf
+20-05-2020,Nord-Est,19,0,2,0,10.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_20-05-2020.pdf
+20-05-2020,Sud-Est,18,3,1,0,5.6%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_20-05-2020.pdf
+20-05-2020,Centre,14,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_20-05-2020.pdf
+20-05-2020,Nippes,10,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_20-05-2020.pdf
+20-05-2020,Nord-Ouest,10,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_20-05-2020.pdf
+20-05-2020,Sud,8,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_20-05-2020.pdf
+20-05-2020,Grand Anse,4,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_20-05-2020.pdf
+19-05-2020,Ouest,502,57,13,0,2.6%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_19-05-2020.pdf
+19-05-2020,Artibonite,60,0,5,0,8.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_19-05-2020.pdf
+19-05-2020,Nord,22,0,1,0,4.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_19-05-2020.pdf
+19-05-2020,Nord-Est,19,1,2,0,10.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_19-05-2020.pdf
+19-05-2020,Sud-Est,15,1,1,0,6.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_19-05-2020.pdf
+19-05-2020,Centre,13,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_19-05-2020.pdf
+19-05-2020,Nippes,10,3,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_19-05-2020.pdf
+19-05-2020,Nord-Ouest,10,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_19-05-2020.pdf
+19-05-2020,Sud,8,3,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_19-05-2020.pdf
+19-05-2020,Grand Anse,4,2,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_19-05-2020.pdf
+18-05-2020,Ouest,445,49,13,1,2.9%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_18-05-2020.pdf
+18-05-2020,Artibonite,60,8,5,0,8.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_18-05-2020.pdf
+18-05-2020,Nord,22,0,1,0,4.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_18-05-2020.pdf
+18-05-2020,Nord-Est,18,0,2,0,11.1%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_18-05-2020.pdf
+18-05-2020,Sud-Est,14,0,1,0,7.1%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_18-05-2020.pdf
+18-05-2020,Centre,13,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_18-05-2020.pdf
+18-05-2020,Nippes,7,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_18-05-2020.pdf
+18-05-2020,Nord-Ouest,10,3,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_18-05-2020.pdf
+18-05-2020,Sud,5,2,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_18-05-2020.pdf
+18-05-2020,Grand Anse,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_18-05-2020.pdf
+17-05-2020,Ouest,396,43,12,1,3.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_17-05-2020.pdf
+17-05-2020,Artibonite,52,15,5,0,9.6%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_17-05-2020.pdf
+17-05-2020,Nord,21,5,1,0,4.8%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_17-05-2020.pdf
+17-05-2020,Nord-Est,19,7,2,0,10.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_17-05-2020.pdf
+17-05-2020,Sud-Est,14,2,1,0,7.1%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_17-05-2020.pdf
+17-05-2020,Centre,12,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_17-05-2020.pdf
+17-05-2020,Nippes,7,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_17-05-2020.pdf
+17-05-2020,Nord-Ouest,7,4,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_17-05-2020.pdf
+17-05-2020,Sud,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_17-05-2020.pdf
+17-05-2020,Grand Anse,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_17-05-2020.pdf
+16-05-2020,Ouest,353,87,11,0,3.1%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_16-05-2020.pdf
+16-05-2020,Artibonite,37,2,5,0,13.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_16-05-2020.pdf
+16-05-2020,Nord,16,0,1,0,6.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_16-05-2020.pdf
+16-05-2020,Nord-Est,12,0,2,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_16-05-2020.pdf
+16-05-2020,Sud-Est,12,3,1,0,8.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_16-05-2020.pdf
+16-05-2020,Centre,11,5,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_16-05-2020.pdf
+16-05-2020,Nippes,7,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_16-05-2020.pdf
+16-05-2020,Nord-Ouest,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_16-05-2020.pdf
+16-05-2020,Sud,3,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_16-05-2020.pdf
+16-05-2020,Grand Anse,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_16-05-2020.pdf
+15-05-2020,Ouest,266,38,11,0,4.1%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_15_05_2020.pdf
+15-05-2020,Artibonite,35,8,5,0,14.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_15_05_2020.pdf
+15-05-2020,Nord-Est,12,0,2,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_15_05_2020.pdf
+15-05-2020,Sud-Est,9,1,1,0,11.1%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_15_05_2020.pdf
+15-05-2020,Nord,16,0,1,0,6.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_15_05_2020.pdf
+15-05-2020,Nord-Ouest,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_15_05_2020.pdf
+15-05-2020,Nippes,7,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_15_05_2020.pdf
+15-05-2020,Centre,6,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_15_05_2020.pdf
+15-05-2020,Sud,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_15_05_2020.pdf
+15-05-2020,Grand Anse,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_15_05_2020.pdf
+14-05-2020,Ouest,228,30,11,0,4.8%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_14-05-2020.pdf
+14-05-2020,Artibonite,27,0,5,0,18.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_14-05-2020.pdf
+14-05-2020,Nord-Est,12,0,2,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_14-05-2020.pdf
+14-05-2020,Sud-Est,8,1,1,0,12.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_14-05-2020.pdf
+14-05-2020,Nord,16,6,1,0,6.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_14-05-2020.pdf
+14-05-2020,Nord-Ouest,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_14-05-2020.pdf
+14-05-2020,Nippes,7,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_14-05-2020.pdf
+14-05-2020,Centre,5,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_14-05-2020.pdf
+14-05-2020,Sud,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_14-05-2020.pdf
+14-05-2020,Grand Anse,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_14-05-2020.pdf
+13-05-2020,Ouest,198,32,11,2,5.6%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_13-05-2020.pdf
+13-05-2020,Artibonite,27,0,5,0,18.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_13-05-2020.pdf
+13-05-2020,Nord-Est,12,0,2,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_13-05-2020.pdf
+13-05-2020,Sud-Est,7,0,1,0,14.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_13-05-2020.pdf
+13-05-2020,Nord,10,2,1,0,10.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_13-05-2020.pdf
+13-05-2020,Nord-Ouest,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_13-05-2020.pdf
+13-05-2020,Nippes,7,4,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_13-05-2020.pdf
+13-05-2020,Centre,5,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_13-05-2020.pdf
+13-05-2020,Sud,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_13-05-2020.pdf
+13-05-2020,Grand Anse,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_13-05-2020.pdf
+12-05-2020,Ouest,166,15,9,0,5.4%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_12-05-2020.pdf
+12-05-2020,Artibonite,27,0,5,0,18.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_12-05-2020.pdf
+12-05-2020,Nord-Est,12,0,2,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_12-05-2020.pdf
+12-05-2020,Nord,8,0,1,0,12.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_12-05-2020.pdf
+12-05-2020,Sud-Est,7,0,1,0,14.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_12-05-2020.pdf
+12-05-2020,Nippes,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_12-05-2020.pdf
+12-05-2020,Centre,4,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_12-05-2020.pdf
+12-05-2020,Sud,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_12-05-2020.pdf
+12-05-2020,Nord-Ouest,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_12-05-2020.pdf
+12-05-2020,Grand Anse,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_12-05-2020.pdf
+11-05-2020,Ouest,151,9,9,1,6.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_11-05-2020.pdf
+11-05-2020,Artibonite,27,1,5,1,18.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_11-05-2020.pdf
+11-05-2020,Nord-Est,12,0,2,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_11-05-2020.pdf
+11-05-2020,Nord,8,0,1,0,12.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_11-05-2020.pdf
+11-05-2020,Sud-Est,7,0,1,0,14.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_11-05-2020.pdf
+11-05-2020,Nippes,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_11-05-2020.pdf
+11-05-2020,Centre,4,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_11-05-2020.pdf
+11-05-2020,Sud,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_11-05-2020.pdf
+11-05-2020,Nord-Ouest,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_11-05-2020.pdf
+11-05-2020,Grand Anse,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_11-05-2020.pdf
+10-05-2020,Ouest,142,16,8,0,5.6%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_10-05-2020.pdf
+10-05-2020,Artibonite,26,8,4,1,15.4%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_10-05-2020.pdf
+10-05-2020,Nord-Est,12,0,2,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_10-05-2020.pdf
+10-05-2020,Nord,8,0,1,0,12.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_10-05-2020.pdf
+10-05-2020,Sud-Est,7,1,1,0,14.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_10-05-2020.pdf
+10-05-2020,Nippes,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_10-05-2020.pdf
+10-05-2020,Centre,4,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_10-05-2020.pdf
+10-05-2020,Sud,2,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_10-05-2020.pdf
+10-05-2020,Nord-Ouest,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_10-05-2020.pdf
+10-05-2020,Grand Anse,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_10-05-2020.pdf
+09-05-2020,Ouest,126,19,8,2,6.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_09-05-2020%20VC.pdf
+09-05-2020,Artibonite,18,7,3,1,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_09-05-2020%20VC.pdf
+09-05-2020,Nord-Est,12,0,2,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_09-05-2020%20VC.pdf
+09-05-2020,Nord,8,2,1,0,12.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_09-05-2020%20VC.pdf
+09-05-2020,Sud-Est,6,0,1,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_09-05-2020%20VC.pdf
+09-05-2020,Nippes,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_09-05-2020%20VC.pdf
+09-05-2020,Centre,3,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_09-05-2020%20VC.pdf
+09-05-2020,Sud,1,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_09-05-2020%20VC.pdf
+09-05-2020,Nord-Ouest,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_09-05-2020%20VC.pdf
+09-05-2020,Grand Anse,2,2,0,0,,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_09-05-2020%20VC.pdf
+08-05-2020,Ouest,107,5,6,0,5.6%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_08-05-2020.pdf
+08-05-2020,Artibonite,11,0,2,0,18.2%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_08-05-2020.pdf
+08-05-2020,Nord-Est,12,0,2,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_08-05-2020.pdf
+08-05-2020,Nord,6,0,1,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_08-05-2020.pdf
+08-05-2020,Sud-Est,6,0,1,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_08-05-2020.pdf
+08-05-2020,Nippes,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_08-05-2020.pdf
+08-05-2020,Centre,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_08-05-2020.pdf
+08-05-2020,Sud,1,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_08-05-2020.pdf
+08-05-2020,Nord-Ouest,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_08-05-2020.pdf
+08-05-2020,Grand Anse,0,0,0,0,,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_08-05-2020.pdf
+07-05-2020,Ouest,102,14,6,0,5.9%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_07-05-2020.pdf
+07-05-2020,Artibonite,11,1,2,0,18.2%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_07-05-2020.pdf
+07-05-2020,Nord-Est,12,0,2,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_07-05-2020.pdf
+07-05-2020,Nord,6,1,1,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_07-05-2020.pdf
+07-05-2020,Sud-Est,6,1,1,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_07-05-2020.pdf
+07-05-2020,Nippes,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_07-05-2020.pdf
+07-05-2020,Centre,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_07-05-2020.pdf
+07-05-2020,Sud,1,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_07-05-2020.pdf
+07-05-2020,Nord-Ouest,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_07-05-2020.pdf
+07-05-2020,Grand Anse,0,0,0,0,,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_07-05-2020.pdf
+06-05-2020,Ouest,88,13,6,0,6.8%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_06-05-2020.pdf
+06-05-2020,Artibonite,10,2,2,0,20.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_06-05-2020.pdf
+06-05-2020,Nord-Est,12,1,2,0,16.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_06-05-2020.pdf
+06-05-2020,Nord,5,4,1,0,20.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_06-05-2020.pdf
+06-05-2020,Sud-Est,5,0,1,0,20.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_06-05-2020.pdf
+06-05-2020,Nippes,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_06-05-2020.pdf
+06-05-2020,Centre,2,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_06-05-2020.pdf
+06-05-2020,Sud,1,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_06-05-2020.pdf
+06-05-2020,Nord-Ouest,3,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_06-05-2020.pdf
+06-05-2020,Grand Anse,0,0,0,0,,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_06-05-2020.pdf

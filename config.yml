@@ -51,7 +51,7 @@ AFG:
   covid:
     url: https://proxy.hxlstandard.org/data.csv?dest=data_view&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1F-AMEDtqK78EA6LYME2oOsWQsgJi4CT3V_G4Uo-47Rg%2Fedit%23gid%3D1539509351
     filename: covid_data.csv
-    replace_names:
+    replace_dict:
       Herat: Hirat
       Helmand: Hilmand
       Paktia: Paktya
@@ -238,3 +238,16 @@ HTI:
   diabetes: 0.07
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.052
+  covid:
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTqVOxCSrhEiZ_CRME3Xqhu_DWZv74FvrvOr77rIXOlorClEi0huwVKxXXcVr2hn8pml82tlwmf59UX/pub?output=csv
+    filename: covid_data.csv
+    replace_dict:
+      Herat: Hirat
+      Helmand: Hilmand
+      Paktia: Paktya
+      Jowzjan: Jawzjan
+      Panjshir: Panjsher 
+      Urozgan: Uruzgan
+      Sar-e Pol: Sar-e-Pul
+      Nimruz: Nimroz
+      Wardak: Maidan Wardak
