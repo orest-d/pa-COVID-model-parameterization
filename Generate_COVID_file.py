@@ -68,10 +68,11 @@ def main(country_iso3, download_covid=False):
     
     # convert to float
     # TODO check conversions
-    df_covid[HLX_TAG_TOTAL_CASES]=df_covid[HLX_TAG_TOTAL_CASES].str.replace(',','')
+    if df_covid[HLX_TAG_TOTAL_CASES].dtype == 'object':
+        df_covid[HLX_TAG_TOTAL_CASES]=df_covid[HLX_TAG_TOTAL_CASES].str.replace(',','')
     df_covid[HLX_TAG_TOTAL_CASES]=pd.to_numeric(df_covid[HLX_TAG_TOTAL_CASES],errors='coerce')
-    
-    df_covid[HLX_TAG_TOTAL_DEATHS]=df_covid[HLX_TAG_TOTAL_DEATHS].str.replace('-','')
+    if df_covid[HLX_TAG_TOTAL_CASES].dtype == 'object':
+       df_covid[HLX_TAG_TOTAL_DEATHS]=df_covid[HLX_TAG_TOTAL_DEATHS].str.replace('-','')
     df_covid[HLX_TAG_TOTAL_DEATHS]=pd.to_numeric(df_covid[HLX_TAG_TOTAL_DEATHS],errors='coerce')
 
     df_covid.fillna(0,inplace=True)
@@ -82,7 +83,6 @@ def main(country_iso3, download_covid=False):
         exposure_gdf=gpd.read_file(exposure_file)
     except:
         logger.info(f'Cannot get exposure file for {country_iso3}, COVID file not generate')
-        return
     
     # add pcodes
     ADM1_names = dict()
@@ -91,7 +91,6 @@ def main(country_iso3, download_covid=False):
     df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM1_NAME].map(ADM1_names)
     if(df_covid[HLX_TAG_ADM1_PCODE].isnull().sum()>0):
         logger.info('missing PCODE for the following admin units ',df_covid[df_covid[HLX_TAG_ADM1_PCODE].isnull()])
-    
     #recalculate total for each ADM1 unit
     gender_age_groups = list(itertools.product(GENDER_CLASSES, AGE_CLASSES))
     gender_age_group_names = ['{}_{}'.format(gender_age_group[0], gender_age_group[1]) for gender_age_group in

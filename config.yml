@@ -244,13 +244,14 @@ HTI:
   covid:
     url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTqVOxCSrhEiZ_CRME3Xqhu_DWZv74FvrvOr77rIXOlorClEi0huwVKxXXcVr2hn8pml82tlwmf59UX/pub?output=csv
     filename: covid_data.csv
+    header: 1
+    skiprows: 0
     replace_dict:
-      Herat: Hirat
-      Helmand: Hilmand
-      Paktia: Paktya
-      Jowzjan: Jawzjan
-      Panjshir: Panjsher 
-      Urozgan: Uruzgan
-      Sar-e Pol: Sar-e-Pul
-      Nimruz: Nimroz
-      Wardak: Maidan Wardak
+      Nord: North
+      Nord-Ouest: North-West
+      Ouest: West
+      Nord-Est: North-East
+      Sud-Est: South-East
+      Sud: South
+      Grand Anse: Grande'Anse
+    
