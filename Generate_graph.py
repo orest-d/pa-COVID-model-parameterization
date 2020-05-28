@@ -13,6 +13,7 @@ import utils
 MAIN_DIR = 'Outputs'
 OUTPUT_DIR = 'Graph'
 OUTPUT_FILE = '{}_graph.json'
+CONFIG_FILE = 'config.yml'
 
 EXPOSURE_DIR = 'Exposure_SADD'
 EXPOSURE_FILENAME = '{country_iso3}_Exposure.geojson'
@@ -22,6 +23,9 @@ COVID_FILENAME = '{country_iso3}_COVID.csv'
 
 VULNERABILITY_DIR = 'Vulnerability'
 VULNERABILITY_FILENAME = '{country_iso3}_Vulnerabilities.geojson'
+
+CONTACT_MATRIX_DIR = 'contact_matrices_152_countries'
+CONTACT_MATRIX_FILENAME = 'MUestimates_all_locations_{file_number}.xlsx'
 
 utils.config_logger()
 logger = logging.getLogger(__name__)
@@ -35,21 +39,25 @@ def parse_args():
 
 def main(country_iso3):
 
+    logger.info(f'Creating graph for {country_iso3}')
     main_dir = os.path.join(MAIN_DIR, country_iso3)
+    config = utils.parse_yaml(CONFIG_FILE)[country_iso3]
 
     # Make a graph
     G = nx.Graph()
     G.graph['country'] = country_iso3
-    # TODO: Add contact matrix in metadata
 
     # Add exposure
-    add_exposure(G, main_dir, country_iso3)
+    G = add_exposure(G, main_dir, country_iso3)
 
     # Add COVID cases
-    add_covid(G, main_dir, country_iso3)
+    G = add_covid(G, main_dir, country_iso3)
 
-    # TODO: Add vulnerability
-    add_vulnerability(G, main_dir, country_iso3)
+    # Add vulnerability
+    G = add_vulnerability(G, main_dir, country_iso3)
+
+    # Add contact matrix
+    add_contact_matrix(G, config['contact_matrix'])
 
     # Write out
     data = nx.readwrite.json_graph.node_link_data(G)
@@ -147,6 +155,21 @@ def add_vulnerability(G, main_dir, country_iso3):
     # Add the exposure info to graph
     for row in vulnerability.to_dict(orient='records'):
         G.add_node(row['ADM2_PCODE'], **row)
+    return G
+
+
+def add_contact_matrix(G, config):
+    filename = os.path.join(CONTACT_MATRIX_DIR, CONTACT_MATRIX_FILENAME.format(file_number=config['file_number']))
+    logger.info(f'Reading in contact matrix from {filename} for country {config["country"]}')
+    column_names = [f'X{i+1}' for i in range(16)]
+    contact_matrix = pd.read_excel(filename, sheet_name=config['country'], header=None, names=column_names)
+    # Add columns X0 and X17
+    contact_matrix['X0'] = contact_matrix['X1']
+    contact_matrix['X17'] = contact_matrix['X16']
+    # Reorder
+    contact_matrix = contact_matrix[['X0'] + column_names + ['X17']]
+    # Add as metadata
+    G.graph['contact_matrix'] = contact_matrix.values.tolist()
     return G
 
 

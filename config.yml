@@ -66,6 +66,9 @@ AFG:
     hlx_dict:
       "#affected+infected+cases": "#affected+infected+confirmed+total"
       "#affected+infected+deaths": "#affected+infected+dead+total"
+  contact_matrix:
+    country: Pakistan
+    file_number: 2
 
 COD:
   admin:
