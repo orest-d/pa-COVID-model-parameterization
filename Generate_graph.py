@@ -20,7 +20,8 @@ EXPOSURE_FILENAME = '{country_iso3}_Exposure.geojson'
 COVID_DIR = 'COVID'
 COVID_FILENAME = '{country_iso3}_COVID.csv'
 
-CONFIG_FILE = 'config.yml'
+VULNERABILITY_DIR = 'Vulnerability'
+VULNERABILITY_FILENAME = '{country_iso3}_Vulnerabilities.geojson'
 
 utils.config_logger()
 logger = logging.getLogger(__name__)
@@ -48,6 +49,7 @@ def main(country_iso3):
     add_covid(G, main_dir, country_iso3)
 
     # TODO: Add vulnerability
+    add_vulnerability(G, main_dir, country_iso3)
 
     # Write out
     data = nx.readwrite.json_graph.node_link_data(G)
@@ -115,6 +117,30 @@ def add_covid(G, main_dir, country_iso3):
         G.graph['dates'] = dates
         for admin2, row in covid_out.to_dict(orient='index').items():
             G.add_node(admin2, **row)
+    return G
+
+
+def add_vulnerability(G, main_dir, country_iso3):
+    # Read in vulnerability file
+    filename = os.path.join(main_dir, VULNERABILITY_DIR, VULNERABILITY_FILENAME.format(country_iso3=country_iso3))
+    logger.info(f'Reading in vulnerability from {filename}')
+    vulnerability = gpd.read_file(filename)
+    # Only keep necessary columns
+    columns = [
+        'ADM2_PCODE',
+        'frac_urban',
+        'Phase 3+',
+        'fossil_fuels',
+        'handwashing_facilities',
+        'raised_blood_pressure',
+        'diabetes',
+        'smoking'
+    ]
+    vulnerability = vulnerability[columns]
+    # Add the exposure info to graph
+    for row in vulnerability.to_dict(orient='records'):
+        G.add_node(row['ADM2_PCODE'], **row)
+    return G
 
 
 if __name__ == '__main__':
