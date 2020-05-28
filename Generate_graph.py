@@ -4,15 +4,21 @@ import logging
 import json
 from pathlib import Path
 
+import pandas as pd
 import geopandas as gpd
 import networkx as nx
 
 import utils
 
 MAIN_DIR = 'Outputs'
-EXPOSURE_DIR = 'Exposure_SADD'
 OUTPUT_DIR = 'Graph'
 OUTPUT_FILE = '{}_graph.json'
+
+EXPOSURE_DIR = 'Exposure_SADD'
+EXPOSURE_FILENAME = '{country_iso3}_Exposure.geojson'
+
+COVID_DIR = 'COVID'
+COVID_FILENAME = '{country_iso3}_COVID.csv'
 
 CONFIG_FILE = 'config.yml'
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))
@@ -34,11 +40,31 @@ def main(country_iso3):
     # Make a graph
     G = nx.Graph()
     G.graph['country'] = country_iso3
+    # TODO: Add contact matrix in metadata
 
-    # TODO: Add mobility matrix in metadata
+    # Add exposure
+    add_exposure(G, main_dir, country_iso3)
 
+    # Add COVID cases
+    add_covid(G, main_dir, country_iso3)
+
+    # TODO: Add vulnerability
+
+    # Write out
+    data = nx.readwrite.json_graph.node_link_data(G)
+    outdir = os.path.join(main_dir, OUTPUT_DIR)
+    Path(outdir).mkdir(parents=True, exist_ok=True)
+    outfile = os.path.join(main_dir, OUTPUT_DIR, OUTPUT_FILE.format(country_iso3))
+    with open(outfile, 'w') as f:
+        json.dump(data, f, indent=2)
+    logger.info(f'Wrote out to {outfile}')
+
+
+def add_exposure(G, main_dir, country_iso3):
     # Read in exposure file
-    exposure = gpd.read_file(os.path.join(main_dir, EXPOSURE_DIR, f'{country_iso3}_Exposure.geojson'))
+    filename = os.path.join(main_dir, EXPOSURE_DIR, EXPOSURE_FILENAME.format(country_iso3=country_iso3))
+    logger.info(f'Reading in exposure from {filename}')
+    exposure = gpd.read_file(filename)
     # Turn disag pop columns into lists
     # TODO: aggregate the ages as the contact matrix
     for gender in ['f', 'm']:
@@ -64,23 +90,18 @@ def main(country_iso3):
     }
     exposure = exposure.rename(columns=rename_dict)
 
-    # Add the exposure info
+    # Add the exposure info to graph
     G.graph['age_groups'] = age_groups
     for row in exposure.to_dict(orient='records'):
         G.add_node(row['ADM2_PCODE'], **row)
+    return G
 
-    # TODO: Add covid cases
 
-    # TODO: Add vulnerability
-
-    # Write out
-    data = nx.readwrite.json_graph.node_link_data(G)
-    outdir = os.path.join(main_dir, OUTPUT_DIR)
-    Path(outdir).mkdir(parents=True, exist_ok=True)
-    outfile = os.path.join(main_dir, OUTPUT_DIR, OUTPUT_FILE.format(country_iso3))
-    with open(outfile, 'w') as f:
-        json.dump(data, f, indent=2)
-    logger.info(f'Wrote out to {outfile}')
+def add_covid(G, main_dir, country_iso3):
+    # Read in COVID file
+    filename = os.path.join(main_dir, COVID_DIR, COVID_FILENAME.format(country_iso3=country_iso3))
+    logger.info(f'Reading in COVID cases from {filename}')
+    covid = pd.read_csv(filename)
 
 
 if __name__ == '__main__':
