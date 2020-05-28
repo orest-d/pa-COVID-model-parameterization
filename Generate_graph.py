@@ -78,9 +78,6 @@ def add_exposure(G, main_dir, country_iso3):
         'ADM2_EN',
         'ADM1_PCODE',
         'ADM2_PCODE',
-        'tot_pop_WP',
-        'tot_pop_UN',
-        'tot_sad',
         'group_pop_f',
         'group_pop_m'
     ]
@@ -137,6 +134,13 @@ def add_vulnerability(G, main_dir, country_iso3):
         'smoking'
     ]
     vulnerability = vulnerability[columns]
+    # Rename some
+    rename_dict = {
+        'Phase 3+': 'food_insecurity',
+    }
+    vulnerability = vulnerability.rename(columns=rename_dict)
+    # Make food insecurity be the vulnerability factor
+    vulnerability['vulnerability_factor'] = vulnerability['food_insecurity']
     # Add the exposure info to graph
     for row in vulnerability.to_dict(orient='records'):
         G.add_node(row['ADM2_PCODE'], **row)
