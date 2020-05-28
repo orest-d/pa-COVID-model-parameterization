@@ -104,13 +104,13 @@ def add_covid(G, main_dir, country_iso3):
     # Do some pivoting
     for cname in ['confirmed', 'dead']:
         covid_out = covid.pivot(columns='#date',
-                                     values=f'#affected+infected+{cname}+total',
-                                     index='#adm2+pcode').fillna(0)
-        # Get the numbers in a list
-        covid_out[f'infected_{cname}'] = covid_out.values.tolist()
-        covid_out = covid_out[['infected_confirmed']]
+                                values=f'#affected+infected+{cname}+total',
+                                index='#adm2+pcode').fillna(0)
         # Get the date list
         dates = list(covid_out.columns)
+        # Get the numbers in a list
+        covid_out[f'infected_{cname}'] = covid_out.values.tolist()
+        covid_out = covid_out[[f'infected_{cname}']]
         # Add to the graph
         G.graph['dates'] = dates
         for admin2, row in covid_out.to_dict(orient='index').items():
