@@ -100,12 +100,15 @@ def add_covid(G, main_dir, country_iso3):
     filename = os.path.join(main_dir, COVID_DIR, COVID_FILENAME.format(country_iso3=country_iso3))
     logger.info(f'Reading in COVID cases from {filename}')
     covid = pd.read_csv(filename)
-    # Do some pivoting
     for cname in ['confirmed', 'dead']:
+        # Do some pivoting
         covid_out = covid.pivot(columns='#date',
                                 values=f'#affected+infected+{cname}+total',
-                                index='#adm2+pcode').fillna(0)
+                                index='#adm2+pcode')
+        # Interpolate the missing values
+        covid_out = covid_out.interpolate(method='linear', axis='columns', limit_direction='forward').fillna(0)
         # Get the date list
+        # TODO: Make sure the dates are the same between infected and deaths
         dates = list(covid_out.columns)
         # Get the numbers in a list
         covid_out[f'infected_{cname}'] = covid_out.values.tolist()
