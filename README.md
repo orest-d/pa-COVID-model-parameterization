@@ -59,3 +59,44 @@ For more information about the definition of urban vs rural settlements, see
 Then we use the GHS-POP raster to calculate the number of people per urban or rural cell,
 and compute the fraction of the population residing in urban cells. 
 
+## Contact matrices
+
+Contact matrices are extracted from [this paper on PLOS Computational Biology](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005697#sec020).
+The contact matrices used are taken from the _all\_locations_ dataset which is available in two different files: _MUestimates\_all\_locations\_1.xlsx_ (containing data for Algeria to Morocco) and _MUestimates\_all\_locations\_2.xlsx_ (containing data for Mozambique to Zimbabwe).
+
+### Methodology
+
+#### Selection of contact matrices
+
+For some of the countries the contact matrix is not directly available and we are usign a country in the same region and with similat socioeconomic indicators as proxy, as also done by [LSHTM](https://www.dropbox.com/sh/m3n6qjesd7v3rd0/AAC0OblfX-8sVyIuGCsqSZjMa?dl=0). Specifically:
+| Country     | Contact Matrix used |
+|-------------|---------------------|
+| Afghanistan | Pakistan            |
+| Sudan       | Ethiopia            |
+| South Sudan | Uganda              |
+| DRC         | Zambia              |
+| Haiti       | available on PLOS   |
+
+#### Correspondence of age classes
+
+The contact matrices are categorised into 5-year age intervals {1,2,...,16} which don't correspond exactly to the age classes in WorldPop. Classes are matched in the following way:
+| WorlpPop Class   | Contact Matrix class |
+|------------------|----------------------|
+| class 0 (0 to 1) | class X1 (0 to 4)       |
+| class 1 (1 to 4) | class X1 (0 to 4)       |
+| class 5 (5 to 9) | class X2 (5 to 9)       |
+| class 10 (10 to 14) | class X3 (10 to 14)       |
+| class 15 (15 to 19) | class X4 (15 to 19)       |
+| class 20 (20 to 24) | class X5 (20 to 24)       |
+| class 25 (25 to 29) | class X6 (25 to 29)       |
+| class 30 (30 to 34) | class X7 (30 to 34)       |
+| class 35 (35 to 39) | class X8 (35 to 39)       |
+| class 40 (40 to 44) | class X9 (40 to 44)       |
+| class 45 (45 to 49) | class X10 (45 to 49)       |
+| class 50 (50 to 54) | class X11 (50 to 54)       |
+| class 55 (55 to 59) | class X12 (55 to 59)       |
+| class 60 (60 to 64) | class X13 (60 to 64)       |
+| class 65 (65 to 69) | class X14 (65 to 69)       |
+| class 70 (70 to 74) | class X15 (70 to 74)       |
+| class 75 (70 to 79) | class X16 (75+)       |
+| class 80 (80+) | class X16 (75+)       |
