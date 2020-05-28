@@ -21,7 +21,6 @@ COVID_DIR = 'COVID'
 COVID_FILENAME = '{country_iso3}_COVID.csv'
 
 CONFIG_FILE = 'config.yml'
-DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 
 utils.config_logger()
 logger = logging.getLogger(__name__)
@@ -35,7 +34,7 @@ def parse_args():
 
 def main(country_iso3):
 
-    main_dir = os.path.join(DIR_PATH, MAIN_DIR, country_iso3)
+    main_dir = os.path.join(MAIN_DIR, country_iso3)
 
     # Make a graph
     G = nx.Graph()
@@ -102,6 +101,20 @@ def add_covid(G, main_dir, country_iso3):
     filename = os.path.join(main_dir, COVID_DIR, COVID_FILENAME.format(country_iso3=country_iso3))
     logger.info(f'Reading in COVID cases from {filename}')
     covid = pd.read_csv(filename)
+    # Do some pivoting
+    for cname in ['confirmed', 'dead']:
+        covid_out = covid.pivot(columns='#date',
+                                     values=f'#affected+infected+{cname}+total',
+                                     index='#adm2+pcode').fillna(0)
+        # Get the numbers in a list
+        covid_out[f'infected_{cname}'] = covid_out.values.tolist()
+        covid_out = covid_out[['infected_confirmed']]
+        # Get the date list
+        dates = list(covid_out.columns)
+        # Add to the graph
+        G.graph['dates'] = dates
+        for admin2, row in covid_out.to_dict(orient='index').items():
+            G.add_node(admin2, **row)
 
 
 if __name__ == '__main__':
