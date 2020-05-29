@@ -15,6 +15,9 @@ OUTPUT_DIR = 'Graph'
 OUTPUT_FILE = '{}_graph.json'
 CONFIG_FILE = 'config.yml'
 
+MOBILITY_DIR = 'MobilityMatrix'
+MOBILITY_FILENAME = '{country_iso3}_mobility_matrix.csv'
+
 EXPOSURE_DIR = 'Exposure_SADD'
 EXPOSURE_FILENAME = '{country_iso3}_Exposure.geojson'
 
@@ -43,9 +46,8 @@ def main(country_iso3):
     main_dir = os.path.join(MAIN_DIR, country_iso3)
     config = utils.parse_yaml(CONFIG_FILE)[country_iso3]
 
-    # Make a graph
-    G = nx.Graph()
-    G.graph['country'] = country_iso3
+    # Initialize graph with mobility edges
+    G = initialize_with_mobility(main_dir, country_iso3)
 
     # Add exposure
     G = add_exposure(G, main_dir, country_iso3)
@@ -67,6 +69,16 @@ def main(country_iso3):
     with open(outfile, 'w') as f:
         json.dump(data, f, indent=2)
     logger.info(f'Wrote out to {outfile}')
+
+
+def initialize_with_mobility(main_dir, country_iso3):
+    filename = os.path.join(main_dir, MOBILITY_DIR, MOBILITY_FILENAME.format(country_iso3=country_iso3))
+    logger.info(f'Reading in mobility from {filename}')
+    mobility = pd.read_csv(filename)
+    mobility.set_index("ADM", inplace=True)
+    G = nx.from_pandas_adjacency(mobility, nx.DiGraph)
+    G.graph['country'] = country_iso3
+    return G
 
 
 def add_exposure(G, main_dir, country_iso3):
