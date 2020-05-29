@@ -6,3 +6,4 @@ rasterio==1.1.4
 xlrd==1.2.0
 PyYAML==5.3.1
 networkx==2.4
+rasterstats==0.14.0
