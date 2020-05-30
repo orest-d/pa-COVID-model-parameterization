@@ -75,8 +75,12 @@ def add_exposure(G, main_dir, country_iso3):
     logger.info(f'Reading in exposure from {filename}')
     exposure = gpd.read_file(filename)
     # Turn disag pop columns into lists
-    # TODO: aggregate the ages as the contact matrix
     for gender in ['f', 'm']:
+        # to match contact matrix, combine gender_0 with gender_1 and gender_75 with gender_80
+        exposure[f'{gender}_0'] = exposure[f'{gender}_0'] + exposure[f'{gender}_1']
+        exposure[f'{gender}_75'] = exposure[f'{gender}_75'] + exposure[f'{gender}_80']
+        exposure.drop([f'{gender}_1', f'{gender}_80'], axis=1, inplace=True)
+
         columns = [c for c in exposure.columns if f'{gender}_' in c]
         exposure[f'group_pop_{gender}'] = exposure[columns].values.tolist()
         # Get the age groups
@@ -161,13 +165,8 @@ def add_vulnerability(G, main_dir, country_iso3):
 def add_contact_matrix(G, config):
     filename = os.path.join(CONTACT_MATRIX_DIR, CONTACT_MATRIX_FILENAME.format(file_number=config['file_number']))
     logger.info(f'Reading in contact matrix from {filename} for country {config["country"]}')
-    column_names = [f'X{i+1}' for i in range(16)]
+    column_names = [f'X{i}' for i in range(16)]
     contact_matrix = pd.read_excel(filename, sheet_name=config['country'], header=None, names=column_names)
-    # Add columns X0 and X17
-    contact_matrix['X0'] = contact_matrix['X1']
-    contact_matrix['X17'] = contact_matrix['X16']
-    # Reorder
-    contact_matrix = contact_matrix[['X0'] + column_names + ['X17']]
     # Add as metadata
     G.graph['contact_matrix'] = contact_matrix.values.tolist()
     return G
