@@ -109,7 +109,7 @@ def main(country_iso3, download_covid=False):
                     HLX_TAG_TOTAL_DEATHS:adm2deaths}
         output_df_covid=output_df_covid.append(pd.DataFrame(raw_data),ignore_index=True)
     elif config['covid']['admin_level']==1:
-        ADM1_names = get_dict_pcodes(exposure_gdf,config['covid']['adm1_name_exp'],'ADM2_PCODE')
+        ADM1_names = get_dict_pcodes(exposure_gdf,config['covid']['adm1_name_exp'],'ADM1_PCODE')
         df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM1_NAME].map(ADM1_names)
         if(df_covid[HLX_TAG_ADM1_PCODE].isnull().sum()>0):
             logger.warning('missing PCODE for the following admin units ',df_covid[df_covid[HLX_TAG_ADM1_PCODE].isnull()])

@@ -194,10 +194,9 @@ SDN:
     admin_level: 1
     adm1_name_exp: ADM1_EN
     replace_dict:
-      Nord Kivu: Nord-Kivu
-      Haut  Katanga: Haut-Katanga
+      Al Jazirah: Aj Jazirah
     hlx_dict:
-      "#affected+infected+confirmed": "#affected+infected+confirmed+total"   
+      "#affected+infected+confirmed": "#affected+infected+confirmed+total" 
 SSD:
   admin:
     # https://data.humdata.org/dataset/south-sudan-administrative-boundaries
