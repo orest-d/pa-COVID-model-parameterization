@@ -9,4 +9,4 @@ python Generate_graph.py -m https://raw.githubusercontent.com/OCHA-DAP/pa-moveme
 python Generate_graph.py -m https://raw.githubusercontent.com/OCHA-DAP/pa-movement-patterns-matrix/master/output/ssd/ssd_mobility_matrix.csv SSD
 python Generate_graph.py -m https://raw.githubusercontent.com/OCHA-DAP/pa-movement-patterns-matrix/master/output/sdn/sdn_mobility_matrix.csv SDN
 python Generate_graph.py -m https://raw.githubusercontent.com/OCHA-DAP/pa-movement-patterns-matrix/master/output/cod/cod_mobility_matrix.csv COD
-python Generate_graph.py -m https://raw.githubusercontent.com/OCHA-DAP/pa-movement-patterns-matrix/master/output/hti/hti_mobility_matrix.csv hti
+python Generate_graph.py -m https://raw.githubusercontent.com/OCHA-DAP/pa-movement-patterns-matrix/master/output/hti/hti_mobility_matrix.csv HTI
