@@ -45,7 +45,8 @@ def main(country_iso3, mobility_csv):
     config = utils.parse_yaml(CONFIG_FILE)[country_iso3]
 
     # Initialize graph with mobility edges
-    G = initialize_with_mobility(mobility_csv, country_iso3)
+    G = initialize_with_mobility(mobility_csv)
+    G.graph['country'] = country_iso3
 
     # Add exposure
     G = add_exposure(G, main_dir, country_iso3)
@@ -69,12 +70,11 @@ def main(country_iso3, mobility_csv):
     logger.info(f'Wrote out to {outfile}')
 
 
-def initialize_with_mobility(filename, country_iso3):
+def initialize_with_mobility(filename):
     logger.info(f'Reading in mobility from {filename}')
     mobility = pd.read_csv(filename)
     mobility.set_index("ADM", inplace=True)
     G = nx.from_pandas_adjacency(mobility, nx.DiGraph)
-    G.graph['country'] = country_iso3
     return G
 
 
