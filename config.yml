@@ -185,14 +185,14 @@ SDN:
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.01
   covid:
-    url: https://data.humdata.org/dataset/6fb3f0ba-dd66-4369-87b4-a837d18e0a45/resource/68a755b0-5f53-4d43-a109-8c5b5b724748/download/sudan-covid-19-cases-by-state-and-date.xlsx
+    url: https://data.humdata.org/dataset/6fb3f0ba-dd66-4369-87b4-a837d18e0a45/resource/68a755b0-5f53-4d43-a109-8c5b5b724748/download/sudan-covid-19-cases-by-state-and-date.csv
     filename: covid_data.csv
     header: 1
     skiprows: 0
     cases: True
     deaths: False
     admin_level: 1
-    adm1_name_exp: ADM1_FR
+    adm1_name_exp: ADM1_EN
     replace_dict:
       Nord Kivu: Nord-Kivu
       Haut  Katanga: Haut-Katanga
@@ -254,8 +254,7 @@ SSD:
       State: "#adm1+name"
       County: "#adm2+name"
       No. of confirmed cases: "#affected+infected+confirmed+total"
-      Confirmation date: "#date"
-    
+      Confirmation date: "#date"   
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
