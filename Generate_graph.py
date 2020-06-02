@@ -51,7 +51,7 @@ def main(country_iso3, mobility_csv):
     G.graph['country'] = country_iso3
 
     # Add exposure
-    G = add_exposure(G, main_dir, country_iso3)
+    G = add_exposure(G, main_dir, country_iso3, config['admin'])
 
     # Add COVID cases
     G = add_covid(G, main_dir, country_iso3)
@@ -80,7 +80,7 @@ def initialize_with_mobility(filename):
     return G
 
 
-def add_exposure(G, main_dir, country_iso3):
+def add_exposure(G, main_dir, country_iso3, config):
     # Read in exposure file
     filename = os.path.join(main_dir, EXPOSURE_DIR, EXPOSURE_FILENAME.format(country_iso3=country_iso3))
     logger.info(f'Reading in exposure from {filename}')
@@ -103,7 +103,7 @@ def add_exposure(G, main_dir, country_iso3):
         PSEUDO_MERCATOR_CRS).apply(lambda x: x.area / 10**6)
     # Only keep necessary columns
     columns = [
-        'ADM2_EN',
+        'ADM2_{}'.format(config['language']),
         'ADM1_PCODE',
         'ADM2_PCODE',
         'group_pop_f',
@@ -114,7 +114,7 @@ def add_exposure(G, main_dir, country_iso3):
     exposure = exposure[columns]
     # Rename some
     rename_dict = {
-        'ADM2_EN': 'name',
+        'ADM2_{}'.format(config['language']): 'name',
     }
     exposure = exposure.rename(columns=rename_dict)
 
