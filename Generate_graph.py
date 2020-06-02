@@ -170,8 +170,11 @@ def add_vulnerability(G, main_dir, country_iso3):
         'Phase 3+': 'food_insecurity',
     }
     vulnerability = vulnerability.rename(columns=rename_dict)
+    # convert the vulnerability factors to numeric
+    vulnerability['food_insecurity']=pd.to_numeric(vulnerability['food_insecurity'])
+    vulnerability['fossil_fuels']=pd.to_numeric(vulnerability['fossil_fuels'])
     # Take the maximum between food security and fossil fuels as vulnerability
-    vulnerability['vulnerable_frac'] = max(vulnerability['food_insecurity'],vulnerability['fossil_fuels'])
+    vulnerability['vulnerable_frac'] = vulnerability[['food_insecurity','fossil_fuels']].max(axis=1)
     # Take the handwashing facilties factor as proxy for high_beta_fraction
     vulnerability['high_beta_frac'] = vulnerability['handwashing_facilities']
     # Add the exposure info to graph
