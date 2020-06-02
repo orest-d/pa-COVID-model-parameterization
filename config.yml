@@ -53,6 +53,9 @@ AFG:
     filename: covid_data.csv
     header: 1
     skiprows: 0
+    cases: True
+    deaths: True
+    adm1_name_exp: ADM1_EN
     replace_dict:
       Herat: Hirat
       Helmand: Hilmand
@@ -69,7 +72,6 @@ AFG:
   contact_matrix:
     country: Pakistan
     file_number: 2
-
 COD:
   admin:
     # https://data.humdata.org/dataset/drc-administrative-boundaries-levels-0-2
@@ -120,7 +122,21 @@ COD:
   # https://www.who.int/nmh/countries/2018/cod_en.pdf?ua=1
   diabetes: 0.04
   # https://vizhub.healthdata.org/tobacco/
-  smoking: 0.063  
+  smoking: 0.063
+  covid:
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQGOGhcfVhfuE_wP5Y78ZoKd6xPlc0BVt6uEPTNJ_6J_dqI29LlwC2KHFqw-9viNsBN60z7wC5ruOtt/pub?gid=0&single=true&output=csv
+    filename: covid_data.csv
+    header: 1
+    skiprows: 0
+    cases: True
+    deaths: False
+    adm1_name_exp: ADM1_FR
+    replace_dict:
+      Nord Kivu: Nord-Kivu
+      Haut  Katanga: Haut-Katanga
+    hlx_dict:
+      "#affected+positive+total": "#affected+infected+confirmed+total"  
+      "#admin1+name": "#adm1+name"  
 SDN:
   admin:
     # https://data.humdata.org/dataset/sudan-administrative-boundaries-levels-0-2
@@ -249,6 +265,9 @@ HTI:
     filename: covid_data.csv
     header: 1
     skiprows: 0
+    cases: True
+    deaths: True
+    adm1_name_exp: ADM1_EN
     replace_dict:
       Nord: North
       Nord-Ouest: North-West

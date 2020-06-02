@@ -66,15 +66,11 @@ def main(country_iso3, download_covid=False):
     if 'replace_dict' in config['covid']:
         df_covid[HLX_TAG_ADM1_NAME] = df_covid[HLX_TAG_ADM1_NAME].replace(config['covid']['replace_dict'])
     
-    # convert to float
-    # TODO check conversions
-    if df_covid[HLX_TAG_TOTAL_CASES].dtype == 'object':
-        df_covid[HLX_TAG_TOTAL_CASES]=df_covid[HLX_TAG_TOTAL_CASES].str.replace(',','')
-    df_covid[HLX_TAG_TOTAL_CASES]=pd.to_numeric(df_covid[HLX_TAG_TOTAL_CASES],errors='coerce')
-    if df_covid[HLX_TAG_TOTAL_CASES].dtype == 'object':
-       df_covid[HLX_TAG_TOTAL_DEATHS]=df_covid[HLX_TAG_TOTAL_DEATHS].str.replace('-','')
-    df_covid[HLX_TAG_TOTAL_DEATHS]=pd.to_numeric(df_covid[HLX_TAG_TOTAL_DEATHS],errors='coerce')
-
+    # convert to numeric
+    if config['covid']['cases']:
+        df_covid[HLX_TAG_TOTAL_CASES]=convert_to_numeric(df_covid[HLX_TAG_TOTAL_CASES])
+    if config['covid']['deaths']:
+        df_covid[HLX_TAG_TOTAL_DEATHS]=convert_to_numeric(df_covid[HLX_TAG_TOTAL_DEATHS])
     df_covid.fillna(0,inplace=True)
     
     # Get exposure file
@@ -82,15 +78,15 @@ def main(country_iso3, download_covid=False):
         exposure_file=f'{DIR_PATH}/{EXP_DIR.format(country_iso3)}/{EXP_FILE.format(country_iso3)}'
         exposure_gdf=gpd.read_file(exposure_file)
     except:
-        logger.info(f'Cannot get exposure file for {country_iso3}, COVID file not generate')
-    
+        logger.error(f'Cannot get exposure file for {country_iso3}, COVID file not generate')
+
     # add pcodes
     ADM1_names = dict()
-    for k, v in exposure_gdf.groupby('ADM1_EN'):
+    for k, v in exposure_gdf.groupby(config['covid']['adm1_name_exp']):
         ADM1_names[k] = v.iloc[0,:].ADM1_PCODE
     df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM1_NAME].map(ADM1_names)
     if(df_covid[HLX_TAG_ADM1_PCODE].isnull().sum()>0):
-        logger.info('missing PCODE for the following admin units ',df_covid[df_covid[HLX_TAG_ADM1_PCODE].isnull()])
+        logger.warning('missing PCODE for the following admin units ',df_covid[df_covid[HLX_TAG_ADM1_PCODE].isnull()])
     #recalculate total for each ADM1 unit
     gender_age_groups = list(itertools.product(GENDER_CLASSES, AGE_CLASSES))
     gender_age_group_names = ['{}_{}'.format(gender_age_group[0], gender_age_group[1]) for gender_age_group in
@@ -109,10 +105,9 @@ def main(country_iso3, download_covid=False):
         adm2_pop_fractions=get_adm2_to_adm1_pop_frac(row[HLX_TAG_ADM1_PCODE],exposure_gdf,gender_age_group_names)
         adm1pcode=row[HLX_TAG_ADM1_PCODE]
         date=row[HLX_TAG_DATE]
-        adm1cases=row[HLX_TAG_TOTAL_CASES]
-        adm1deaths=row[HLX_TAG_TOTAL_DEATHS]
-        adm2cases=[v*adm1cases for v in adm2_pop_fractions.values()]
-        adm2deaths=[v*adm1deaths for v in adm2_pop_fractions.values()]
+        adm2cases=scale_adm1_by_adm2_pop(config['covid']['cases'],HLX_TAG_TOTAL_CASES,row,adm2_pop_fractions)
+        adm2deaths=scale_adm1_by_adm2_pop(config['covid']['deaths'],HLX_TAG_TOTAL_DEATHS,row,adm2_pop_fractions)
+       
         adm2pcodes=[v for v in adm2_pop_fractions.keys()]
         raw_data = {HLX_TAG_ADM1_PCODE:adm1pcode,
                     HLX_TAG_ADM2_PCODE:adm2pcodes,
@@ -124,14 +119,30 @@ def main(country_iso3, download_covid=False):
     # cross-check: the total must match
     if(abs((output_df_covid[HLX_TAG_TOTAL_CASES].sum()-\
         df_covid[HLX_TAG_TOTAL_CASES].sum()))>10):
-        logger.info('WARNING The sum of input and output files don\'t match')
-
+        logger.warning('The sum of input and output files don\'t match')
+    
     # Write to file
     output_df_covid['created_at'] = str(datetime.datetime.now())
     output_df_covid['created_by'] = getpass.getuser()
     output_csv = get_output_filename(country_iso3)
     logger.info(f'Writing to file {output_csv}')
     output_df_covid.to_csv(f'{DIR_PATH}/{output_csv}',index=False)
+
+def scale_adm1_by_adm2_pop(config_val,tag,df_row,fractions):
+    if config_val:
+        adm1val=df_row[tag]
+        adm2val=[v*adm1val for v in fractions.values()]
+    else:
+        adm2val=None
+    return adm2val
+
+def convert_to_numeric(df_col):
+    # TODO check conversions
+    if df_col.dtype == 'object':
+        df_col=df_col.str.replace(',','')
+        df_col=df_col.str.replace('-','')
+        df_col=pd.to_numeric(df_col,errors='coerce')
+    return df_col
 
 def get_output_filename(country_iso3):
     # get the filename for writing the file

@@ -1,0 +1,104 @@
+Date,Province,Number of heatlh structures,Affected,Confirmed Cases,Probable cases,Source
+#date,#admin1+name,,#affected+total,#affected+positive+total,#probable+total,#source+url
+2020-05-24,Haut-Katanga,27,2,17,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_115.pdf
+2020-05-24,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_115.pdf
+2020-05-24,Kinshasa,35,34,2106,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_115.pdf
+2020-05-24,Kongo-Central,31,5,151,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_115.pdf
+2020-05-24,Kwilu,24,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_115.pdf
+2020-05-24,Nord-Kivu,34,5,15,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_115.pdf
+2020-05-24,Sud-Kivu,34,2,4,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_115.pdf
+2020-05-16,Haut-Katanga,27,1,11,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_107_v1.pdf
+2020-05-16,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_107_v1.pdf
+2020-05-16,Kinshasa,35,33,1356,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_107_v1.pdf
+2020-05-16,Kongo-Central,31,5,72,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_107_v1.pdf
+2020-05-16,Kwilu,24,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_107_v1.pdf
+2020-05-16,Nord-Kivu,34,3,8,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_107_v1.pdf
+2020-05-16,Sud-Kivu,34,2,4,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_107_v1.pdf
+2020-05-12,Haut-Katanga,27,1,10,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_103_v1_2.pdf
+2020-05-12,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_103_v1_2.pdf
+2020-05-12,Kinshasa,35,32,1089,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_103_v1_2.pdf
+2020-05-12,Kongo-Central,31,2,55,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_103_v1_2.pdf
+2020-05-12,Kwilu,24,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_103_v1_2.pdf
+2020-05-12,Nord-Kivu,34,3,8,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_103_v1_2.pdf
+2020-05-12,Sud-Kivu,34,2,5,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_103_v1_2.pdf
+2020-05-07,Haut-Katanga,27,1,10,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_98.pdf
+2020-05-07,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_98.pdf
+2020-05-07,Kinshasa,35,31,844,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_98.pdf
+2020-05-07,Kongo-Central,31,2,29,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_98.pdf
+2020-05-07,Kwilu,24,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_98.pdf
+2020-05-07,Nord-Kivu,34,3,7,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_98.pdf
+2020-05-07,Sud-Kivu,34,1,4,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_98.pdf
+2020-05-06,Haut-Katanga,27,1,10,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_97.pdf
+2020-05-06,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_97.pdf
+2020-05-06,Kinshasa,35,30,810,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_97.pdf
+2020-05-06,Kongo-Central,31,2,29,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_97.pdf
+2020-05-06,Kwilu,24,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_97.pdf
+2020-05-06,Nord-Kivu,34,3,7,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_97.pdf
+2020-05-06,Sud-Kivu,34,1,4,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_97.pdf
+2020-05-04,Haut-Katanga,27,1,10,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_95.pdf
+2020-05-04,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_95.pdf
+2020-05-04,Kinshasa,35,30,675,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_95.pdf
+2020-05-04,Kongo-Central,31,2,6,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_95.pdf
+2020-05-04,Kwilu,24,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_95.pdf
+2020-05-04,Nord-Kivu,34,3,7,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_95.pdf
+2020-05-04,Sud-Kivu,34,1,4,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_95.pdf
+2020-04-28,Haut-Katanga,27,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_89.pdf
+2020-04-28,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_89.pdf
+2020-04-28,Kinshasa,35,29,476,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_89.pdf
+2020-04-28,Kongo-Central,31,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_89.pdf
+2020-04-28,Kwilu,24,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_89.pdf
+2020-04-28,Nord-Kivu,34,2,5,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_89.pdf
+2020-04-28,Sud-Kivu,34,1,4,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_89.pdf
+2020-04-27,Haut-Katanga,27,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_88.pdf
+2020-04-27,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_88.pdf
+2020-04-27,Kinshasa,35,29,456,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_88.pdf
+2020-04-27,Kongo-Central,31,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_88.pdf
+2020-04-27,Kwilu,24,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_88.pdf
+2020-04-27,Nord-Kivu,34,2,5,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_88.pdf
+2020-04-27,Sud-Kivu,34,1,4,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_88.pdf
+2020-04-26,Haut  Katanga,27,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_n_87.pdf
+2020-04-26,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_n_87.pdf
+2020-04-26,Kinshasa,35,29,446,1,https://fscluster.org/sites/default/files/documents/bulletin_n_87.pdf
+2020-04-26,Kwilu,24,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_n_87.pdf
+2020-04-26,Nord Kivu,34,2,5,0,https://fscluster.org/sites/default/files/documents/bulletin_n_87.pdf
+2020-04-26,Sud-Kivu,34,1,4,0,https://fscluster.org/sites/default/files/documents/bulletin_n_87.pdf
+2020-04-22,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_83.pdf
+2020-04-22,Kinshasa,35,29,365,26,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_83.pdf
+2020-04-22,Kwilu,24,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_83.pdf
+2020-04-22,Nord Kivu,34,2,5,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_83.pdf
+2020-04-22,Sud-Kivu,34,1,4,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_83.pdf
+2020-04-20,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_81.pdf
+2020-04-20,Kinshasa,35,28,338,24,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_81.pdf
+2020-04-20,Kwilu,24,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_81.pdf
+2020-04-20,Nord Kivu,34,2,5,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_81.pdf
+2020-04-20,Sud-Kivu,34,1,4,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_81.pdf
+2020-04-17,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_78.pdf
+2020-04-17,Kinshasa,35,28,338,24,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_78.pdf
+2020-04-17,Kwilu,24,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_78.pdf
+2020-04-17,Nord Kivu,34,2,5,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_78.pdf
+2020-04-17,Sud-Kivu,34,1,4,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_78.pdf
+2020-04-15,Ituri,36,2,2,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_76.pdf
+2020-04-15,Kinshasa,35,24,255,19,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_76.pdf
+2020-04-15,Kwilu,24,1,1,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_76.pdf
+2020-04-15,Nord Kivu,34,2,5,2,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_76.pdf
+2020-04-15,Sud-Kivu,34,1,4,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_76.pdf
+2020-04-12,Ituri,36,2,2,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_73.pdf
+2020-04-12,Kinshasa,35,24,223,21,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_73.pdf
+2020-04-12,Kwilu,24,1,1,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_73.pdf
+2020-04-12,Nord Kivu,34,2,5,2,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_73.pdf
+2020-04-12,Sud-Kivu,34,1,4,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_73.pdf
+2020-04-08,Ituri,36,2,2,2,fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_69.pdf
+2020-04-08,Kinshasa,35,23,195,22,fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_69.pdf
+2020-04-08,Kwilu,24,1,1,1,fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_69.pdf
+2020-04-08,Nord Kivu,34,2,5,2,fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_69.pdf
+2020-04-08,Sud-Kivu,34,1,4,1,fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_69.pdf
+2020-04-07,Ituri,36,2,2,2,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_68.pdf
+2020-04-07,Kinshasa,35,23,171,22,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_68.pdf
+2020-04-07,Kwilu,24,1,1,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_68.pdf
+2020-04-07,Nord Kivu,34,2,5,2,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_68.pdf
+2020-04-07,Sud-Kivu,34,1,4,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_68.pdf
+2020-04-06,Ituri,36,2,2,2,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_67.pdf
+2020-04-06,Kinshasa,35,23,168,22,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_67.pdf
+2020-04-06,Kwilu,24,1,1,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_67.pdf
+2020-04-06,Nord Kivu,34,2,5,2,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_67.pdf
+2020-04-06,Sud-Kivu,34,1,4,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_67.pdf
