@@ -185,7 +185,7 @@ SDN:
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.01
   covid:
-    url: https://data.humdata.org/dataset/6fb3f0ba-dd66-4369-87b4-a837d18e0a45/resource/68a755b0-5f53-4d43-a109-8c5b5b724748/download/sudan-covid-19-cases-by-state-and-date.csv
+    url: https://data.humdata.org/dataset/6fb3f0ba-dd66-4369-87b4-a837d18e0a45/resource/71169c25-7760-47b6-b818-cb2c7c44d9c1/download/sudan-covid-19-cases-by-state-and-date.csv
     filename: covid_data.csv
     header: 1
     skiprows: 0
