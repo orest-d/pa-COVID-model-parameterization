@@ -100,3 +100,15 @@ The contact matrices are categorised into 5-year age intervals {1,2,...,16} whic
 | class 70 (70 to 74) | class X15 (70 to 74)       |
 | class 75 (70 to 79) | class X16 (75+)       |
 | class 80 (80+) | class X16 (75+)       |
+
+## Graph
+The graph collects the COVID-19 case data, mobility data, contact matrix, population data, and vulnerability data
+into a single file.
+
+### Running 
+
+To run, execute:
+```bash
+python Generate_graph.py -m [path to mobility csv] [Country ISO code]
+```
+The `-m` flag points at mobility data for that country located in [this repository](https://github.com/OCHA-DAP/pa-movement-patterns-matrix).

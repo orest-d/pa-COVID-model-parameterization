@@ -34,17 +34,18 @@ logger = logging.getLogger(__name__)
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('country_iso3', help='Country ISO3')
+    parser.add_argument('-m', '--mobility', required=True, help="Path to mobility CSV file")
     return parser.parse_args()
 
 
-def main(country_iso3):
+def main(country_iso3, mobility_csv):
 
     logger.info(f'Creating graph for {country_iso3}')
     main_dir = os.path.join(MAIN_DIR, country_iso3)
     config = utils.parse_yaml(CONFIG_FILE)[country_iso3]
 
-    # Make a graph
-    G = nx.Graph()
+    # Initialize graph with mobility edges
+    G = initialize_with_mobility(mobility_csv)
     G.graph['country'] = country_iso3
 
     # Add exposure
@@ -67,6 +68,14 @@ def main(country_iso3):
     with open(outfile, 'w') as f:
         json.dump(data, f, indent=2)
     logger.info(f'Wrote out to {outfile}')
+
+
+def initialize_with_mobility(filename):
+    logger.info(f'Reading in mobility from {filename}')
+    mobility = pd.read_csv(filename)
+    mobility.set_index("ADM", inplace=True)
+    G = nx.from_pandas_adjacency(mobility, nx.DiGraph)
+    return G
 
 
 def add_exposure(G, main_dir, country_iso3):
@@ -172,4 +181,4 @@ def add_contact_matrix(G, config):
 
 if __name__ == '__main__':
     args = parse_args()
-    main(args.country_iso3.upper())
+    main(args.country_iso3.upper(), args.mobility)
