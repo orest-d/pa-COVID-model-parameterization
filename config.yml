@@ -53,6 +53,10 @@ AFG:
     filename: covid_data.csv
     header: 1
     skiprows: 0
+    cases: True
+    deaths: True
+    admin_level: 1
+    adm1_name_exp: ADM1_EN
     replace_dict:
       Herat: Hirat
       Helmand: Hilmand
@@ -69,7 +73,6 @@ AFG:
   contact_matrix:
     country: Pakistan
     file_number: 2
-
 COD:
   admin:
     # https://data.humdata.org/dataset/drc-administrative-boundaries-levels-0-2
@@ -120,7 +123,22 @@ COD:
   # https://www.who.int/nmh/countries/2018/cod_en.pdf?ua=1
   diabetes: 0.04
   # https://vizhub.healthdata.org/tobacco/
-  smoking: 0.063  
+  smoking: 0.063
+  covid:
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQGOGhcfVhfuE_wP5Y78ZoKd6xPlc0BVt6uEPTNJ_6J_dqI29LlwC2KHFqw-9viNsBN60z7wC5ruOtt/pub?gid=0&single=true&output=csv
+    filename: covid_data.csv
+    header: 1
+    skiprows: 0
+    cases: True
+    deaths: False
+    admin_level: 1
+    adm1_name_exp: ADM1_FR
+    replace_dict:
+      Nord Kivu: Nord-Kivu
+      Haut  Katanga: Haut-Katanga
+    hlx_dict:
+      "#affected+positive+total": "#affected+infected+confirmed+total"  
+      "#admin1+name": "#adm1+name"  
 SDN:
   admin:
     # https://data.humdata.org/dataset/sudan-administrative-boundaries-levels-0-2
@@ -166,6 +184,19 @@ SDN:
   diabetes: 0.0853
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.01
+  covid:
+    url: https://data.humdata.org/dataset/6fb3f0ba-dd66-4369-87b4-a837d18e0a45/resource/71169c25-7760-47b6-b818-cb2c7c44d9c1/download/sudan-covid-19-cases-by-state-and-date.csv
+    filename: covid_data.csv
+    header: 1
+    skiprows: 0
+    cases: True
+    deaths: False
+    admin_level: 1
+    adm1_name_exp: ADM1_EN
+    replace_dict:
+      Al Jazirah: Aj Jazirah
+    hlx_dict:
+      "#affected+infected+confirmed": "#affected+infected+confirmed+total" 
 SSD:
   admin:
     # https://data.humdata.org/dataset/south-sudan-administrative-boundaries
@@ -206,6 +237,22 @@ SSD:
   diabetes: 0.0737
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.064
+  covid:
+    url: None
+    filename: covid_data.csv
+    header: 0
+    skiprows: False
+    cases: True
+    deaths: False
+    admin_level: 2
+    adm2_name_exp: ADM2_EN
+    replace_dict:
+      Abyei: Abyei Region
+    hlx_dict:
+      State: "#adm1+name"
+      County: "#adm2+name"
+      No. of confirmed cases: "#affected+infected+confirmed+total"
+      Confirmation date: "#date"   
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
@@ -249,6 +296,10 @@ HTI:
     filename: covid_data.csv
     header: 1
     skiprows: 0
+    cases: True
+    deaths: True
+    admin_level: 1
+    adm1_name_exp: ADM1_EN
     replace_dict:
       Nord: North
       Nord-Ouest: North-West
