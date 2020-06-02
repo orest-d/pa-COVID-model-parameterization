@@ -112,23 +112,21 @@ def add_covid(G, main_dir, country_iso3):
     filename = os.path.join(main_dir, COVID_DIR, COVID_FILENAME.format(country_iso3=country_iso3))
     logger.info(f'Reading in COVID cases from {filename}')
     covid = pd.read_csv(filename)
+    date_range = pd.date_range(covid['#date'].min(), covid['#date'].max())
     for cname in ['confirmed', 'dead']:
         # Do some pivoting
-        covid_out = covid.pivot(columns='#date',
+        covid_out = covid.pivot(index='#date',
                                 values=f'#affected+infected+{cname}+total',
-                                index='#adm2+pcode')
+                                columns='#adm2+pcode')
+        # Add any missing dates
+        covid_out.index = pd.DatetimeIndex(covid_out.index)
+        covid_out = covid_out.reindex(date_range)
         # Interpolate the missing values
-        covid_out = covid_out.interpolate(method='linear', axis='columns', limit_direction='forward').fillna(0)
-        # Get the date list
-        # TODO: Make sure the dates are the same between infected and deaths
-        dates = list(covid_out.columns)
-        # Get the numbers in a list
-        covid_out[f'infected_{cname}'] = covid_out.values.tolist()
-        covid_out = covid_out[[f'infected_{cname}']]
+        covid_out = covid_out.interpolate(method='linear', axis='rows', limit_direction='forward').fillna(0)
         # Add to the graph
-        G.graph['dates'] = dates
-        for admin2, row in covid_out.to_dict(orient='index').items():
-            G.add_node(admin2, **row)
+        G.graph['dates'] = list(covid_out.index.astype(str))
+        for admin2 in covid_out.columns:
+            G.add_node(admin2, **{f'infected_{cname}': covid_out[admin2].values.tolist()})
     return G
 
 
