@@ -15,9 +15,6 @@ OUTPUT_DIR = 'Graph'
 OUTPUT_FILE = '{}_graph.json'
 CONFIG_FILE = 'config.yml'
 
-MOBILITY_DIR = 'MobilityMatrix'
-MOBILITY_FILENAME = '{country_iso3}_mobility_matrix.csv'
-
 EXPOSURE_DIR = 'Exposure_SADD'
 EXPOSURE_FILENAME = '{country_iso3}_Exposure.geojson'
 
@@ -37,17 +34,18 @@ logger = logging.getLogger(__name__)
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('country_iso3', help='Country ISO3')
+    parser.add_argument('-m', '--mobility', required=True, help="Path to mobility CSV file")
     return parser.parse_args()
 
 
-def main(country_iso3):
+def main(country_iso3, mobility_csv):
 
     logger.info(f'Creating graph for {country_iso3}')
     main_dir = os.path.join(MAIN_DIR, country_iso3)
     config = utils.parse_yaml(CONFIG_FILE)[country_iso3]
 
     # Initialize graph with mobility edges
-    G = initialize_with_mobility(main_dir, country_iso3)
+    G = initialize_with_mobility(mobility_csv, country_iso3)
 
     # Add exposure
     G = add_exposure(G, main_dir, country_iso3)
@@ -71,8 +69,7 @@ def main(country_iso3):
     logger.info(f'Wrote out to {outfile}')
 
 
-def initialize_with_mobility(main_dir, country_iso3):
-    filename = os.path.join(main_dir, MOBILITY_DIR, MOBILITY_FILENAME.format(country_iso3=country_iso3))
+def initialize_with_mobility(filename, country_iso3):
     logger.info(f'Reading in mobility from {filename}')
     mobility = pd.read_csv(filename)
     mobility.set_index("ADM", inplace=True)
@@ -187,4 +184,4 @@ def add_contact_matrix(G, config):
 
 if __name__ == '__main__':
     args = parse_args()
-    main(args.country_iso3.upper())
+    main(args.country_iso3.upper(), args.mobility)
