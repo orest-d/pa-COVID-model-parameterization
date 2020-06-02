@@ -27,6 +27,8 @@ VULNERABILITY_FILENAME = '{country_iso3}_Vulnerabilities.geojson'
 CONTACT_MATRIX_DIR = 'contact_matrices_152_countries'
 CONTACT_MATRIX_FILENAME = 'MUestimates_all_locations_{file_number}.xlsx'
 
+PSEUDO_MERCATOR_CRS = 'EPSG:3857'
+
 utils.config_logger()
 logger = logging.getLogger(__name__)
 
@@ -94,13 +96,20 @@ def add_exposure(G, main_dir, country_iso3):
         exposure[f'group_pop_{gender}'] = exposure[columns].values.tolist()
         # Get the age groups
         age_groups = [s.split('_')[-1] for s in columns]
+    # Add pop -- recalculate for now until exposure script updated
+    exposure['population'] = exposure[[c for c in exposure.columns if 'f_' in c or 'm_' in c]].sum(axis=1)
+    # Project to pseudo mercator to get meter units: https://epsg.io/3857
+    exposure['population_density'] = exposure['population'] / exposure['geometry'].to_crs(
+        PSEUDO_MERCATOR_CRS).apply(lambda x: x.area / 10**6)
     # Only keep necessary columns
     columns = [
         'ADM2_EN',
         'ADM1_PCODE',
         'ADM2_PCODE',
         'group_pop_f',
-        'group_pop_m'
+        'group_pop_m',
+        'population',
+        'population_density'
     ]
     exposure = exposure[columns]
     # Rename some
