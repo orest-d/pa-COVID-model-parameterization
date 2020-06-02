@@ -171,7 +171,9 @@ def add_vulnerability(G, main_dir, country_iso3):
     }
     vulnerability = vulnerability.rename(columns=rename_dict)
     # Take the maximum between food security and fossil fuels as vulnerability
-    vulnerability['vulnerability_factor'] = max(vulnerability['food_insecurity'],vulnerability['fossil_fuels'])
+    vulnerability['vulnerable_frac'] = max(vulnerability['food_insecurity'],vulnerability['fossil_fuels'])
+    # Take the handwashing facilties factor as proxy for high_beta_fraction
+    vulnerability['high_beta_frac'] = vulnerability['handwashing_facilities']
     # Add the exposure info to graph
     for row in vulnerability.to_dict(orient='records'):
         G.add_node(row['ADM2_PCODE'], **row)
