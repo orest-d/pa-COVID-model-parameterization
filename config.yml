@@ -55,6 +55,7 @@ AFG:
     skiprows: 0
     cases: True
     deaths: True
+    admin_level: 1
     adm1_name_exp: ADM1_EN
     replace_dict:
       Herat: Hirat
@@ -130,6 +131,7 @@ COD:
     skiprows: 0
     cases: True
     deaths: False
+    admin_level: 1
     adm1_name_exp: ADM1_FR
     replace_dict:
       Nord Kivu: Nord-Kivu
@@ -189,6 +191,7 @@ SDN:
     skiprows: 0
     cases: True
     deaths: False
+    admin_level: 1
     adm1_name_exp: ADM1_FR
     replace_dict:
       Nord Kivu: Nord-Kivu
@@ -239,19 +242,20 @@ SSD:
   covid:
     url: None
     filename: covid_data.csv
-    header: 1
-    skiprows: 0
+    header: 0
+    skiprows: False
     cases: True
-    deaths: True
-    adm1_name_exp: ADM1_EN
+    deaths: False
+    admin_level: 2
+    adm2_name_exp: ADM2_EN
     replace_dict:
-      Nord: North
-      Nord-Ouest: North-West
-      Ouest: West
-      Nord-Est: North-East
-      Sud-Est: South-East
-      Sud: South
-      Grand Anse: Grande'Anse  
+      Abyei: Abyei Region
+    hlx_dict:
+      State: "#adm1+name"
+      County: "#adm2+name"
+      No. of confirmed cases: "#affected+infected+confirmed+total"
+      Confirmation date: "#date"
+    
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
@@ -297,6 +301,7 @@ HTI:
     skiprows: 0
     cases: True
     deaths: True
+    admin_level: 1
     adm1_name_exp: ADM1_EN
     replace_dict:
       Nord: North

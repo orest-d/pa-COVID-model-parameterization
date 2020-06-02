@@ -30,6 +30,7 @@ HLX_TAG_TOTAL_CASES='#affected+infected+confirmed+total'
 HLX_TAG_TOTAL_DEATHS='#affected+infected+dead+total'
 HLX_TAG_DATE='#date'
 HLX_TAG_ADM1_NAME='#adm1+name'
+HLX_TAG_ADM2_NAME='#adm2+name'
 HLX_TAG_ADM1_PCODE='#adm1+pcode'
 HLX_TAG_ADM2_PCODE='#adm2+pcode'
 
@@ -63,8 +64,10 @@ def main(country_iso3, download_covid=False):
 
     # in some files we have province explicitely
     df_covid[HLX_TAG_ADM1_NAME]= df_covid[HLX_TAG_ADM1_NAME].str.replace(' Province','')
-    if 'replace_dict' in config['covid']:
+    if 'replace_dict' in config['covid'] and config['covid']['admin_level']==1: 
         df_covid[HLX_TAG_ADM1_NAME] = df_covid[HLX_TAG_ADM1_NAME].replace(config['covid']['replace_dict'])
+    if 'replace_dict' in config['covid'] and config['covid']['admin_level']==2: 
+        df_covid[HLX_TAG_ADM2_NAME] = df_covid[HLX_TAG_ADM2_NAME].replace(config['covid']['replace_dict'])
     
     # convert to numeric
     if config['covid']['cases']:
@@ -80,42 +83,58 @@ def main(country_iso3, download_covid=False):
     except:
         logger.error(f'Cannot get exposure file for {country_iso3}, COVID file not generate')
 
-    # add pcodes
-    ADM1_names = dict()
-    for k, v in exposure_gdf.groupby(config['covid']['adm1_name_exp']):
-        ADM1_names[k] = v.iloc[0,:].ADM1_PCODE
-    df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM1_NAME].map(ADM1_names)
-    if(df_covid[HLX_TAG_ADM1_PCODE].isnull().sum()>0):
-        logger.warning('missing PCODE for the following admin units ',df_covid[df_covid[HLX_TAG_ADM1_PCODE].isnull()])
-    #recalculate total for each ADM1 unit
-    gender_age_groups = list(itertools.product(GENDER_CLASSES, AGE_CLASSES))
-    gender_age_group_names = ['{}_{}'.format(gender_age_group[0], gender_age_group[1]) for gender_age_group in
-                              gender_age_groups]
+    output_fields=[ HLX_TAG_ADM1_PCODE,
+                    HLX_TAG_ADM2_PCODE,
+                    HLX_TAG_DATE,
+                    HLX_TAG_TOTAL_CASES,
+                    HLX_TAG_TOTAL_DEATHS]
+    output_df_covid=pd.DataFrame(columns=output_fields)
 
-    # TODO fields should depend on country
-    output_df_covid=pd.DataFrame(columns=[HLX_TAG_ADM1_PCODE,
-                                          HLX_TAG_ADM2_PCODE,
-                                          HLX_TAG_DATE,
-                                          HLX_TAG_TOTAL_CASES,
-                                          HLX_TAG_TOTAL_DEATHS])
-
-    # make a loop over reported cases and downscale ADM1 to ADM2
-    # print(df_covid.sum())
-    for _, row in df_covid.iterrows():
-        adm2_pop_fractions=get_adm2_to_adm1_pop_frac(row[HLX_TAG_ADM1_PCODE],exposure_gdf,gender_age_group_names)
-        adm1pcode=row[HLX_TAG_ADM1_PCODE]
-        date=row[HLX_TAG_DATE]
-        adm2cases=scale_adm1_by_adm2_pop(config['covid']['cases'],HLX_TAG_TOTAL_CASES,row,adm2_pop_fractions)
-        adm2deaths=scale_adm1_by_adm2_pop(config['covid']['deaths'],HLX_TAG_TOTAL_DEATHS,row,adm2_pop_fractions)
-       
-        adm2pcodes=[v for v in adm2_pop_fractions.keys()]
+    if config['covid']['admin_level']==2:
+        ADM2_names=get_dict_pcodes(exposure_gdf,config['covid']['adm2_name_exp'],'ADM2_PCODE')
+        df_covid[HLX_TAG_ADM2_PCODE]= df_covid[HLX_TAG_ADM2_NAME].map(ADM2_names)
+        if(df_covid[HLX_TAG_ADM2_PCODE].isnull().sum()>0):
+            logger.warning('missing PCODE for the following admin units ',df_covid[df_covid[HLX_TAG_ADM2_PCODE].isnull()])        
+        ADM2_ADM1_pcodes=get_dict_pcodes(exposure_gdf,'ADM2_PCODE')
+        df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM2_PCODE].map(ADM2_ADM1_pcodes)
+        adm1pcode=df_covid[HLX_TAG_ADM1_PCODE]
+        adm2pcodes=df_covid[HLX_TAG_ADM2_PCODE]
+        date=df_covid[HLX_TAG_DATE]
+        adm2cases=df_covid[HLX_TAG_TOTAL_CASES] if config['covid']['cases'] else None
+        adm2deaths=df_covid[HLX_TAG_TOTAL_DEATHS] if config['covid']['deaths'] else None
         raw_data = {HLX_TAG_ADM1_PCODE:adm1pcode,
                     HLX_TAG_ADM2_PCODE:adm2pcodes,
                     HLX_TAG_DATE:date,
                     HLX_TAG_TOTAL_CASES:adm2cases,
                     HLX_TAG_TOTAL_DEATHS:adm2deaths}
         output_df_covid=output_df_covid.append(pd.DataFrame(raw_data),ignore_index=True)
-    
+    elif config['covid']['admin_level']==1:
+        ADM1_names = get_dict_pcodes(exposure_gdf,config['covid']['adm1_name_exp'],'ADM2_PCODE')
+        df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM1_NAME].map(ADM1_names)
+        if(df_covid[HLX_TAG_ADM1_PCODE].isnull().sum()>0):
+            logger.warning('missing PCODE for the following admin units ',df_covid[df_covid[HLX_TAG_ADM1_PCODE].isnull()])
+        #recalculate total for each ADM1 unit
+        gender_age_groups = list(itertools.product(GENDER_CLASSES, AGE_CLASSES))
+        gender_age_group_names = ['{}_{}'.format(gender_age_group[0], gender_age_group[1]) for gender_age_group in
+                                gender_age_groups]
+
+        
+        for _, row in df_covid.iterrows():
+            adm2_pop_fractions=get_adm2_to_adm1_pop_frac(row[HLX_TAG_ADM1_PCODE],exposure_gdf,gender_age_group_names)
+            adm1pcode=row[HLX_TAG_ADM1_PCODE]
+            date=row[HLX_TAG_DATE]
+            adm2cases=scale_adm1_by_adm2_pop(config['covid']['cases'],HLX_TAG_TOTAL_CASES,row,adm2_pop_fractions)
+            adm2deaths=scale_adm1_by_adm2_pop(config['covid']['deaths'],HLX_TAG_TOTAL_DEATHS,row,adm2_pop_fractions)
+        
+            adm2pcodes=[v for v in adm2_pop_fractions.keys()]
+            raw_data = {HLX_TAG_ADM1_PCODE:adm1pcode,
+                        HLX_TAG_ADM2_PCODE:adm2pcodes,
+                        HLX_TAG_DATE:date,
+                        HLX_TAG_TOTAL_CASES:adm2cases,
+                        HLX_TAG_TOTAL_DEATHS:adm2deaths}
+            output_df_covid=output_df_covid.append(pd.DataFrame(raw_data),ignore_index=True)
+    else:
+        logger.error(f'Missing admin_level info for COVID data')
     # cross-check: the total must match
     if(abs((output_df_covid[HLX_TAG_TOTAL_CASES].sum()-\
         df_covid[HLX_TAG_TOTAL_CASES].sum()))>10):
@@ -127,6 +146,12 @@ def main(country_iso3, download_covid=False):
     output_csv = get_output_filename(country_iso3)
     logger.info(f'Writing to file {output_csv}')
     output_df_covid.to_csv(f'{DIR_PATH}/{output_csv}',index=False)
+
+def get_dict_pcodes(exposure,adm_unit_name,adm_unit_pcode='ADM1_PCODE'):
+    pcode_dict=dict()
+    for k, v in exposure.groupby(adm_unit_name):
+        pcode_dict[k] = v.iloc[0,:][adm_unit_pcode]
+    return(pcode_dict)
 
 def scale_adm1_by_adm2_pop(config_val,tag,df_row,fractions):
     if config_val:
@@ -167,7 +192,7 @@ def get_covid_data(config, country_iso3, input_dir):
     try:
         utils.download_url(config['url'], covid_filename)
     except Exception:
-        logger.info(f'Cannot get COVID file from for {country_iso3}')
+        logger.warning(f'Cannot download COVID file from for {country_iso3}')
 
 if __name__ == '__main__':
     args = parse_args()
