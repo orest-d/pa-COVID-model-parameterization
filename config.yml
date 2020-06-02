@@ -182,6 +182,20 @@ SDN:
   diabetes: 0.0853
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.01
+  covid:
+    url: https://data.humdata.org/dataset/6fb3f0ba-dd66-4369-87b4-a837d18e0a45/resource/68a755b0-5f53-4d43-a109-8c5b5b724748/download/sudan-covid-19-cases-by-state-and-date.xlsx
+    filename: covid_data.csv
+    header: 1
+    skiprows: 0
+    cases: True
+    deaths: False
+    adm1_name_exp: ADM1_FR
+    replace_dict:
+      Nord Kivu: Nord-Kivu
+      Haut  Katanga: Haut-Katanga
+    hlx_dict:
+      "#affected+positive+total": "#affected+infected+confirmed+total"  
+      "#admin1+name": "#adm1+name" 
 SSD:
   admin:
     # https://data.humdata.org/dataset/south-sudan-administrative-boundaries
@@ -222,6 +236,22 @@ SSD:
   diabetes: 0.0737
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.064
+  covid:
+    url: None
+    filename: covid_data.csv
+    header: 1
+    skiprows: 0
+    cases: True
+    deaths: True
+    adm1_name_exp: ADM1_EN
+    replace_dict:
+      Nord: North
+      Nord-Ouest: North-West
+      Ouest: West
+      Nord-Est: North-East
+      Sud-Est: South-East
+      Sud: South
+      Grand Anse: Grande'Anse  
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
