@@ -138,7 +138,10 @@ COD:
       Haut  Katanga: Haut-Katanga
     hlx_dict:
       "#affected+positive+total": "#affected+infected+confirmed+total"  
-      "#admin1+name": "#adm1+name"  
+      "#admin1+name": "#adm1+name"
+  contact_matrix:
+    country: Zambia
+    file_number: 2
 SDN:
   admin:
     # https://data.humdata.org/dataset/sudan-administrative-boundaries-levels-0-2
@@ -196,7 +199,10 @@ SDN:
     replace_dict:
       Al Jazirah: Aj Jazirah
     hlx_dict:
-      "#affected+infected+confirmed": "#affected+infected+confirmed+total" 
+      "#affected+infected+confirmed": "#affected+infected+confirmed+total"
+  contact_matrix:
+    country: Ethiopia
+    file_number: 1
 SSD:
   admin:
     # https://data.humdata.org/dataset/south-sudan-administrative-boundaries
@@ -252,7 +258,10 @@ SSD:
       State: "#adm1+name"
       County: "#adm2+name"
       No. of confirmed cases: "#affected+infected+confirmed+total"
-      Confirmation date: "#date"   
+      Confirmation date: "#date"
+  contact_matrix:
+    country: Uganda
+    file_number: 2
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
@@ -308,4 +317,6 @@ HTI:
       Sud-Est: South-East
       Sud: South
       Grand Anse: Grande'Anse
-    
+  contact_matrix:
+    country: Haiti
+    file_number: 1
