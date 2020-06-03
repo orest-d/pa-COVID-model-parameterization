@@ -1,5 +1,25 @@
 Date,Département,Cumulative cases,New cases (24h),Cumulative Deaths,New deaths (24h) Rate Of,Case fatality rate,Source
 #date,#adm1+name,#affected+infected+confirmed+total,#affected+infected+confirmed+new,#affected+infected+dead+total,#affected+infected+dead+new,,
+31-05-2020,Ouest,1809,71,28,1,1.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf
+31-05-2020,Artibonite,132,13,6,0,4.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf
+31-05-2020,Centre,61,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf
+31-05-2020,Nord,58,14,4,0,6.9%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf
+31-05-2020,Sud-Est,40,0,2,0,5.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf
+31-05-2020,Nord-Est,32,4,2,0,6.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf
+31-05-2020,Nord-Ouest,29,0,2,0,6.9%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf
+31-05-2020,Sud,27,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf
+31-05-2020,Grand Anse,20,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf
+31-05-2020,Nippes,18,0,1,0,5.6%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf
+30-05-2020,Ouest,1738,244,27,1,1.6%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_30-05-2020.pdf
+30-05-2020,Artibonite,119,4,6,1,5.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_30-05-2020.pdf
+30-05-2020,Centre,61,1,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_30-05-2020.pdf
+30-05-2020,Nord,44,7,4,1,9.1%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_30-05-2020.pdf
+30-05-2020,Sud-Est,40,1,2,0,5.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_30-05-2020.pdf
+30-05-2020,Nord-Ouest,29,0,2,0,6.9%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_30-05-2020.pdf
+30-05-2020,Nord-Est,28,2,2,0,7.1%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_30-05-2020.pdf
+30-05-2020,Sud,27,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_30-05-2020.pdf
+30-05-2020,Grand Anse,20,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_30-05-2020.pdf
+30-05-2020,Nippes,18,0,1,0,5.6%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_30-05-2020.pdf
 29-05-2020,Ouest,1494,253,26,5,1.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_29-05-2020.pdf
 29-05-2020,Artibonite,115,23,5,0,4.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_29-05-2020.pdf
 29-05-2020,Centre,60,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_29-05-2020.pdf
