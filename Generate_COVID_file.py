@@ -99,7 +99,8 @@ def main(country_iso3, download_covid=False):
         df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM2_PCODE].map(ADM2_ADM1_pcodes)
         adm1pcode=df_covid[HLX_TAG_ADM1_PCODE]
         adm2pcodes=df_covid[HLX_TAG_ADM2_PCODE]
-        date=df_covid[HLX_TAG_DATE]
+        date=pd.to_datetime(df_covid[HLX_TAG_DATE],format=config['covid']['date_format'])
+        date=date.dt.strftime('%Y-%m-%d')
         adm2cases=df_covid[HLX_TAG_TOTAL_CASES] if config['covid']['cases'] else None
         adm2deaths=df_covid[HLX_TAG_TOTAL_DEATHS] if config['covid']['deaths'] else None
         raw_data = {HLX_TAG_ADM1_PCODE:adm1pcode,
@@ -122,7 +123,7 @@ def main(country_iso3, download_covid=False):
         for _, row in df_covid.iterrows():
             adm2_pop_fractions=get_adm2_to_adm1_pop_frac(row[HLX_TAG_ADM1_PCODE],exposure_gdf,gender_age_group_names)
             adm1pcode=row[HLX_TAG_ADM1_PCODE]
-            date=row[HLX_TAG_DATE]
+            date=datetime.datetime.strptime(row[HLX_TAG_DATE],config['covid']['date_format']).strftime('%Y-%m-%d')
             adm2cases=scale_adm1_by_adm2_pop(config['covid']['cases'],HLX_TAG_TOTAL_CASES,row,adm2_pop_fractions)
             adm2deaths=scale_adm1_by_adm2_pop(config['covid']['deaths'],HLX_TAG_TOTAL_DEATHS,row,adm2_pop_fractions)
         

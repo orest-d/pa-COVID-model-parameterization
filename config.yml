@@ -57,6 +57,7 @@ AFG:
     deaths: True
     admin_level: 1
     adm1_name_exp: ADM1_EN
+    date_format: "%Y-%m-%d"
     replace_dict:
       Herat: Hirat
       Helmand: Hilmand
@@ -133,6 +134,7 @@ COD:
     deaths: False
     admin_level: 1
     adm1_name_exp: ADM1_FR
+    date_format: "%Y-%m-%d"
     replace_dict:
       Nord Kivu: Nord-Kivu
       Haut  Katanga: Haut-Katanga
@@ -196,6 +198,7 @@ SDN:
     deaths: False
     admin_level: 1
     adm1_name_exp: ADM1_EN
+    date_format: "%d/%m/%Y"
     replace_dict:
       Al Jazirah: Aj Jazirah
     hlx_dict:
@@ -252,6 +255,7 @@ SSD:
     deaths: False
     admin_level: 2
     adm2_name_exp: ADM2_EN
+    date_format: "%B %d, %Y"
     replace_dict:
       Abyei: Abyei Region
     hlx_dict:
@@ -309,6 +313,7 @@ HTI:
     deaths: True
     admin_level: 1
     adm1_name_exp: ADM1_EN
+    date_format: "%d-%m-%Y"
     replace_dict:
       Nord: North
       Nord-Ouest: North-West
