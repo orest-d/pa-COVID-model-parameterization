@@ -1,5 +1,15 @@
 Date,Département,Cumulative cases,New cases (24h),Cumulative Deaths,New deaths (24h) Rate Of,Case fatality rate,Source
 #date,#adm1+name,#affected+infected+confirmed+total,#affected+infected+confirmed+new,#affected+infected+dead+total,#affected+infected+dead+new,,
+01-06-2020,Ouest,1994,185,28,0,1.4%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_01-06-2020.pdf
+01-06-2020,Artibonite,152,20,8,2,5.3%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_01-06-2020.pdf
+01-06-2020,Centre,76,15,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_01-06-2020.pdf
+01-06-2020,Nord,58,0,4,0,6.9%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_01-06-2020.pdf
+01-06-2020,Sud,51,24,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_01-06-2020.pdf
+01-06-2020,Nord-Ouest,49,20,2,0,4.1%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_01-06-2020.pdf
+01-06-2020,Sud-Est,43,3,2,0,4.7%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_01-06-2020.pdf
+01-06-2020,Nord-Est,32,0,3,1,9.4%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_01-06-2020.pdf
+01-06-2020,Grand Anse,30,10,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_01-06-2020.pdf
+01-06-2020,Nippes,22,4,1,0,4.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_01-06-2020.pdf
 31-05-2020,Ouest,1809,71,28,1,1.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf
 31-05-2020,Artibonite,132,13,6,0,4.5%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf
 31-05-2020,Centre,61,0,0,0,0.0%,https://mspp.gouv.ht/site/downloads/Sitrep%20COVID-19_31-05-2020.pdf

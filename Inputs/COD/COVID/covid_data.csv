@@ -1,5 +1,13 @@
 Date,Province,Number of heatlh structures,Affected,Confirmed Cases,Probable cases,Source
 #date,#admin1+name,,#affected+total,#affected+positive+total,#probable+total,#source+url
+2020-05-31,Haut-Katanga,27,8,33,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_122.pdf
+2020-05-31,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_122.pdf
+2020-05-31,Kinshasa,35,34,3008,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_122.pdf
+2020-05-31,Kongo-Central,31,5,190,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_122.pdf
+2020-05-31,Kwango,14,1,1,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_122.pdf
+2020-05-31,Kwilu,24,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_122.pdf
+2020-05-31,Nord-Kivu,34,6,48,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_122.pdf
+2020-05-31,Sud-Kivu,34,3,41,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_122.pdf
 2020-05-24,Haut-Katanga,27,2,17,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_115.pdf
 2020-05-24,Ituri,36,2,2,0,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_115.pdf
 2020-05-24,Kinshasa,35,34,2106,1,https://fscluster.org/sites/default/files/documents/bulletin_epid_covid-19_n_115.pdf
