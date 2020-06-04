@@ -186,8 +186,13 @@ def add_vulnerability(G, main_dir, country_iso3):
 def add_contact_matrix(G, config):
     filename = os.path.join(CONTACT_MATRIX_DIR, CONTACT_MATRIX_FILENAME.format(file_number=config['file_number']))
     logger.info(f'Reading in contact matrix from {filename} for country {config["country"]}')
-    column_names = [f'X{i}' for i in range(16)]
-    contact_matrix = pd.read_excel(filename, sheet_name=config['country'], header=None, names=column_names)
+    if config['file_number'] == 1:
+        column_names = None
+        header = 0
+    elif config['file_number'] == 2:
+        column_names = [f'X{i}' for i in range(16)]
+        header = None
+    contact_matrix = pd.read_excel(filename, sheet_name=config['country'], header=header, names=column_names)
     # Add as metadata
     G.graph['contact_matrix'] = contact_matrix.values.tolist()
     return G
