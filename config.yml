@@ -55,6 +55,7 @@ AFG:
     skiprows: 0
     cases: True
     deaths: True
+    cumulative: True
     admin_level: 1
     adm1_name_exp: ADM1_EN
     date_format: "%Y-%m-%d"
@@ -132,6 +133,7 @@ COD:
     skiprows: 0
     cases: True
     deaths: False
+    cumulative: True
     admin_level: 1
     adm1_name_exp: ADM1_FR
     date_format: "%Y-%m-%d"
@@ -196,6 +198,7 @@ SDN:
     skiprows: 0
     cases: True
     deaths: False
+    cumulative: True
     admin_level: 1
     adm1_name_exp: ADM1_EN
     date_format: "%d/%m/%Y"
@@ -253,6 +256,7 @@ SSD:
     skiprows: False
     cases: True
     deaths: False
+    cumulative: False
     admin_level: 2
     adm2_name_exp: ADM2_EN
     date_format: "%B %d, %Y"
@@ -311,6 +315,7 @@ HTI:
     skiprows: 0
     cases: True
     deaths: True
+    cumulative: True
     admin_level: 1
     adm1_name_exp: ADM1_EN
     date_format: "%d-%m-%Y"

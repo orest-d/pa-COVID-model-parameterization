@@ -141,6 +141,14 @@ def main(country_iso3, download_covid=False):
         df_covid[HLX_TAG_TOTAL_CASES].sum()))>10):
         logger.warning('The sum of input and output files don\'t match')
     
+    if not config['covid']['cumulative']:
+        logger.info(f'Calculating cumulative numbers COVID data')
+        groups=[HLX_TAG_ADM1_PCODE,HLX_TAG_ADM2_PCODE,HLX_TAG_DATE]
+        # get sum by day (in case multipel report)
+        output_df_covid=output_df_covid.groupby(groups).sum().sort_values(by=HLX_TAG_DATE)
+        # get cumsum by day (in case multipel report)
+        output_df_covid=output_df_covid.groupby(level=0).cumsum().reset_index()
+        
     # Write to file
     output_df_covid['created_at'] = str(datetime.datetime.now())
     output_df_covid['created_by'] = getpass.getuser()
