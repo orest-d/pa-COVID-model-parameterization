@@ -147,7 +147,7 @@ def main(country_iso3, download_covid=False):
         # get sum by day (in case multipel report)
         output_df_covid=output_df_covid.groupby(groups).sum().sort_values(by=HLX_TAG_DATE)
         # get cumsum by day (in case multipel report)
-        output_df_covid=output_df_covid.groupby(level=0).cumsum().reset_index()
+        output_df_covid=output_df_covid.groupby(HLX_TAG_ADM2_PCODE).cumsum().reset_index()
         
     # Write to file
     output_df_covid['created_at'] = str(datetime.datetime.now())
