@@ -144,9 +144,9 @@ def main(country_iso3, download_covid=False):
     if not config['covid']['cumulative']:
         logger.info(f'Calculating cumulative numbers COVID data')
         groups=[HLX_TAG_ADM1_PCODE,HLX_TAG_ADM2_PCODE,HLX_TAG_DATE]
-        # get sum by day (in case multipel report)
+        # get sum by day (in case multiple reports per day)
         output_df_covid=output_df_covid.groupby(groups).sum().sort_values(by=HLX_TAG_DATE)
-        # get cumsum by day (in case multipel report)
+        # get cumsum by day (grouped by ADM2)
         output_df_covid=output_df_covid.groupby(HLX_TAG_ADM2_PCODE).cumsum().reset_index()
         
     # Write to file
