@@ -59,6 +59,7 @@ def map_vulnerabilities(main_dir, country_iso3, outdir):
                     'Food insecure population fraction',
                     'Greens',
                     outdir,
+                    country_iso3,
                     'food_insecurity',
                     norm=(0, 1))
     # Map for houshold air pollution
@@ -67,6 +68,7 @@ def map_vulnerabilities(main_dir, country_iso3, outdir):
                     'Population fraction using indoor cooking fuels',
                     'Reds',
                     outdir,
+                    country_iso3,
                     'indoor_fuels',
                     norm=(0, 1))
     return vulnerability
@@ -94,7 +96,14 @@ def map_covid_cases(main_dir, country_iso3, gdf, outdir):
         covid_out.columns = ['covid']
         # Join with geodataframe to make map
         map = gdf.merge(covid_out, left_on='ADM2_PCODE', right_on='#adm2+pcode', how='left').fillna(0)
-        plot_choropleth(map, 'covid', f'COVID-19 {plot_title}', cmap, outdir, f'covid_{cname}', use_scheme=True)
+        plot_choropleth(map,
+                        'covid',
+                        f'COVID-19 {plot_title}',
+                        cmap,
+                        outdir,
+                        country_iso3,
+                        f'covid_{cname}',
+                        use_scheme=True)
 
 
 def map_population(main_dir, country_iso3, outdir):
@@ -104,16 +113,23 @@ def map_population(main_dir, country_iso3, outdir):
     exposure = gpd.read_file(filename)
     # Add pop -- recalculate for now until exposure script updated
     exposure['population'] = exposure[[c for c in exposure.columns if 'f_' in c or 'm_' in c]].sum(axis=1)
-    plot_choropleth(exposure, 'population', 'Population', 'Purples', outdir, 'population', use_scheme=True)
+    plot_choropleth(exposure,
+                    'population',
+                    'Population',
+                    'Purples',
+                    outdir,
+                    country_iso3,
+                    'population',
+                    use_scheme=True)
 
 
-def plot_choropleth(gdf, parameter, title, cmap, outdir, filename, norm=None, use_scheme=False):
+def plot_choropleth(gdf, parameter, title, cmap, outdir, country_iso3, filename, norm=None, use_scheme=False):
     fig, ax = plt.subplots()
     if use_scheme:
         try:
             scheme = mc.FisherJenks(gdf[parameter], k=5)
         except ValueError:
-            logger.error('Not enough values to plot')
+            logger.warning(f'Not enough values to plot {filename}')
             return 0
         # Make nice legend labels
         if gdf[parameter].max() < 10:
@@ -142,7 +158,7 @@ def plot_choropleth(gdf, parameter, title, cmap, outdir, filename, norm=None, us
                     scheme=scheme,
                     legend_labels=legend_labels,
                     norm=norm)
-    fig.savefig(os.path.join(outdir, f'{filename}.png'), dpi=150)
+    fig.savefig(os.path.join(outdir, f'{country_iso3}_{filename}.png'), dpi=150)
     plt.close(fig)
 
 
