@@ -8,26 +8,28 @@ import pandas as pd
 import geopandas as gpd
 import networkx as nx
 
-import utils
+from covid_model_parametrization import utils
+from covid_model_parametrization.config import Config
 
-MAIN_DIR = 'Outputs'
-OUTPUT_DIR = 'Graph'
-OUTPUT_FILE = '{}_graph.json'
-CONFIG_FILE = 'config.yml'
 
-EXPOSURE_DIR = 'Exposure_SADD'
-EXPOSURE_FILENAME = '{country_iso3}_Exposure.geojson'
-
-COVID_DIR = 'COVID'
-COVID_FILENAME = '{country_iso3}_COVID.csv'
-
-VULNERABILITY_DIR = 'Vulnerability'
-VULNERABILITY_FILENAME = '{country_iso3}_Vulnerabilities.geojson'
-
-CONTACT_MATRIX_DIR = 'contact_matrices_152_countries'
-CONTACT_MATRIX_FILENAME = 'MUestimates_all_locations_{file_number}.xlsx'
-
-PSEUDO_MERCATOR_CRS = 'EPSG:3857'
+#MAIN_DIR = 'Outputs'
+#OUTPUT_DIR = 'Graph'
+#OUTPUT_FILE = '{}_graph.json'
+#CONFIG_FILE = 'config.yml'
+#
+#EXPOSURE_DIR = 'Exposure_SADD'
+#EXPOSURE_FILENAME = '{country_iso3}_Exposure.geojson'
+#
+#COVID_DIR = 'COVID'
+#COVID_FILENAME = '{country_iso3}_COVID.csv'
+#
+#VULNERABILITY_DIR = 'Vulnerability'
+#VULNERABILITY_FILENAME = '{country_iso3}_Vulnerabilities.geojson'
+#
+#CONTACT_MATRIX_DIR = 'contact_matrices_152_countries'
+#CONTACT_MATRIX_FILENAME = 'MUestimates_all_locations_{file_number}.xlsx'
+#
+#PSEUDO_MERCATOR_CRS = 'EPSG:3857'
 
 utils.config_logger()
 logger = logging.getLogger(__name__)
@@ -40,33 +42,37 @@ def parse_args():
     return parser.parse_args()
 
 
-def main(country_iso3, mobility_csv):
+def main(country_iso3, mobility_csv, config=None):
+
+    if config is None:
+        config = Config()
+    parameters = config.parameters[country_iso3]
 
     logger.info(f'Creating graph for {country_iso3}')
-    main_dir = os.path.join(MAIN_DIR, country_iso3)
-    config = utils.parse_yaml(CONFIG_FILE)[country_iso3]
+    main_dir = os.path.join(config.MAIN_OUTPUT_DIR, country_iso3)
+
 
     # Initialize graph with mobility edges
     G = initialize_with_mobility(mobility_csv)
     G.graph['country'] = country_iso3
 
     # Add exposure
-    G = add_exposure(G, main_dir, country_iso3, config['admin'])
+    G = add_exposure(G, main_dir, country_iso3, parameters['admin'], config)
 
     # Add COVID cases
-    G = add_covid(G, main_dir, country_iso3)
+    G = add_covid(G, main_dir, country_iso3, config)
 
     # Add vulnerability
-    G = add_vulnerability(G, main_dir, country_iso3)
+    G = add_vulnerability(G, main_dir, country_iso3, config)
 
     # Add contact matrix
-    add_contact_matrix(G, config['contact_matrix'])
+    add_contact_matrix(G, parameters['contact_matrix'], config)
 
     # Write out
     data = nx.readwrite.json_graph.node_link_data(G)
-    outdir = os.path.join(main_dir, OUTPUT_DIR)
+    outdir = os.path.join(main_dir, config.GRAPH_OUTPUT_DIR)
     Path(outdir).mkdir(parents=True, exist_ok=True)
-    outfile = os.path.join(main_dir, OUTPUT_DIR, OUTPUT_FILE.format(country_iso3))
+    outfile = os.path.join(main_dir, config.GRAPH_OUTPUT_DIR, config.GRAPH_OUTPUT_FILE.format(country_iso3))
     with open(outfile, 'w') as f:
         json.dump(data, f, indent=2)
     logger.info(f'Wrote out to {outfile}')
@@ -80,9 +86,9 @@ def initialize_with_mobility(filename):
     return G
 
 
-def add_exposure(G, main_dir, country_iso3, config):
+def add_exposure(G, main_dir, country_iso3, parameters, config):
     # Read in exposure file
-    filename = os.path.join(main_dir, EXPOSURE_DIR, EXPOSURE_FILENAME.format(country_iso3=country_iso3))
+    filename = os.path.join(main_dir, config.SADD_OUTPUT_DIR, config.EXPOSURE_GEOJSON.format(country_iso3))
     logger.info(f'Reading in exposure from {filename}')
     exposure = gpd.read_file(filename)
     # Turn disag pop columns into lists
@@ -100,10 +106,10 @@ def add_exposure(G, main_dir, country_iso3, config):
     exposure['population'] = exposure[[c for c in exposure.columns if 'f_' in c or 'm_' in c]].sum(axis=1)
     # Project to pseudo mercator to get meter units: https://epsg.io/3857
     exposure['population_density'] = exposure['population'] / exposure['geometry'].to_crs(
-        PSEUDO_MERCATOR_CRS).apply(lambda x: x.area / 10**6)
+        config.PSEUDO_MERCATOR_CRS).apply(lambda x: x.area / 10**6)
     # Only keep necessary columns
     columns = [
-        'ADM2_{}'.format(config['language']),
+        'ADM2_{}'.format(parameters['language']),
         'ADM1_PCODE',
         'ADM2_PCODE',
         'group_pop_f',
@@ -114,7 +120,7 @@ def add_exposure(G, main_dir, country_iso3, config):
     exposure = exposure[columns]
     # Rename some
     rename_dict = {
-        'ADM2_{}'.format(config['language']): 'name',
+        'ADM2_{}'.format(parameters['language']): 'name',
     }
     exposure = exposure.rename(columns=rename_dict)
 
@@ -125,9 +131,9 @@ def add_exposure(G, main_dir, country_iso3, config):
     return G
 
 
-def add_covid(G, main_dir, country_iso3):
+def add_covid(G, main_dir, country_iso3, config):
     # Read in COVID file
-    filename = os.path.join(main_dir, COVID_DIR, COVID_FILENAME.format(country_iso3=country_iso3))
+    filename = os.path.join(main_dir, config.COVID_OUTPUT_DIR, config.COVID_OUTPUT_CSV.format(country_iso3))
     logger.info(f'Reading in COVID cases from {filename}')
     covid = pd.read_csv(filename)
     date_range = pd.date_range(covid['#date'].min(), covid['#date'].max())
@@ -148,9 +154,9 @@ def add_covid(G, main_dir, country_iso3):
     return G
 
 
-def add_vulnerability(G, main_dir, country_iso3):
+def add_vulnerability(G, main_dir, country_iso3, config):
     # Read in vulnerability file
-    filename = os.path.join(main_dir, VULNERABILITY_DIR, VULNERABILITY_FILENAME.format(country_iso3=country_iso3))
+    filename = os.path.join(main_dir, config.VULNERABILITY_OUTPUT_DIR, config.VULNERABILITY_FILENAME.format(country_iso3=country_iso3))
     logger.info(f'Reading in vulnerability from {filename}')
     vulnerability = gpd.read_file(filename)
     # Only keep necessary columns
@@ -183,16 +189,16 @@ def add_vulnerability(G, main_dir, country_iso3):
     return G
 
 
-def add_contact_matrix(G, config):
-    filename = os.path.join(CONTACT_MATRIX_DIR, CONTACT_MATRIX_FILENAME.format(file_number=config['file_number']))
-    logger.info(f'Reading in contact matrix from {filename} for country {config["country"]}')
-    if config['file_number'] == 1:
+def add_contact_matrix(G, parameters, config):
+    filename = os.path.join(config.CONTACT_MATRIX_DIR, config.CONTACT_MATRIX_FILENAME.format(file_number=parameters['file_number']))
+    logger.info(f'Reading in contact matrix from {filename} for country {parameters["country"]}')
+    if parameters['file_number'] == 1:
         column_names = None
         header = 0
-    elif config['file_number'] == 2:
+    elif parameters['file_number'] == 2:
         column_names = [f'X{i}' for i in range(16)]
         header = None
-    contact_matrix = pd.read_excel(filename, sheet_name=config['country'], header=header, names=column_names)
+    contact_matrix = pd.read_excel(filename, sheet_name=parameters['country'], header=header, names=column_names)
     # Add as metadata
     G.graph['contact_matrix'] = contact_matrix.values.tolist()
     return G
