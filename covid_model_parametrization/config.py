@@ -1,5 +1,5 @@
 import os.path
-
+from covid_model_parametrization import utils
 
 class Config:
 
@@ -15,7 +15,14 @@ class Config:
 
     def __init__(self):
         self.DIR_PATH = getattr(
-            self, "DIR_PATH", os.path.dirname(os.path.realpath(__file__)))
+            self, "DIR_PATH", os.path.split(os.path.dirname(os.path.realpath(__file__))))[0]
+        self._parameters=None
+
+    @property
+    def parameters(self):
+        if self._parameters is None:
+            self._parameters = utils.parse_yaml(self.CONFIG_FILE)
+        return self._parameters
 
 ### SADD config
     #OUTPUT_GEOJSON = '{}_Exposure.geojson'
@@ -40,7 +47,7 @@ class Config:
     }
 
     def SADD_output_dir(self):
-        return os.path.join(DIR_PATH, self.MAIN_OUTPUT_DIR, '{}', self.SADD_OUTPUT_DIR)
+        return os.path.join(self.DIR_PATH, self.MAIN_OUTPUT_DIR, '{}', self.SADD_OUTPUT_DIR)
 
 ### Vulnerability config
     #OUTPUT_GEOJSON = '{country_iso3}_Vulnerabilities.geojson'
@@ -70,7 +77,7 @@ class Config:
     RURAL_MIN_MAX = (11, 13)
 
     def vulnerability_output_dir(self):
-        return os.path.join(DIR_PATH, self.MAIN_OUTPUT_DIR, '{}', self.VULNERABILITY_OUTPUT_DIR)
+        return os.path.join(self.DIR_PATH, self.MAIN_OUTPUT_DIR, '{}', self.VULNERABILITY_OUTPUT_DIR)
 
 ### COVID config
     def COVID_output_dir(self):
