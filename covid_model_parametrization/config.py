@@ -81,7 +81,7 @@ class Config:
 
 ### COVID config
     def COVID_output_dir(self):
-        return os.path.join(DIR_PATH, self.MAIN_OUTPUT_DIR, '{}', self.COVID_DIR)
+        return os.path.join(self.DIR_PATH, self.MAIN_OUTPUT_DIR, '{}', self.COVID_OUTPUT_DIR)
 
     COVID_OUTPUT_CSV = '{}_COVID.csv'
 
