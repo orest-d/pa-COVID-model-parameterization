@@ -1,7 +1,6 @@
 # script that pulls data from several sources and generate COVID-19 breakdown for subnational SEIR model
 
 import argparse
-import utils
 import datetime
 import pandas as pd
 import geopandas as gpd
@@ -11,6 +10,8 @@ import logging
 import itertools
 import getpass
 from Generate_SADD_exposure_from_tiff import GENDER_CLASSES, AGE_CLASSES
+
+from utils import utils
 
 CONFIG_FILE = 'config.yml'
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))

@@ -11,7 +11,7 @@ import mapclassify as mc
 import numpy as np
 import pandas as pd
 
-import utils
+from utils import utils
 
 MAIN_DIR = 'Outputs'
 OUTPUT_DIR = 'Figures'
