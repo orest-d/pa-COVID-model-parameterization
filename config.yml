@@ -193,7 +193,7 @@ SDN:
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.01
   covid:
-    url: https://data.humdata.org/dataset/6fb3f0ba-dd66-4369-87b4-a837d18e0a45/resource/71169c25-7760-47b6-b818-cb2c7c44d9c1/download/sudan-covid-19-cases-by-state-and-date.csv
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQgIjG5wYFaK-z25ciiNNSWUTdxMWKRe5_y1YLNMpCzJziFor16xyP3R1nKz1wAkN7F4w6gx4F6yUIp/pub?gid=1817954914&single=true&output=csv
     filename: covid_data.csv
     header: 1
     skiprows: 0
@@ -206,7 +206,7 @@ SDN:
     replace_dict:
       Al Jazirah: Aj Jazirah
     hlx_dict:
-      "#affected+infected+confirmed": "#affected+infected+confirmed+total"
+      "#affected+infected+confirmed+fatalities": "#affected+infected+confirmed+total"
   contact_matrix:
     country: Ethiopia
     file_number: 1
