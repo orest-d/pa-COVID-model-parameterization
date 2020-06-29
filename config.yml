@@ -283,20 +283,18 @@ SOM:
       - (22, 9)
       - (23, 7)
   ipc:
-    filename: South Sudan - IPC Analysis 2020-2020.xlsx
-    last_row: 101
+    filename: Somalia - IPC Analysis 2020-2020.xlsx
+    last_row: 105
     admin_level: 2
     replace_dict:
       # Admin 2
-      Canal/pigi: Canal/Pigi
-      Luakpiny/nasir: Luakpiny/Nasir
-      Wau (rural Only): Wau
-      Yei County: Yei
       # Admin 1
-      Northern Bahr El Ghazal: Northern Bahr el Ghazal
-      Western Bahr El Ghazal: Western Bahr el Ghazal
+      Juba Dhexe: Middle Juba
+      Juba Hoose: Lower Juba
+      Shabelle Dhexe: Middle Shabelle
+      Shabelle Hoose: Lower Shabelle
       # Country
-      South Sudan:
+      Somalia:
   solid_fuels:
     # from https://www.who.int/nmh/countries/2018/ssd_en.pdf?ua=1
     frac_urban: 0.95
