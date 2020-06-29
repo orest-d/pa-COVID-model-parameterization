@@ -69,6 +69,7 @@ AFG:
       Sar-e Pol: Sar-e-Pul
       Nimruz: Nimroz
       Wardak: Maidan Wardak
+      Sar-e Pol: Sar-e-Pul
     hlx_dict:
       "#affected+infected+cases": "#affected+infected+confirmed+total"
       "#affected+infected+deaths": "#affected+infected+dead+total"

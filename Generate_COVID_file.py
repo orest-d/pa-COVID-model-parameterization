@@ -63,7 +63,8 @@ def main(country_iso3, download_covid=False):
         df_covid=df_covid.rename(columns=config['covid']['hlx_dict'])
 
     # in some files we have province explicitely
-    df_covid[HLX_TAG_ADM1_NAME]= df_covid[HLX_TAG_ADM1_NAME].str.replace(' Province','')
+    df_covid[HLX_TAG_ADM1_NAME]= df_covid[HLX_TAG_ADM1_NAME].str.replace('Province','')
+    df_covid[HLX_TAG_ADM1_NAME]= df_covid[HLX_TAG_ADM1_NAME].str.strip()
     if 'replace_dict' in config['covid'] and config['covid']['admin_level']==1: 
         df_covid[HLX_TAG_ADM1_NAME] = df_covid[HLX_TAG_ADM1_NAME].replace(config['covid']['replace_dict'])
     if 'replace_dict' in config['covid'] and config['covid']['admin_level']==2: 
@@ -113,7 +114,8 @@ def main(country_iso3, download_covid=False):
         ADM1_names = get_dict_pcodes(exposure_gdf,config['covid']['adm1_name_exp'],'ADM1_PCODE')
         df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM1_NAME].map(ADM1_names)
         if(df_covid[HLX_TAG_ADM1_PCODE].isnull().sum()>0):
-            logger.warning('missing PCODE for the following admin units ',df_covid[df_covid[HLX_TAG_ADM1_PCODE].isnull()])
+            logger.warning('missing PCODE for the following admin units :')
+            logger.warning(df_covid[df_covid[HLX_TAG_ADM1_PCODE].isnull()][[HLX_TAG_ADM1_NAME,HLX_TAG_DATE]])
         #recalculate total for each ADM1 unit
         gender_age_groups = list(itertools.product(GENDER_CLASSES, AGE_CLASSES))
         gender_age_group_names = ['{}_{}'.format(gender_age_group[0], gender_age_group[1]) for gender_age_group in
