@@ -271,6 +271,67 @@ SSD:
   contact_matrix:
     country: Uganda
     file_number: 2
+SOM:
+  admin:
+    # https://data.humdata.org/dataset/somalia-administrative-boundaries
+    directory: Som_Admbnda_Adm2_UNDP
+    language: EN
+  ghs:
+    column_row_pairs:
+      - (20, 7)
+      - (20, 8)
+      - (21, 7)
+      - (21, 8)
+  ipc:
+    filename: South Sudan - IPC Analysis 2020-2020.xlsx
+    last_row: 101
+    admin_level: 2
+    replace_dict:
+      # Admin 2
+      Canal/pigi: Canal/Pigi
+      Luakpiny/nasir: Luakpiny/Nasir
+      Wau (rural Only): Wau
+      Yei County: Yei
+      # Admin 1
+      Northern Bahr El Ghazal: Northern Bahr el Ghazal
+      Western Bahr El Ghazal: Western Bahr el Ghazal
+      # Country
+      South Sudan:
+  solid_fuels:
+    # from https://www.who.int/nmh/countries/2018/ssd_en.pdf?ua=1
+    frac_urban: 0.95
+    frac_rural: 0.95
+  handwashing_facilities:
+    # from https://washdata.org/data/downloads#WLD
+    frac_urban: 0.93
+    frac_rural: 0.98
+  # Using Chad https://www.who.int/nmh/countries/2018/tcd_en.pdf?ua=1
+  raised_blood_pressure: 0.24
+  # http://ghdx.healthdata.org/gbd-results-tool?params=gbd-api-2017-permalink/91c1bfad5bd48ffe4484ccdeca24e066 
+  diabetes: 0.0737
+  # https://vizhub.healthdata.org/tobacco/
+  smoking: 0.064
+  covid:
+    url: None
+    filename: covid_data.csv
+    header: 0
+    skiprows: False
+    cases: True
+    deaths: False
+    cumulative: False
+    admin_level: 2
+    adm2_name_exp: ADM2_EN
+    date_format: "%B %d, %Y"
+    replace_dict:
+      Abyei: Abyei Region
+    hlx_dict:
+      State: "#adm1+name"
+      County: "#adm2+name"
+      No. of confirmed cases: "#affected+infected+confirmed+total"
+      Confirmation date: "#date"
+  contact_matrix:
+    country: Uganda
+    file_number: 2
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
