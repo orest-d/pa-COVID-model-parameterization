@@ -63,6 +63,7 @@ def main(country_iso3, download_covid=False):
         df_covid=df_covid.rename(columns=config['covid']['hlx_dict'])
 
     # in some files we have province explicitely
+    df_covid= df_covid[df_covid[HLX_TAG_ADM1_NAME]!='Total']
     df_covid[HLX_TAG_ADM1_NAME]= df_covid[HLX_TAG_ADM1_NAME].str.replace('Province','')
     df_covid[HLX_TAG_ADM1_NAME]= df_covid[HLX_TAG_ADM1_NAME].str.strip()
     if 'replace_dict' in config['covid'] and config['covid']['admin_level']==1: 
