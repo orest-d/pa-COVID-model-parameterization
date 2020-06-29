@@ -278,10 +278,10 @@ SOM:
     language: EN
   ghs:
     column_row_pairs:
-      - (20, 7)
-      - (20, 8)
-      - (21, 7)
-      - (21, 8)
+      - (22, 7)
+      - (22, 8)
+      - (22, 9)
+      - (23, 7)
   ipc:
     filename: South Sudan - IPC Analysis 2020-2020.xlsx
     last_row: 101
