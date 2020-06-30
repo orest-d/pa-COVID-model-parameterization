@@ -5,7 +5,6 @@ import argparse
 
 import pandas as pd
 import geopandas as gpd
-import numpy as np
 
 from utils import utils
 from utils.hdx_api import query_api
@@ -57,7 +56,7 @@ def main(download):
     for country_iso3 in countries:
         boundaries = get_boundaries_file(country_iso3, config[country_iso3])
         df_country = get_country_info(country_iso3, df_acaps, boundaries)
-        write_country_info_to_csv(countri_iso3, df_country, boundaries)
+        write_country_info_to_csv(country_iso3, df_country, boundaries)
 
 
 def get_df_acaps():
@@ -73,7 +72,7 @@ def get_measures_equivalence_dictionary():
     return df.set_index('ACAPS NPI').to_dict()['Our equivalent']
 
 
-def get_boundaries_file(country_iso3, config)
+def get_boundaries_file(country_iso3, config):
     # Get input boundary shape file, for the admin regions
     input_dir = os.path.join(INPUT_DIR, country_iso3)
     input_shp = os.path.join(input_dir, SHAPEFILE_DIR, config['admin']['directory'],
