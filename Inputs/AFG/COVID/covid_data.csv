@@ -1,5 +1,243 @@
 Province,Cases,Deaths,Recoveries,Active Cases,Date
 #adm1+name,#affected+infected+cases,#affected+infected+deaths,#affected+infected+recoveries,#affected+infected+active,#date
+Badakhshan Province ,203,5,43,155,2020-06-25
+Badghis Province ,372,4,141,227,2020-06-25
+Baghlan Province ,557,22,192,343,2020-06-25
+Balkh Province ,"1,596",53,573,970,2020-06-25
+Bamyan Province,393,7,110,276,2020-06-25
+Daykundi Province,152,1,21,130,2020-06-25
+Farah Province ,242,5,22,215,2020-06-25
+Faryab Province,193,13,110,70,2020-06-25
+Ghazni Province ,408,27,138,243,2020-06-25
+Ghor Province,116,1,70,45,2020-06-25
+Helmand Province ,160,18,94,48,2020-06-25
+Herat Province,"4,665",124,"1,938","2,603",2020-06-25
+Jowzjan Province,196,6,83,107,2020-06-25
+Kabul Province ,"12,475",156,"4,096","8,223",2020-06-25
+Kandahar Province ,"1,231",20,195,"1,016",2020-06-25
+Kapisa Province,176,2,57,117,2020-06-25
+Khost Province,340,17,45,278,2020-06-25
+Kunar Province ,375,16,120,239,2020-06-25
+Kunduz Province ,428,9,116,303,2020-06-25
+Laghman Province ,327,4,101,222,2020-06-25
+Logar Province ,448,15,120,313,2020-06-25
+Nangarhar Province ,"1,322",56,322,944,2020-06-25
+Nimruz Province ,326,6,162,158,2020-06-25
+Nuristan Province,66,0,12,54,2020-06-25
+Paktia Province ,942,16,150,776,2020-06-25
+Paktika Province ,168,3,130,35,2020-06-25
+Panjshir Province ,248,15,122,111,2020-06-25
+Parwan Province ,331,10,86,235,2020-06-25
+Samangan Province ,304,9,265,30,2020-06-25
+Sar-e Pol Province,130,6,99,25,2020-06-25
+Takhar Province ,790,17,168,605,2020-06-25
+Urozgan Province ,38,5,9,24,2020-06-25
+Wardak Province,280,10,182,88,2020-06-25
+Zabul Province ,109,4,56,49,2020-06-25
+Badakhshan Province ,190,5,43,142,2020-06-23
+Badghis Province ,364,4,141,219,2020-06-23
+Baghlan Province ,539,17,170,352,2020-06-23
+Balkh Province ,"1,596",52,492,"1,052",2020-06-23
+Bamyan Province,366,7,70,289,2020-06-23
+Daykundi Province,105,1,21,83,2020-06-23
+Farah Province,242,2,22,218,2020-06-23
+Faryab Province,193,13,110,70,2020-06-23
+Ghazni Province ,408,27,138,243,2020-06-23
+Ghor Province,116,1,70,45,2020-06-23
+Helmand Province ,160,17,94,49,2020-06-23
+Herat Province,"4,572",113,"1,589","2,870",2020-06-23
+Jowzjan Province,196,6,83,107,2020-06-23
+Kabul Province ,"12,185",147,"3,883","8,155",2020-06-23
+Kandahar Province ,"1,231",20,195,"1,016",2020-06-23
+Kapisa Province,144,2,22,120,2020-06-23
+Khost Province,340,17,45,278,2020-06-23
+Kunar Province ,364,15,120,229,2020-06-23
+Kunduz Province ,404,7,65,332,2020-06-23
+Laghman Province ,324,4,101,219,2020-06-23
+Logar Province ,445,15,113,317,2020-06-23
+Nangarhar Province ,"1,307",45,284,978,2020-06-23
+Nimruz Province ,326,6,162,158,2020-06-23
+Nuristan Province,66,0,12,54,2020-06-23
+Paktia Province ,942,16,150,776,2020-06-23
+Paktika Province ,168,2,130,36,2020-06-23
+Panjshir Province ,245,10,104,131,2020-06-23
+Parwan Province ,329,10,86,233,2020-06-23
+Samangan Province ,304,9,222,73,2020-06-23
+Sar-e Pol Province,130,2,70,58,2020-06-23
+Takhar Province ,752,14,168,570,2020-06-23
+Urozgan Province ,38,5,9,24,2020-06-23
+Wardak Province,267,10,182,75,2020-06-23
+Zabul Province ,109,4,56,49,2020-06-23
+Badakhshan Province,139,0,3,,2020-06-16
+Badghis Province,331,3,50,,2020-06-16
+Baghlan Province,450,16,134,,2020-06-16
+Balkh Province,"1,493",46,279,,2020-06-16
+Bamyan Province,212,4,64,,2020-06-16
+Daykundi Province,62,1,21,,2020-06-16
+Farah Province,218,2,22,,2020-06-16
+Faryab Province,189,10,21,,2020-06-16
+Ghazni Province,356,20,62,,2020-06-16
+Ghor Province,108,1,45,,2020-06-16
+Helmand Province,138,12,80,,2020-06-16
+Herat Province,"4,304",89,719,,2020-06-16
+Jowzjan Province,196,6,20,,2020-06-16
+Kabul Province,"10,732",106,"2,238",,2020-06-16
+Kandahar Province,"1,092",18,165,,2020-06-16
+Kapisa Province,124,0,57,,2020-06-16
+Khost Province,272,8,18,,2020-06-16
+Kunar Province,332,15,87,,2020-06-16
+Kunduz Province,309,7,65,,2020-06-16
+Laghman Province,314,4,101,,2020-06-16
+Logar Province,414,9,65,,2020-06-16
+Nangarhar Province,"1,275",38,59,,2020-06-16
+Nimruz Province,305,6,98,,2020-06-16
+Nuristan Province,47,0,4,,2020-06-16
+Paktia Province,849,14,144,,2020-06-16
+Paktika Province,137,2,22,,2020-06-16
+Panjshir Province,225,10,104,,2020-06-16
+Parwan Province,311,10,85,,2020-06-16
+Samangan Province,298,7,132,,2020-06-16
+Sar-e Pol Province,130,2,12,,2020-06-16
+Takhar Province,596,10,140,,2020-06-16
+Urozgan Province,32,5,9,,2020-06-16
+Wardak Province,236,7,123,,2020-06-16
+Zabul Province,84,2,44,,2020-06-16
+Badakhshan Province,67,0,3,,2020-06-14
+Badghis Province,331,3,50,,2020-06-14
+Baghlan Province,402,16,116,,2020-06-14
+Balkh Province,"1,493",46,279,,2020-06-14
+Bamyan Province,139,4,64,,2020-06-14
+Daykundi Province,52,1,21,,2020-06-14
+Farah Province,218,2,22,,2020-06-14
+Faryab Province,189,10,21,,2020-06-14
+Ghazni Province,356,20,62,,2020-06-14
+Ghor Province,108,1,45,,2020-06-14
+Helmand Province,132,10,73,,2020-06-14
+Herat Province,"4,304",89,719,,2020-06-14
+Jowzjan Province,196,6,20,,2020-06-14
+Kabul Province,"10,035",101,"1,738",,2020-06-14
+Kandahar Province,"1,054",18,165,,2020-06-14
+Kapisa Province,124,0,57,,2020-06-14
+Khost Province,272,8,18,,2020-06-14
+Kunar Province,328,14,63,,2020-06-14
+Kunduz Province,192,6,56,,2020-06-14
+Laghman Province,301,4,101,,2020-06-14
+Logar Province,277,9,65,,2020-06-14
+Nangarhar Province,"1,253",38,59,,2020-06-14
+Nimruz Province,303,6,98,,2020-06-14
+Nuristan Province,43,0,4,,2020-06-14
+Paktia Province,806,12,130,,2020-06-14
+Paktika Province,137,2,22,,2020-06-14
+Panjshir Province,204,10,99,,2020-06-14
+Parwan Province,268,10,85,,2020-06-14
+Samangan Province,298,7,132,,2020-06-14
+Sar-e Pol Province,130,2,12,,2020-06-14
+Takhar Province,454,10,124,,2020-06-14
+Urozgan Province,20,0,1,,2020-06-14
+Wardak Province,206,4,89,,2020-06-14
+Zabul Province,74,2,38,,2020-06-14
+Badakhshan Province,67,0,3,,2020-06-13
+Badghis Province,329,3,50,,2020-06-13
+Baghlan Province,370,16,106,,2020-06-13
+Balkh Province,"1,493",46,279,,2020-06-13
+Bamyan Province,137,4,64,,2020-06-13
+Daykundi Province,40,1,17,,2020-06-13
+Farah Province,218,2,22,,2020-06-13
+Faryab Province,189,10,21,,2020-06-13
+Ghazni Province,356,20,62,,2020-06-13
+Ghor Province,108,1,45,,2020-06-13
+Helmand Province,125,10,65,,2020-06-13
+Herat Province,"4,304",89,719,,2020-06-13
+Jowzjan Province,196,6,20,,2020-06-13
+Kabul Province,"9,719",95,"1,332",,2020-06-13
+Kandahar Province,"1,020",18,165,,2020-06-13
+Kapisa Province,94,0,57,,2020-06-13
+Khost Province,272,8,18,,2020-06-13
+Kunar Province,320,14,57,,2020-06-13
+Kunduz Province,178,6,56,,2020-06-13
+Laghman Province,280,4,101,,2020-06-13
+Logar Province,266,9,65,,2020-06-13
+Nangarhar Province,"1,246",29,59,,2020-06-13
+Nimruz Province,300,6,98,,2020-06-13
+Nuristan Province,11,0,2,,2020-06-13
+Paktia Province,784,10,128,,2020-06-13
+Paktika Province,118,2,22,,2020-06-13
+Panjshir Province,173,10,79,,2020-06-13
+Parwan Province,234,7,85,,2020-06-13
+Samangan Province,298,7,132,,2020-06-13
+Sar-e Pol Province,130,2,12,,2020-06-13
+Takhar Province,422,10,100,,2020-06-13
+Urozgan Province,20,0,1,,2020-06-13
+Wardak Province,206,4,89,,2020-06-13
+Zabul Province,71,2,38,,2020-06-13
+Badakhshan Province,56,0,2,,2020-06-05
+Badghis Province,265,1,30,,2020-06-05
+Baghlan Province,336,13,63,,2020-06-05
+Balkh Province,"1,329",44,50,,2020-06-05
+Bamyan Province,114,2,23,,2020-06-05
+Daykundi Province,28,1,10,,2020-06-05
+Farah Province,195,2,19,,2020-06-05
+Faryab Province,155,9,11,,2020-06-05
+Ghazni Province,239,16,27,,2020-06-05
+Ghor Province,72,0,10,,2020-06-05
+Helmand Province,65,0,20,,2020-06-05
+Herat Province,"3,426",59,366,,2020-06-05
+Jowzjan Province,179,6,7,,2020-06-05
+Kabul Province,"7,556",39,505,,2020-06-05
+Kandahar Province,776,17,43,,2020-06-05
+Kapisa Province,79,0,19,,2020-06-05
+Khost Province,144,6,8,,2020-06-05
+Kunar Province,217,7,19,,2020-06-05
+Kunduz Province,162,6,38,,2020-06-05
+Laghman Province,224,3,47,,2020-06-05
+Logar Province,227,8,39,,2020-06-05
+Nangarhar Province,901,22,42,,2020-06-05
+Nimruz Province,81,2,30,,2020-06-05
+Nuristan Province,9,0,2,,2020-06-05
+Paktia Province,659,7,108,,2020-06-05
+Paktika Province,118,1,22,,2020-06-05
+Panjshir Province,158,10,43,,2020-06-05
+Parwan Province,186,7,14,,2020-06-05
+Samangan Province,264,5,11,,2020-06-05
+Sar-e Pol Province,120,1,12,,2020-06-05
+Takhar Province,389,9,48,,2020-06-05
+Urozgan Province,5,0,1,,2020-06-05
+Wardak Province,179,3,50,,2020-06-05
+Zabul Province,38,1,10,,2020-06-05
+Badakhshan Province,56,0,2,,2020-06-04
+Badghis Province,265,1,30,,2020-06-04
+Baghlan Province,336,13,63,,2020-06-04
+Balkh Province,"1,213",41,49,,2020-06-04
+Bamyan Province,114,2,23,,2020-06-04
+Daykundi Province,28,1,10,,2020-06-04
+Farah Province,174,2,19,,2020-06-04
+Faryab Province,155,9,8,,2020-06-04
+Ghazni Province,239,16,27,,2020-06-04
+Ghor Province,72,0,10,,2020-06-04
+Helmand Province,45,0,20,,2020-06-04
+Herat Province,"3,227",57,308,,2020-06-04
+Jowzjan Province,179,6,7,,2020-06-04
+Kabul Province,"7,133",39,401,,2020-06-04
+Kandahar Province,755,17,43,,2020-06-04
+Kapisa Province,79,0,19,,2020-06-04
+Khost Province,144,6,8,,2020-06-04
+Kunar Province,194,7,18,,2020-06-04
+Kunduz Province,133,4,38,,2020-06-04
+Laghman Province,221,3,46,,2020-06-04
+Logar Province,227,8,39,,2020-06-04
+Nangarhar Province,894,22,42,,2020-06-04
+Nimruz Province,81,2,30,,2020-06-04
+Nuristan Province,9,0,2,,2020-06-04
+Paktia Province,648,7,108,,2020-06-04
+Paktika Province,86,1,22,,2020-06-04
+Panjshir Province,158,10,43,,2020-06-04
+Parwan Province,186,7,14,,2020-06-04
+Samangan Province,264,5,11,,2020-06-04
+Sar-e Pol Province,99,1,9,,2020-06-04
+Takhar Province,389,9,48,,2020-06-04
+Urozgan Province,5,0,1,,2020-06-04
+Wardak Province,175,3,49,,2020-06-04
+Zabul Province,38,1,10,,2020-06-04
 Badakhshan Province,48,0,1,,2020-06-03
 Badghis Province,217,0,25,,2020-06-03
 Baghlan Province,336,13,63,,2020-06-03
