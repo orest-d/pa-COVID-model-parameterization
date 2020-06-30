@@ -38,7 +38,7 @@ def parse_args():
 
 def main(download):
     config = utils.parse_yaml(CONFIG_FILE)
-    countries = config.keys()
+    countries = list(config.keys())[0:1]
     # Get ACAPS and Natural Earth data
     if download:
         logger.info('Getting ACAPS data')
@@ -54,9 +54,10 @@ def main(download):
     measures_dict = get_measures_equivalence_dictionary()
     df_acaps['our_measures'] = df_acaps["MEASURE"].str.lower().map(measures_dict)
     df_acaps = df_acaps[df_acaps['our_measures'].notnull()]
-
     for country_iso3 in countries:
-        get_country_info(country_iso3, df_acaps, config[country_iso3])
+        boundaries = get_boundaries_file(country_iso3, config[country_iso3])
+        df_country = get_country_info(country_iso3, df_acaps, boundaries)
+        write_country_info_to_csv(countri_iso3, df_country, boundaries)
 
 
 def get_df_acaps():
@@ -72,20 +73,24 @@ def get_measures_equivalence_dictionary():
     return df.set_index('ACAPS NPI').to_dict()['Our equivalent']
 
 
-def get_country_info(country_iso3, df_acaps, config):
-    logger.info(f'Getting info for {country_iso3}')
-    df = df_acaps[df_acaps['ISO'] == country_iso3]
+def get_boundaries_file(country_iso3, config)
     # Get input boundary shape file, for the admin regions
     input_dir = os.path.join(INPUT_DIR, country_iso3)
     input_shp = os.path.join(input_dir, SHAPEFILE_DIR, config['admin']['directory'],
                              f'{config["admin"]["directory"]}.shp')
-    boundaries = gpd.read_file(input_shp)
+    return gpd.read_file(input_shp)
+
+
+def get_country_info(country_iso3, df_acaps, boundaries):
+    logger.info(f'Getting info for {country_iso3}')
+    df = df_acaps[df_acaps['ISO'] == country_iso3]
     # Get list of admin 0, 1 and 2 regions
     admin_regions = {
         'admin0': boundaries['ADM0_PCODE'].unique().tolist(),
         'admin1': boundaries['ADM1_PCODE'].unique().tolist(),
         'admin2': boundaries['ADM2_PCODE'].unique().tolist()
     }
+    admin1_to_2_dict = boundaries.groupby('ADM1_PCODE')['ADM2_PCODE'].apply(lambda x: x.tolist()).to_dict()
     # Check if JSON file already exists, if so read it in
     output_dir = os.path.join(INPUT_DIR, country_iso3, OUTPUT_DATA_DIR)
     filename = os.path.join(output_dir, OUTPUT_JSON_FILENAME.format(country_iso3))
@@ -105,6 +110,27 @@ def get_country_info(country_iso3, df_acaps, config):
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     logger.info(f'Writing to {filename}')
     df.set_index('ID').to_json(filename, indent=2, orient='index')
+    # Convert all region levels to admin 2
+    # If admin 0, just add all of admin 2 directly
+    df['affected_pcodes'] = df['affected_pcodes'].apply(lambda x: admin_regions['admin2'] if x == admin_regions['admin0'] else x)
+    # For the rest, check if any items in the list are admin 1. If they are, expand them and add them back in
+    for row in df.itertuples():
+        loc_list = df.at[row.Index, 'affected_pcodes']
+        final_loc_list = []
+        for loc in loc_list:
+            if loc in admin_regions['admin1']:
+                final_loc_list += admin1_to_2_dict[loc]
+            elif loc in admin_regions['admin2']:
+                final_loc_list.append(loc)
+            else:
+                logger.error(f'Found incorrect pcode {loc}')
+        df.at[row.Index, 'affected_pcodes'] = final_loc_list
+    return df
+
+
+def write_country_info_to_csv(country_iso3, df, boundaries):
+    pass
+
 
 if __name__ == '__main__':
     args = parse_args()
