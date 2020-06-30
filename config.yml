@@ -347,8 +347,8 @@ SOM:
       '#affected+infected+dead': "#affected+infected+dead+total"
       "Unnamed: 1": "#adm1+name"
   contact_matrix:
-    country: Uganda
-    file_number: 2
+    country: Kenya
+    file_number: 1
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
