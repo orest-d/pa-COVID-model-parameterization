@@ -296,19 +296,19 @@ SOM:
       # Country
       Somalia:
   solid_fuels:
-    # from https://www.who.int/nmh/countries/2018/ssd_en.pdf?ua=1
+    # from https://www.who.int/nmh/countries/2018/som_en.pdf?ua=1
     frac_urban: 0.95
     frac_rural: 0.95
   handwashing_facilities:
     # from https://washdata.org/data/downloads#WLD
-    frac_urban: 0.93
-    frac_rural: 0.98
-  # Using Chad https://www.who.int/nmh/countries/2018/tcd_en.pdf?ua=1
-  raised_blood_pressure: 0.24
-  # http://ghdx.healthdata.org/gbd-results-tool?params=gbd-api-2017-permalink/91c1bfad5bd48ffe4484ccdeca24e066 
-  diabetes: 0.0737
+    frac_urban: 0.88
+    frac_rural: 0.92
+  # Using https://www.who.int/nmh/countries/2018/som_en.pdf?ua=1
+  raised_blood_pressure: 0.26
+  # https://www.who.int/nmh/countries/2018/som_en.pdf?ua=1 
+  diabetes: 0.05
   # https://vizhub.healthdata.org/tobacco/
-  smoking: 0.064
+  smoking: 0.06
   covid:
     url: None
     filename: covid_data.csv
