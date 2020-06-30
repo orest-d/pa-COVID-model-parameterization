@@ -65,12 +65,13 @@ def main(country_iso3, download_covid=False):
     # in some files we have province explicitely
     df_covid= df_covid[df_covid[HLX_TAG_ADM1_NAME]!='Total']
     df_covid[HLX_TAG_ADM1_NAME]= df_covid[HLX_TAG_ADM1_NAME].str.replace('Province','')
+    df_covid[HLX_TAG_ADM1_NAME]= df_covid[HLX_TAG_ADM1_NAME].str.replace('State','')
     df_covid[HLX_TAG_ADM1_NAME]= df_covid[HLX_TAG_ADM1_NAME].str.strip()
     if 'replace_dict' in config['covid'] and config['covid']['admin_level']==1: 
         df_covid[HLX_TAG_ADM1_NAME] = df_covid[HLX_TAG_ADM1_NAME].replace(config['covid']['replace_dict'])
     if 'replace_dict' in config['covid'] and config['covid']['admin_level']==2: 
         df_covid[HLX_TAG_ADM2_NAME] = df_covid[HLX_TAG_ADM2_NAME].replace(config['covid']['replace_dict'])
-    
+
     # convert to numeric
     if config['covid']['cases']:
         df_covid[HLX_TAG_TOTAL_CASES]=convert_to_numeric(df_covid[HLX_TAG_TOTAL_CASES])
@@ -112,7 +113,11 @@ def main(country_iso3, download_covid=False):
                     HLX_TAG_TOTAL_DEATHS:adm2deaths}
         output_df_covid=output_df_covid.append(pd.DataFrame(raw_data),ignore_index=True)
     elif config['covid']['admin_level']==1:
+        if(config['covid']['federal_state_dict']):
+            exposure_gdf[config['covid']['adm1_name_exp']] = exposure_gdf[config['covid']['adm1_name_exp']].replace(config['covid']['federal_state_dict'])
         ADM1_names = get_dict_pcodes(exposure_gdf,config['covid']['adm1_name_exp'],'ADM1_PCODE')
+        print(ADM1_names)
+        return
         df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM1_NAME].map(ADM1_names)
         if(df_covid[HLX_TAG_ADM1_PCODE].isnull().sum()>0):
             logger.warning('missing PCODE for the following admin units :')
@@ -122,7 +127,6 @@ def main(country_iso3, download_covid=False):
         gender_age_group_names = ['{}_{}'.format(gender_age_group[0], gender_age_group[1]) for gender_age_group in
                                 gender_age_groups]
 
-        
         for _, row in df_covid.iterrows():
             adm2_pop_fractions=get_adm2_to_adm1_pop_frac(row[HLX_TAG_ADM1_PCODE],exposure_gdf,gender_age_group_names)
             adm1pcode=row[HLX_TAG_ADM1_PCODE]
@@ -143,7 +147,7 @@ def main(country_iso3, download_covid=False):
     if(abs((output_df_covid[HLX_TAG_TOTAL_CASES].sum()-\
         df_covid[HLX_TAG_TOTAL_CASES].sum()))>10):
         logger.warning('The sum of input and output files don\'t match')
-    
+
     if not config['covid']['cumulative']:
         logger.info(f'Calculating cumulative numbers COVID data')
         groups=[HLX_TAG_ADM1_PCODE,HLX_TAG_ADM2_PCODE,HLX_TAG_DATE]

@@ -312,21 +312,40 @@ SOM:
   covid:
     url: https://docs.google.com/spreadsheets/d/e/2PACX-1vRTGuZDNylQKqZC7ITpHkLw-7nHvElQNtImJS7kRFXGak664t6jxDjvdVHHWkKPJ7rvwAtj6VGXrQUC/pub?output=csv
     filename: covid_data.csv
-    header: 0
-    skiprows: 1
+    header: 1
+    skiprows: 0
     cases: True
     deaths: True
     cumulative: True
     admin_level: 1
-    adm2_name_exp: ADM2_EN
-    date_format: "%d/%m/%Y"
+    federal_state_dict:
+      # dictionary based on https://bmgf.maps.arcgis.com/apps/opsdashboard/index.html#/d0d9a939c5fa401caa3a7447e72b2017
+      'Lower Juba' : "Jubaland"
+      'Middle Juba' : "Jubaland"
+      'Gedo' : "Jubaland"
+      'Bay' : "South West"
+      'Bakool' : "South West"
+      'Lower Shabelle' : "South West"
+      'Banadir' : "Banadir"
+      'Hiraan' : "Hir-Shabelle"
+      'Middle Shabelle' : "Hir-Shabelle"
+      'Mudug' : "Galmudug"
+      'Galgaduud' : "Galmudug"
+      'Nugaal' : "Puntaland"
+      'Bari' : "Puntaland"
+      'Awdal' : "Somaliland"
+      'Sool' : "Somaliland"
+      'Sanaag' : "Somaliland"
+      'Togdheer' : "Somaliland"
+      'Woqooyi Galbeed' : "Somaliland"
+    adm1_name_exp: ADM1_EN
+    date_format: "%m/%d/%Y"
     replace_dict:
-      Abyei: Abyei Region
+      Galmmudug: Galmudug
     hlx_dict:
-      State: "#adm1+name"
-      Confirmed: "#affected+infected+confirmed+total"
-      Dead: "#affected+infected+dead+total"
-      Date: "#date"
+      '#affected+infected+confirmed': "#affected+infected+confirmed+total"
+      '#affected+infected+dead': "#affected+infected+dead+total"
+      "Unnamed: 1": "#adm1+name"
   contact_matrix:
     country: Uganda
     file_number: 2
