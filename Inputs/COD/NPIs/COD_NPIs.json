@@ -18,9 +18,7 @@
     "ENTRY_DATE":1584230400000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "204":{
     "COUNTRY":"Congo DR",
@@ -41,9 +39,7 @@
     "ENTRY_DATE":1584230400000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "1126":{
     "COUNTRY":"Congo DR",
@@ -64,9 +60,7 @@
     "ENTRY_DATE":1584748800000,
     "Alternative source":"https:\/\/cd.usembassy.gov\/covid-19-information\/",
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "1127":{
     "COUNTRY":"Congo DR",
@@ -87,9 +81,7 @@
     "ENTRY_DATE":1584748800000,
     "Alternative source":"https:\/\/www.stopcoronavirusrdc.info\/mesures-de-protection-contre-le-coronavirus",
     "our_measures":"school closure",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "1128":{
     "COUNTRY":"Congo DR",
@@ -110,9 +102,7 @@
     "ENTRY_DATE":1584748800000,
     "Alternative source":"https:\/\/www.stopcoronavirusrdc.info\/mesures-de-protection-contre-le-coronavirus",
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "1129":{
     "COUNTRY":"Congo DR",
@@ -133,9 +123,7 @@
     "ENTRY_DATE":1584748800000,
     "Alternative source":"https:\/\/www.stopcoronavirusrdc.info\/mesures-de-protection-contre-le-coronavirus",
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "1130":{
     "COUNTRY":"Congo DR",
@@ -156,9 +144,7 @@
     "ENTRY_DATE":1584748800000,
     "Alternative source":"https:\/\/www.stopcoronavirusrdc.info\/mesures-de-protection-contre-le-coronavirus",
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "2704":{
     "COUNTRY":"Congo DR",
@@ -179,9 +165,7 @@
     "ENTRY_DATE":1585267200000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "2705":{
     "COUNTRY":"Congo DR",
@@ -202,9 +186,7 @@
     "ENTRY_DATE":1585267200000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "2706":{
     "COUNTRY":"Congo DR",
@@ -225,9 +207,7 @@
     "ENTRY_DATE":1585267200000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "2707":{
     "COUNTRY":"Congo DR",
@@ -248,9 +228,7 @@
     "ENTRY_DATE":1585267200000,
     "Alternative source":"https:\/\/cd.usembassy.gov\/covid-19-information\/",
     "our_measures":"partial lockdown",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "5046":{
     "COUNTRY":"Congo DR",
@@ -271,9 +249,7 @@
     "ENTRY_DATE":1586649600000,
     "Alternative source":"https:\/\/cd.usembassy.gov\/covid-19-information\/",
     "our_measures":"partial lockdown",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "6432":{
     "COUNTRY":"Congo DR",
@@ -294,9 +270,7 @@
     "ENTRY_DATE":1587340800000,
     "Alternative source":"https:\/\/www.stopcoronavirusrdc.info\/mesures-de-protection-contre-le-coronavirus",
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "6433":{
     "COUNTRY":"Congo DR",
@@ -317,9 +291,7 @@
     "ENTRY_DATE":1587340800000,
     "Alternative source":"https:\/\/www.stopcoronavirusrdc.info\/mesures-de-protection-contre-le-coronavirus",
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "6435":{
     "COUNTRY":"Congo DR",
@@ -340,9 +312,7 @@
     "ENTRY_DATE":1587340800000,
     "Alternative source":"https:\/\/www.stopcoronavirusrdc.info\/mesures-de-protection-contre-le-coronavirus",
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "6436":{
     "COUNTRY":"Congo DR",
@@ -363,9 +333,7 @@
     "ENTRY_DATE":1587340800000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "7002":{
     "COUNTRY":"Congo DR",
@@ -386,9 +354,7 @@
     "ENTRY_DATE":1587513600000,
     "Alternative source":"https:\/\/www.gov.uk\/foreign-travel-advice\/democratic-republic-of-the-congo\/coronavirus",
     "our_measures":"face mask wearing",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "7003":{
     "COUNTRY":"Congo DR",
@@ -409,9 +375,7 @@
     "ENTRY_DATE":1587513600000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "7004":{
     "COUNTRY":"Congo DR",
@@ -432,9 +396,7 @@
     "ENTRY_DATE":1587513600000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "7005":{
     "COUNTRY":"Congo DR",
@@ -455,9 +417,7 @@
     "ENTRY_DATE":1587513600000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "7006":{
     "COUNTRY":"Congo DR",
@@ -478,9 +438,7 @@
     "ENTRY_DATE":1587513600000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "7007":{
     "COUNTRY":"Congo DR",
@@ -501,9 +459,7 @@
     "ENTRY_DATE":1587513600000,
     "Alternative source":null,
     "our_measures":"face mask wearing",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "7008":{
     "COUNTRY":"Congo DR",
@@ -524,9 +480,7 @@
     "ENTRY_DATE":1587513600000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "7009":{
     "COUNTRY":"Congo DR",
@@ -547,9 +501,7 @@
     "ENTRY_DATE":1587513600000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "8320":{
     "COUNTRY":"Congo DR",
@@ -570,9 +522,7 @@
     "ENTRY_DATE":1588204800000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "8321":{
     "COUNTRY":"Congo DR",
@@ -593,9 +543,7 @@
     "ENTRY_DATE":1588204800000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "8324":{
     "COUNTRY":"Congo DR",
@@ -616,9 +564,7 @@
     "ENTRY_DATE":1588204800000,
     "Alternative source":null,
     "our_measures":"school closure",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "8327":{
     "COUNTRY":"Congo DR",
@@ -639,9 +585,7 @@
     "ENTRY_DATE":1588204800000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "8328":{
     "COUNTRY":"Congo DR",
@@ -662,9 +606,7 @@
     "ENTRY_DATE":1588204800000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "9728":{
     "COUNTRY":"Congo DR",
@@ -685,9 +627,7 @@
     "ENTRY_DATE":1589155200000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "10482":{
     "COUNTRY":"Congo DR",
@@ -708,9 +648,7 @@
     "ENTRY_DATE":1589414400000,
     "Alternative source":null,
     "our_measures":"face mask wearing",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "10483":{
     "COUNTRY":"Congo DR",
@@ -731,9 +669,7 @@
     "ENTRY_DATE":1589414400000,
     "Alternative source":null,
     "our_measures":"face mask wearing",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "11515":{
     "COUNTRY":"Congo DR",
@@ -754,9 +690,7 @@
     "ENTRY_DATE":1589932800000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "12062":{
     "COUNTRY":"Congo DR",
@@ -777,9 +711,7 @@
     "ENTRY_DATE":1590537600000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "12063":{
     "COUNTRY":"Congo DR",
@@ -800,9 +732,7 @@
     "ENTRY_DATE":1590537600000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   },
   "12064":{
     "COUNTRY":"Congo DR",
@@ -823,8 +753,6 @@
     "ENTRY_DATE":1590537600000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "CD"
-    ]
+    "affected_pcodes":null
   }
 }

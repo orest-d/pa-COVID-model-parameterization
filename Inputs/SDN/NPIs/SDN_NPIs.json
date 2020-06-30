@@ -18,9 +18,7 @@
     "ENTRY_DATE":1584230400000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "810":{
     "COUNTRY":"Sudan",
@@ -41,9 +39,7 @@
     "ENTRY_DATE":1584403200000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "811":{
     "COUNTRY":"Sudan",
@@ -64,9 +60,7 @@
     "ENTRY_DATE":1584403200000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "818":{
     "COUNTRY":"Sudan",
@@ -87,9 +81,7 @@
     "ENTRY_DATE":1584403200000,
     "Alternative source":null,
     "our_measures":"school closure",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "2994":{
     "COUNTRY":"Sudan",
@@ -110,9 +102,7 @@
     "ENTRY_DATE":1585440000000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "2995":{
     "COUNTRY":"Sudan",
@@ -133,9 +123,7 @@
     "ENTRY_DATE":1585440000000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "2996":{
     "COUNTRY":"Sudan",
@@ -156,9 +144,7 @@
     "ENTRY_DATE":1585440000000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "3606":{
     "COUNTRY":"Sudan",
@@ -179,9 +165,7 @@
     "ENTRY_DATE":1585785600000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "3607":{
     "COUNTRY":"Sudan",
@@ -202,9 +186,7 @@
     "ENTRY_DATE":1585785600000,
     "Alternative source":"https:\/\/www.dabangasudan.org\/en\/all-news\/article\/sudan-this-week-s-news-in-brief-3",
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "5337":{
     "COUNTRY":"Sudan",
@@ -225,9 +207,7 @@
     "ENTRY_DATE":1586822400000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "5338":{
     "COUNTRY":"Sudan",
@@ -248,9 +228,7 @@
     "ENTRY_DATE":1586822400000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "6607":{
     "COUNTRY":"Sudan",
@@ -271,9 +249,7 @@
     "ENTRY_DATE":1587427200000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "6608":{
     "COUNTRY":"Sudan",
@@ -294,9 +270,7 @@
     "ENTRY_DATE":1587427200000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "8603":{
     "COUNTRY":"Sudan",
@@ -317,9 +291,7 @@
     "ENTRY_DATE":1588291200000,
     "Alternative source":null,
     "our_measures":"closing businesses",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "9844":{
     "COUNTRY":"Sudan",
@@ -340,9 +312,7 @@
     "ENTRY_DATE":1589155200000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "10043":{
     "COUNTRY":"Sudan",
@@ -363,9 +333,7 @@
     "ENTRY_DATE":1589241600000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "10044":{
     "COUNTRY":"Sudan",
@@ -386,9 +354,7 @@
     "ENTRY_DATE":1589241600000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "11301":{
     "COUNTRY":"Sudan",
@@ -409,9 +375,7 @@
     "ENTRY_DATE":1589846400000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "11776":{
     "COUNTRY":"Sudan",
@@ -432,9 +396,7 @@
     "ENTRY_DATE":1590364800000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "11777":{
     "COUNTRY":"Sudan",
@@ -455,9 +417,7 @@
     "ENTRY_DATE":1590364800000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "13031":{
     "COUNTRY":"Sudan",
@@ -478,9 +438,7 @@
     "ENTRY_DATE":1591315200000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "13032":{
     "COUNTRY":"Sudan",
@@ -501,9 +459,7 @@
     "ENTRY_DATE":1591315200000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "13033":{
     "COUNTRY":"Sudan",
@@ -524,9 +480,7 @@
     "ENTRY_DATE":1591315200000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   },
   "13034":{
     "COUNTRY":"Sudan",
@@ -547,8 +501,6 @@
     "ENTRY_DATE":1591315200000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "SD"
-    ]
+    "affected_pcodes":null
   }
 }

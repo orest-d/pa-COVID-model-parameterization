@@ -18,9 +18,7 @@
     "ENTRY_DATE":1584230400000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "343":{
     "COUNTRY":"South Sudan",
@@ -41,9 +39,7 @@
     "ENTRY_DATE":1584230400000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "349":{
     "COUNTRY":"South Sudan",
@@ -64,9 +60,7 @@
     "ENTRY_DATE":1584230400000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "816":{
     "COUNTRY":"South Sudan",
@@ -87,9 +81,7 @@
     "ENTRY_DATE":1584403200000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "817":{
     "COUNTRY":"South Sudan",
@@ -110,9 +102,7 @@
     "ENTRY_DATE":1584403200000,
     "Alternative source":"https:\/\/sudantribune.com\/spip.php?article69109",
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "1754":{
     "COUNTRY":"South Sudan",
@@ -133,9 +123,7 @@
     "ENTRY_DATE":1584921600000,
     "Alternative source":null,
     "our_measures":"school closure",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "2990":{
     "COUNTRY":"South Sudan",
@@ -156,9 +144,7 @@
     "ENTRY_DATE":1585440000000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "5413":{
     "COUNTRY":"South Sudan",
@@ -179,9 +165,7 @@
     "ENTRY_DATE":1586908800000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "5414":{
     "COUNTRY":"South Sudan",
@@ -202,9 +186,7 @@
     "ENTRY_DATE":1586908800000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "5415":{
     "COUNTRY":"South Sudan",
@@ -225,9 +207,7 @@
     "ENTRY_DATE":1586908800000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "5416":{
     "COUNTRY":"South Sudan",
@@ -248,9 +228,7 @@
     "ENTRY_DATE":1586908800000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "5417":{
     "COUNTRY":"South Sudan",
@@ -271,9 +249,7 @@
     "ENTRY_DATE":1586908800000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "6609":{
     "COUNTRY":"South Sudan",
@@ -294,9 +270,7 @@
     "ENTRY_DATE":1587427200000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "7867":{
     "COUNTRY":"South Sudan",
@@ -317,9 +291,7 @@
     "ENTRY_DATE":1587945600000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "8595":{
     "COUNTRY":"South Sudan",
@@ -340,9 +312,7 @@
     "ENTRY_DATE":1588291200000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "8596":{
     "COUNTRY":"South Sudan",
@@ -363,9 +333,7 @@
     "ENTRY_DATE":1588291200000,
     "Alternative source":null,
     "our_measures":"closing businesses",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "8597":{
     "COUNTRY":"South Sudan",
@@ -386,9 +354,7 @@
     "ENTRY_DATE":1588291200000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "8598":{
     "COUNTRY":"South Sudan",
@@ -409,9 +375,7 @@
     "ENTRY_DATE":1588291200000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "8599":{
     "COUNTRY":"South Sudan",
@@ -432,9 +396,7 @@
     "ENTRY_DATE":1588291200000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "8600":{
     "COUNTRY":"South Sudan",
@@ -455,9 +417,7 @@
     "ENTRY_DATE":1588291200000,
     "Alternative source":null,
     "our_measures":"closing businesses",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "8601":{
     "COUNTRY":"South Sudan",
@@ -478,9 +438,7 @@
     "ENTRY_DATE":1588291200000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "9634":{
     "COUNTRY":"South Sudan",
@@ -501,9 +459,7 @@
     "ENTRY_DATE":1588896000000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "9635":{
     "COUNTRY":"South Sudan",
@@ -524,9 +480,7 @@
     "ENTRY_DATE":1588896000000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "9637":{
     "COUNTRY":"South Sudan",
@@ -547,9 +501,7 @@
     "ENTRY_DATE":1588896000000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "9638":{
     "COUNTRY":"South Sudan",
@@ -570,9 +522,7 @@
     "ENTRY_DATE":1588896000000,
     "Alternative source":null,
     "our_measures":"closing businesses",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "9639":{
     "COUNTRY":"South Sudan",
@@ -593,9 +543,7 @@
     "ENTRY_DATE":1588896000000,
     "Alternative source":null,
     "our_measures":"closing businesses",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "9640":{
     "COUNTRY":"South Sudan",
@@ -616,9 +564,7 @@
     "ENTRY_DATE":1588896000000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "10521":{
     "COUNTRY":"South Sudan",
@@ -639,9 +585,7 @@
     "ENTRY_DATE":1589414400000,
     "Alternative source":"https:\/\/www.gov.uk\/foreign-travel-advice\/south-sudan\/coronavirus",
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "10701":{
     "COUNTRY":"South Sudan",
@@ -662,9 +606,7 @@
     "ENTRY_DATE":1589500800000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "10702":{
     "COUNTRY":"South Sudan",
@@ -685,9 +627,7 @@
     "ENTRY_DATE":1589500800000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "10705":{
     "COUNTRY":"South Sudan",
@@ -708,9 +648,7 @@
     "ENTRY_DATE":1589500800000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "10706":{
     "COUNTRY":"South Sudan",
@@ -731,9 +669,7 @@
     "ENTRY_DATE":1589500800000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   },
   "10707":{
     "COUNTRY":"South Sudan",
@@ -754,8 +690,6 @@
     "ENTRY_DATE":1589500800000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":[
-      "SS"
-    ]
+    "affected_pcodes":null
   }
 }

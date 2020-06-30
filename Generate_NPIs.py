@@ -5,6 +5,7 @@ import argparse
 
 import pandas as pd
 import geopandas as gpd
+import numpy as np
 
 from utils import utils
 from utils.hdx_api import query_api
@@ -72,6 +73,7 @@ def get_measures_equivalence_dictionary():
 
 
 def get_country_info(country_iso3, df_acaps, config):
+    logger.info(f'Getting info for {country_iso3}')
     df = df_acaps[df_acaps['ISO'] == country_iso3]
     # Get input boundary shape file, for the admin regions
     input_dir = os.path.join(INPUT_DIR, country_iso3)
@@ -87,14 +89,19 @@ def get_country_info(country_iso3, df_acaps, config):
     # Check if JSON file already exists, if so read it in
     output_dir = os.path.join(INPUT_DIR, country_iso3, OUTPUT_DATA_DIR)
     filename = os.path.join(output_dir, OUTPUT_JSON_FILENAME.format(country_iso3))
-    if not os.path.isfile(filename):
-        pass
+    if os.path.isfile(filename):
+        df_manual = pd.read_json(filename, orient='index')
+        df_manual['ID'] = df_manual.index
+        # Join the pcode info
+        df = df.merge(df_manual[['ID', 'affected_pcodes']], how='left', on='ID')
+        # Warn about any empty entries
+        empty_entries = df[df['affected_pcodes'].isna()]
+        if not empty_entries.empty:
+            logger.warning(f'The following NPIs need location info: {empty_entries["ID"].values}')
     else:
-        # If it doesn't exist,
-        df = df.astype('object')
-        df['affected_pcodes'] = df.apply(lambda x: admin_regions['admin0'], axis=1)
-    # Join the pcode info
-    # Write to country-specific input file
+        # If it doesn't exist, add an affected pcodes column
+        df['affected_pcodes'] = None
+    # Write out to a JSON
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     logger.info(f'Writing to {filename}')
     df.set_index('ID').to_json(filename, indent=2, orient='index')
