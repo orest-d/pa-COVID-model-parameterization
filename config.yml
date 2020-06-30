@@ -310,16 +310,16 @@ SOM:
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.06
   covid:
-    url: None
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vRTGuZDNylQKqZC7ITpHkLw-7nHvElQNtImJS7kRFXGak664t6jxDjvdVHHWkKPJ7rvwAtj6VGXrQUC/pub?output=csv
     filename: covid_data.csv
     header: 0
-    skiprows: False
+    skiprows: 1
     cases: True
-    deaths: False
-    cumulative: False
-    admin_level: 2
+    deaths: True
+    cumulative: True
+    admin_level: 1
     adm2_name_exp: ADM2_EN
-    date_format: "%B %d, %Y"
+    date_format: "%d/%m/%Y"
     replace_dict:
       Abyei: Abyei Region
     hlx_dict:
