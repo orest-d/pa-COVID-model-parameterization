@@ -93,12 +93,13 @@ def main(country_iso3, download_covid=False):
                     HLX_TAG_TOTAL_DEATHS]
     output_df_covid=pd.DataFrame(columns=output_fields)
 
+    ADM2_ADM1_pcodes=get_dict_pcodes(exposure_gdf,'ADM2_PCODE')
+
     if config['covid']['admin_level']==2:
         ADM2_names=get_dict_pcodes(exposure_gdf,config['covid']['adm2_name_exp'],'ADM2_PCODE')
         df_covid[HLX_TAG_ADM2_PCODE]= df_covid[HLX_TAG_ADM2_NAME].map(ADM2_names)
         if(df_covid[HLX_TAG_ADM2_PCODE].isnull().sum()>0):
             logger.warning('missing PCODE for the following admin units ',df_covid[df_covid[HLX_TAG_ADM2_PCODE].isnull()])        
-        ADM2_ADM1_pcodes=get_dict_pcodes(exposure_gdf,'ADM2_PCODE')
         df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM2_PCODE].map(ADM2_ADM1_pcodes)
         adm1pcode=df_covid[HLX_TAG_ADM1_PCODE]
         adm2pcodes=df_covid[HLX_TAG_ADM2_PCODE]
@@ -114,10 +115,11 @@ def main(country_iso3, download_covid=False):
         output_df_covid=output_df_covid.append(pd.DataFrame(raw_data),ignore_index=True)
     elif config['covid']['admin_level']==1:
         if(config['covid']['federal_state_dict']):
-            exposure_gdf[config['covid']['adm1_name_exp']] = exposure_gdf[config['covid']['adm1_name_exp']].replace(config['covid']['federal_state_dict'])
+            # for Somalia we replace the ADM1_PCODE the name of the ADM1 and with the name of the state
+            # this is done according to the dictionary
+            exposure_gdf['ADM1_PCODE'] = exposure_gdf[config['covid']['adm1_name_exp']].replace(config['covid']['federal_state_dict'])
+            exposure_gdf[config['covid']['adm1_name_exp']] = exposure_gdf['ADM1_PCODE']
         ADM1_names = get_dict_pcodes(exposure_gdf,config['covid']['adm1_name_exp'],'ADM1_PCODE')
-        print(ADM1_names)
-        return
         df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM1_NAME].map(ADM1_names)
         if(df_covid[HLX_TAG_ADM1_PCODE].isnull().sum()>0):
             logger.warning('missing PCODE for the following admin units :')
@@ -155,6 +157,10 @@ def main(country_iso3, download_covid=False):
         output_df_covid=output_df_covid.groupby(groups).sum().sort_values(by=HLX_TAG_DATE)
         # get cumsum by day (grouped by ADM2)
         output_df_covid=output_df_covid.groupby(HLX_TAG_ADM2_PCODE).cumsum().reset_index()
+    
+    if(config['covid']['federal_state_dict']):
+        # bring back the adm1 pcode that we modified to calculate the sum
+        output_df_covid[HLX_TAG_ADM1_PCODE]= output_df_covid[HLX_TAG_ADM2_PCODE].map(ADM2_ADM1_pcodes)
         
     # Write to file
     output_df_covid['created_at'] = str(datetime.datetime.now())
