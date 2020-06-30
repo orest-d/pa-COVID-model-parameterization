@@ -324,9 +324,9 @@ SOM:
       Abyei: Abyei Region
     hlx_dict:
       State: "#adm1+name"
-      County: "#adm2+name"
-      No. of confirmed cases: "#affected+infected+confirmed+total"
-      Confirmation date: "#date"
+      Confirmed: "#affected+infected+confirmed+total"
+      Dead: "#affected+infected+dead+total"
+      Date: "#date"
   contact_matrix:
     country: Uganda
     file_number: 2
