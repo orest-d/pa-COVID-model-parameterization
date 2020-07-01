@@ -75,6 +75,7 @@ For some of the countries the contact matrix is not directly available and we ar
 | Sudan       | Ethiopia            |
 | South Sudan | Uganda              |
 | DRC         | Zambia              |
+| Somalia     | Kenya               |
 | Haiti       | available on PLOS   |
 
 #### Correspondence of age classes

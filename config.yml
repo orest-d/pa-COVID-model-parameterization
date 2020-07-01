@@ -69,6 +69,7 @@ AFG:
       Sar-e Pol: Sar-e-Pul
       Nimruz: Nimroz
       Wardak: Maidan Wardak
+      Sar-e Pol: Sar-e-Pul
     hlx_dict:
       "#affected+infected+cases": "#affected+infected+confirmed+total"
       "#affected+infected+deaths": "#affected+infected+dead+total"
@@ -192,7 +193,7 @@ SDN:
   # https://vizhub.healthdata.org/tobacco/
   smoking: 0.01
   covid:
-    url: https://data.humdata.org/dataset/6fb3f0ba-dd66-4369-87b4-a837d18e0a45/resource/71169c25-7760-47b6-b818-cb2c7c44d9c1/download/sudan-covid-19-cases-by-state-and-date.csv
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQgIjG5wYFaK-z25ciiNNSWUTdxMWKRe5_y1YLNMpCzJziFor16xyP3R1nKz1wAkN7F4w6gx4F6yUIp/pub?gid=1817954914&single=true&output=csv
     filename: covid_data.csv
     header: 1
     skiprows: 0
@@ -201,11 +202,11 @@ SDN:
     cumulative: True
     admin_level: 1
     adm1_name_exp: ADM1_EN
-    date_format: "%d/%m/%Y"
+    date_format: "%m/%d/%Y"
     replace_dict:
       Al Jazirah: Aj Jazirah
     hlx_dict:
-      "#affected+infected+confirmed": "#affected+infected+confirmed+total"
+      "#affected+infected+confirmed+fatalities": "#affected+infected+confirmed+total"
   contact_matrix:
     country: Ethiopia
     file_number: 1
@@ -270,6 +271,84 @@ SSD:
   contact_matrix:
     country: Uganda
     file_number: 2
+SOM:
+  admin:
+    # https://data.humdata.org/dataset/somalia-administrative-boundaries
+    directory: Som_Admbnda_Adm2_UNDP
+    language: EN
+  ghs:
+    column_row_pairs:
+      - (22, 7)
+      - (22, 8)
+      - (22, 9)
+      - (23, 7)
+  ipc:
+    filename: Somalia - IPC Analysis 2020-2020.xlsx
+    last_row: 105
+    admin_level: 2
+    replace_dict:
+      # Admin 2
+      # Admin 1
+      Juba Dhexe: Middle Juba
+      Juba Hoose: Lower Juba
+      Shabelle Dhexe: Middle Shabelle
+      Shabelle Hoose: Lower Shabelle
+      # Country
+      Somalia:
+  solid_fuels:
+    # from https://www.who.int/nmh/countries/2018/som_en.pdf?ua=1
+    frac_urban: 0.95
+    frac_rural: 0.95
+  handwashing_facilities:
+    # from https://washdata.org/data/downloads#WLD
+    frac_urban: 0.88
+    frac_rural: 0.92
+  # Using https://www.who.int/nmh/countries/2018/som_en.pdf?ua=1
+  raised_blood_pressure: 0.26
+  # https://www.who.int/nmh/countries/2018/som_en.pdf?ua=1 
+  diabetes: 0.05
+  # https://vizhub.healthdata.org/tobacco/
+  smoking: 0.06
+  covid:
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vRTGuZDNylQKqZC7ITpHkLw-7nHvElQNtImJS7kRFXGak664t6jxDjvdVHHWkKPJ7rvwAtj6VGXrQUC/pub?output=csv
+    filename: covid_data.csv
+    header: 1
+    skiprows: 0
+    cases: True
+    deaths: True
+    cumulative: True
+    admin_level: 1
+    federal_state_dict:
+      # dictionary based on https://bmgf.maps.arcgis.com/apps/opsdashboard/index.html#/d0d9a939c5fa401caa3a7447e72b2017
+      'Lower Juba' : "Jubaland"
+      'Middle Juba' : "Jubaland"
+      'Gedo' : "Jubaland"
+      'Bay' : "South West"
+      'Bakool' : "South West"
+      'Lower Shabelle' : "South West"
+      'Banadir' : "Banadir"
+      'Hiraan' : "Hir-Shabelle"
+      'Middle Shabelle' : "Hir-Shabelle"
+      'Mudug' : "Galmudug"
+      'Galgaduud' : "Galmudug"
+      'Nugaal' : "Puntland"
+      'Bari' : "Puntland"
+      'Awdal' : "Somaliland"
+      'Sool' : "Somaliland"
+      'Sanaag' : "Somaliland"
+      'Togdheer' : "Somaliland"
+      'Woqooyi Galbeed' : "Somaliland"
+    adm1_name_exp: ADM1_EN
+    date_format: "%m/%d/%Y"
+    replace_dict:
+      Galmmudug: Galmudug
+    hlx_dict:
+      '#affected+infected+confirmed': "#affected+infected+confirmed+total"
+      '#affected+infected+dead': "#affected+infected+dead+total"
+      "Unnamed: 1": "#adm1+name"
+  contact_matrix:
+    country: Kenya
+    file_number: 1
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip

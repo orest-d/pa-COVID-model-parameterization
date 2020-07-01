@@ -1,0 +1,163 @@
+Date,State,Confirmed ,Dead,Recovered,Active
+#date,,#affected+infected+confirmed,#affected+infected+dead,#affected+infected+recovered,#affected+infected+active
+06/29/2020,Banadir,1417,54,517,846
+06/29/2020,Somaliland,698,26,142,530
+06/29/2020,Puntland,290,7,48,235
+06/29/2020,Jubaland,175,1,63,111
+06/29/2020,South West,143,0,42,101
+06/29/2020,Galmmudug,117,1,17,99
+06/29/2020,Hir-Shabelle,23,1,8,14
+06/26/2020,Banadir,1417,54,517,846
+06/26/2020,Somaliland,698,26,142,530
+06/26/2020,Puntland,290,7,48,235
+06/26/2020,Jubaland,175,1,63,111
+06/26/2020,South West,143,0,42,101
+06/26/2020,Galmmudug,117,1,17,99
+06/26/2020,Hir-Shabelle,23,1,8,14
+06/25/2020,Banadir,1417,54,517,846
+06/25/2020,Somaliland,698,26,142,530
+06/25/2020,Puntland,290,7,48,235
+06/25/2020,Jubaland,175,1,63,111
+06/25/2020,South West,143,0,42,99
+06/25/2020,Galmudug,117,1,17,99
+06/25/2020,Hir-Shabelle,23,1,8,14
+06/19/2020,Banadir,1396,54,455,887
+06/19/2020,Somaliland,612,25,114,473
+06/19/2020,Puntland,263,6,55,202
+06/19/2020,Jubaland,171,1,51,119
+06/19/2020,South West,142,0,27,115
+06/19/2020,Galmmudug,112,1,14,97
+06/19/2020,Hir-Shabelle,23,1,8,14
+06/18/2020,Banadir,1393,54,443,911
+06/18/2020,Somaliland,593,25,111,461
+06/18/2020,Puntland,263,6,48,213
+06/18/2020,Jubaland,171,1,45,131
+06/18/2020,South West,141,0,22,126
+06/18/2020,Galmmudug,112,1,10,101
+06/18/2020,Hir-Shabelle,23,1,6,16
+06/17/2020,Banadir,1385,54,428,903
+06/17/2020,Somaliland,580,25,107,448
+06/17/2020,Puntland,247,6,44,197
+06/17/2020,Jubaland,171,1,39,131
+06/17/2020,South West,140,0,15,125
+06/17/2020,Galmmudug,112,1,10,101
+06/17/2020,Hir-Shabelle,23,1,6,16
+06/16/2020,Banadir,1385,54,417,914
+06/16/2020,Somaliland,565,25,100,440
+06/16/2020,Puntland,247,6,44,197
+06/16/2020,Jubaland,171,1,37,133
+06/16/2020,South West,139,0,11,128
+06/16/2020,Galmmudug,112,1,10,101
+06/16/2020,Hir-Shabelle,23,1,3,19
+06/15/2020,Banadir,1371,54,408,909
+06/15/2020,Somaliland,557,25,90,442
+06/15/2020,Puntland,235,6,43,186
+06/15/2020,Jubaland,168,1,31,136
+06/15/2020,South West,137,0,3,134
+06/15/2020,Galmmudug,112,1,2,109
+06/15/2020,Hir-Shabelle,23,1,0,22
+06/11/2020,Banadir,1348,54,342,952
+06/11/2020,Somaliland,466,24,73,370
+06/11/2020,Puntland,204,5,41,158
+06/11/2020,Jubaland,156,1,31,124
+06/11/2020,South West,117,0,1,116
+06/11/2020,Galmmudug,102,0,1,101
+06/11/2020,Hir-Shabelle,23,1,0,22
+06/10/2020,Banadir,1348,342,54,952
+06/10/2020,Somaliland,466,73,24,370
+06/10/2020,Puntland,204,41,5,158
+06/10/2020,Jubaland,156,31,1,124
+06/10/2020,South West,117,1,0,116
+06/10/2020,Galmmudug,102,1,0,101
+06/10/2020,Hir-Shabelle,23,0,1,22
+06/09/2020,Banadir,1329,54,330,945
+06/09/2020,Somaliland,449,23,68,358
+06/09/2020,Puntland,196,5,39,152
+06/09/2020,Jubaland State,156,1,31,124
+06/09/2020,South West State,117,0,1,116
+06/09/2020,Galmudug State,100,0,1,99
+06/09/2020,Hir-Shabelle State,21,1,0,20
+06/05/2020,Banadir,1285,52,314,919
+06/05/2020,Somaliland,384,19,51,314
+06/05/2020,Puntland,194,6,19,169
+06/05/2020,Jubaland State,142,0,32,110
+06/05/2020,South West State,111,1,1,109
+06/05/2020,Galmudug State,68,0,1,67
+06/05/2020,Hir-Shabelle State,20,1,0,19
+06/04/2020,Banadir,1253,52,314,855
+06/04/2020,Somaliland,376,19,48,294
+06/04/2020,Puntland,192,6,19,167
+06/04/2020,Jubaland State,141,0,23,134
+06/04/2020,South West State,110,1,1,108
+06/04/2020,Galmudug State,65,0,1,64
+06/04/2020,Hir-Shabelle State,9,1,0,8
+06/03/2020,Banadir,1219,52,312,855
+06/03/2020,Somaliland,358,19,45,294
+06/03/2020,Puntland,192,6,19,167
+06/03/2020,Jubaland State,136,0,2,134
+06/03/2020,South West State,110,1,1,108
+06/03/2020,Galmudug State,65,0,1,64
+06/03/2020,Hir-Shabelle State,9,1,0,8
+06/01/2020,Banadir,1177,53,294,830
+06/01/2020,Somaliland,304,18,34,252
+06/01/2020,Puntland,180,5,16,159
+06/01/2020,Jubaland State,131,0,2,129
+06/01/2020,South West State,110,1,1,108
+06/01/2020,Galmudug State,65,0,1,64
+06/01/2020,Hir-Shabelle State,9,1,0,8
+05/29/2020,Banadir,1161,50,268,843
+05/29/2020,Somaliland,257,15,28,214
+05/29/2020,Puntland,178,5,11,162
+05/29/2020,South West State,110,1,1,108
+05/29/2020,Jubaland State,99,0,2,97
+05/29/2020,Galmudug State,14,0,0,14
+05/29/2020,Hir-Shabelle State,9,1,0,8
+05/28/2020,Banadir,1126,43,225,855
+05/28/2020,Somaliland,225,16,21,180
+05/28/2020,Puntland,170,6,7,148
+05/28/2020,Jubaland State,99,0,0,99
+05/28/2020,South West State,88,1,0,87
+05/28/2020,Galmudug State,14,0,0,14
+05/28/2020,Hir-Shabelle State,9,1,0,8
+05/27/2020,Banadir,1123,43,225,855
+05/27/2020,Galmudug State,14,0,0,14
+05/27/2020,Hir-Shabelle State,9,1,0,8
+05/27/2020,Jubaland State,99,0,0,99
+05/27/2020,Puntland,161,6,7,148
+05/27/2020,Somaliland,217,16,21,180
+05/27/2020,South West State,88,1,0,87
+05/26/2020,Banadir,1118,43,211,864
+05/26/2020,Galmudug State,14,0,0,14
+05/26/2020,Hir-Shabelle State,8,1,0,7
+05/26/2020,Jubaland State,98,0,0,98
+05/26/2020,Puntland,161,6,7,148
+05/26/2020,Somaliland,203,15,19,169
+05/26/2020,South West State,87,1,0,86
+05/25/2020,Banadir,1099,42,187,870
+05/25/2020,Galmudug State,12,0,0,12
+05/25/2020,Hir-Shabelle State,8,1,0,7
+05/25/2020,Jubaland State,98,0,0,98
+05/25/2020,Puntland,163,6,7,150
+05/25/2020,Somaliland,131,11,10,110
+05/25/2020,South West State,83,1,0,82
+05/21/2020,Banadir,1080,42,167,871
+05/21/2020,Galmudug State,12,0,0,12
+05/21/2020,Hir-Shabelle State,6,1,0,5
+05/21/2020,Jubaland State,98,0,2,96
+05/21/2020,Puntland,161,6,9,146
+05/21/2020,Somaliland,131,11,10,110
+05/21/2020,South West State,84,1,0,83
+05/20/2020,Banadir,1063,42,161,860
+05/20/2020,Galmudug State,12,0,0,12
+05/20/2020,Hir-Shabelle State,8,1,0,7
+05/20/2020,Jubaland State,81,0,2,79
+05/20/2020,Puntland,157,6,7,144
+05/20/2020,Somaliland,129,9,8,112
+05/20/2020,South West State,84,1,0,84
+05/19/2020,Banadir,1048,39,145,864
+05/19/2020,Galmudug State,12,0,0,12
+05/19/2020,Hir-Shabelle State,8,1,2,5
+05/19/2020,Jubaland State,52,0,0,52
+05/19/2020,Puntland,137,7,2,128
+05/19/2020,Somaliland,121,9,8,104
+05/19/2020,South West State,77,1,0,76
