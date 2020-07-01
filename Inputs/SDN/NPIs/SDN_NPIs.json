@@ -18,6 +18,7 @@
     "ENTRY_DATE":1584230400000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
+    "category":"mobility-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -40,6 +41,7 @@
     "ENTRY_DATE":1584403200000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -62,6 +64,7 @@
     "ENTRY_DATE":1584403200000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -84,6 +87,7 @@
     "ENTRY_DATE":1584403200000,
     "Alternative source":null,
     "our_measures":"school closure",
+    "category":"contact-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -106,6 +110,7 @@
     "ENTRY_DATE":1585440000000,
     "Alternative source":null,
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -128,6 +133,7 @@
     "ENTRY_DATE":1585440000000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -150,6 +156,7 @@
     "ENTRY_DATE":1585440000000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
+    "category":"mobility-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -172,6 +179,7 @@
     "ENTRY_DATE":1585785600000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
+    "category":"reproduction number-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -194,6 +202,7 @@
     "ENTRY_DATE":1585785600000,
     "Alternative source":"https:\/\/www.dabangasudan.org\/en\/all-news\/article\/sudan-this-week-s-news-in-brief-3",
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -216,6 +225,7 @@
     "ENTRY_DATE":1586822400000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
+    "category":"reproduction number-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -238,6 +248,7 @@
     "ENTRY_DATE":1586822400000,
     "Alternative source":null,
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -260,6 +271,7 @@
     "ENTRY_DATE":1587427200000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -282,6 +294,7 @@
     "ENTRY_DATE":1587427200000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
+    "category":"mobility-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -304,6 +317,7 @@
     "ENTRY_DATE":1588291200000,
     "Alternative source":null,
     "our_measures":"closing businesses",
+    "category":"reproduction number-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -326,6 +340,7 @@
     "ENTRY_DATE":1589155200000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
+    "category":"reproduction number-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -348,6 +363,7 @@
     "ENTRY_DATE":1589241600000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
+    "category":"reproduction number-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -370,6 +386,7 @@
     "ENTRY_DATE":1589241600000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
+    "category":"reproduction number-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -392,6 +409,7 @@
     "ENTRY_DATE":1589846400000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
+    "category":"reproduction number-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -414,6 +432,7 @@
     "ENTRY_DATE":1590364800000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -436,6 +455,7 @@
     "ENTRY_DATE":1590364800000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
+    "category":"mobility-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -458,6 +478,7 @@
     "ENTRY_DATE":1591315200000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
+    "category":"reproduction number-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -480,6 +501,7 @@
     "ENTRY_DATE":1591315200000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -502,6 +524,7 @@
     "ENTRY_DATE":1591315200000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
+    "category":"mobility-based",
     "affected_pcodes":null,
     "end_date":null
   },
@@ -524,6 +547,7 @@
     "ENTRY_DATE":1591315200000,
     "Alternative source":null,
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":null,
     "end_date":null
   }

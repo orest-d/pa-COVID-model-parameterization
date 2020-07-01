@@ -54,9 +54,10 @@ def main(download):
     df_acaps = df_acaps.replace({'Introduction / extension of measures': 'add',
                                 'Phase-out measure': 'remove'})
     # Get our measures equivalent, and drop any that we don't use
-    measures_dict = get_measures_equivalence_dictionary()
-    df_acaps['our_measures'] = df_acaps["MEASURE"].str.lower().map(measures_dict)
+    df_acaps['our_measures'] = df_acaps["MEASURE"].str.lower().map(get_measures_equivalence_dictionary())
     df_acaps = df_acaps[df_acaps['our_measures'].notnull()]
+    df_acaps['category'] = df_acaps['our_measures'].map(get_measures_category_dictionary())
+    # Loop through countries
     for country_iso3 in countries:
         boundaries = get_boundaries_file(country_iso3, config[country_iso3])
         df_country = get_country_info(country_iso3, df_acaps, boundaries)
@@ -74,6 +75,12 @@ def get_measures_equivalence_dictionary():
     df = pd.read_csv(os.path.join(RAW_DATA_DIR, MEASURE_EQUIVALENCE_FILENAME),
                      usecols=['ACAPS NPI', 'Our equivalent'])
     return df.set_index('ACAPS NPI').to_dict()['Our equivalent']
+
+
+def get_measures_category_dictionary():
+    df = pd.read_csv(os.path.join(RAW_DATA_DIR, MEASURE_EQUIVALENCE_FILENAME),
+                     usecols=['Our NPIs', 'Category']).dropna()
+    return df.set_index('Our NPIs').to_dict()['Category']
 
 
 def get_boundaries_file(country_iso3, config):
@@ -142,9 +149,20 @@ def write_country_info_to_csv(country_iso3, df, boundaries):
         'compliance'
     ])
     for _, row in df.iterrows():
+        # Get admin level
+        admin_level = None
+        admin_regions = get_admin_regions(boundaries)
+        for level in [0, 1, 2]:
+            if row['affected_pcodes'][0] in admin_regions[f'admin{level}']:
+                admin_level = level
+                break
+        # TODO: add warning if admin level is still None
+        # Loop through locs
         for loc in row['affected_pcodes']:
             new_row = {
                 'npi_type': row['our_measures'],
+                'npi_category': row['category'],
+                'admin_level': admin_level,
                 'region_1_geotag': loc,
                 'start_date': row['ENTRY_DATE'],
                 'end_date': row['end_date']
@@ -155,7 +173,7 @@ def write_country_info_to_csv(country_iso3, df, boundaries):
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     filename = os.path.join(output_dir, OUTPUT_CSV_FILENAME.format(country_iso3))
     logger.info(f'Writing final results to {filename}')
-    df_out.to_csv(filename, index=False)
+    df_out.to_csv(filename, index=None)
 
 
 if __name__ == '__main__':

@@ -18,6 +18,7 @@
     "ENTRY_DATE":1584144000000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -42,6 +43,7 @@
     "ENTRY_DATE":1584144000000,
     "Alternative source":null,
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF01"
     ],
@@ -66,6 +68,7 @@
     "ENTRY_DATE":1584144000000,
     "Alternative source":null,
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -90,6 +93,7 @@
     "ENTRY_DATE":1584144000000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -114,6 +118,7 @@
     "ENTRY_DATE":1584144000000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":[
       "AF32",
       "AF33",
@@ -140,6 +145,7 @@
     "ENTRY_DATE":1584144000000,
     "Alternative source":null,
     "our_measures":"school closure",
+    "category":"contact-based",
     "affected_pcodes":[
       "AF32"
     ],
@@ -164,6 +170,7 @@
     "ENTRY_DATE":1584144000000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF32"
     ],
@@ -188,6 +195,7 @@
     "ENTRY_DATE":1584144000000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -212,6 +220,7 @@
     "ENTRY_DATE":1584144000000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":[
       "AF0101",
       "AF3201",
@@ -239,6 +248,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -263,6 +273,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":[
       "AF0101",
       "AF3201",
@@ -290,6 +301,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -314,6 +326,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -338,6 +351,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -362,6 +376,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -386,6 +401,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -410,6 +426,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":"http:\/\/tinyurl.com\/twpqsek ",
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -434,6 +451,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
+    "category":"mobility-based",
     "affected_pcodes":[
       "AF32"
     ],
@@ -458,6 +476,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -482,6 +501,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":[
       "AF32",
       "AF33",
@@ -508,6 +528,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -532,6 +553,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"school closure",
+    "category":"contact-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -556,6 +578,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":[
       "AF32"
     ],
@@ -580,6 +603,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -604,6 +628,7 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF0101"
     ],
@@ -628,6 +653,7 @@
     "ENTRY_DATE":1589155200000,
     "Alternative source":"https:\/\/www.democracynow.org\/2020\/3\/31\/headlines\/afghanistan_releases_hundreds_of_prisoners_to_limit_coronavirus_outbreaks",
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -652,6 +678,7 @@
     "ENTRY_DATE":1589760000000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -676,6 +703,7 @@
     "ENTRY_DATE":1589760000000,
     "Alternative source":null,
     "our_measures":"social distancing",
+    "category":"reproduction number-based",
     "affected_pcodes":[
       "AF"
     ],
@@ -700,6 +728,7 @@
     "ENTRY_DATE":1589760000000,
     "Alternative source":null,
     "our_measures":"closing borders",
+    "category":"mobility-based",
     "affected_pcodes":[
       "AF32",
       "AF33",
