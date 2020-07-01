@@ -18,7 +18,8 @@
     "ENTRY_DATE":1584403200000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "1749":{
     "COUNTRY":"Somalia",
@@ -39,7 +40,8 @@
     "ENTRY_DATE":1584921600000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "1751":{
     "COUNTRY":"Somalia",
@@ -60,7 +62,8 @@
     "ENTRY_DATE":1584921600000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "1752":{
     "COUNTRY":"Somalia",
@@ -81,7 +84,8 @@
     "ENTRY_DATE":1584921600000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "1753":{
     "COUNTRY":"Somalia",
@@ -102,7 +106,8 @@
     "ENTRY_DATE":1584921600000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "2921":{
     "COUNTRY":"Somalia",
@@ -123,7 +128,8 @@
     "ENTRY_DATE":1585353600000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "2922":{
     "COUNTRY":"Somalia",
@@ -144,7 +150,8 @@
     "ENTRY_DATE":1585353600000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "3133":{
     "COUNTRY":"Somalia",
@@ -165,7 +172,8 @@
     "ENTRY_DATE":1585612800000,
     "Alternative source":null,
     "our_measures":"school closure",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "5412":{
     "COUNTRY":"Somalia",
@@ -186,7 +194,8 @@
     "ENTRY_DATE":1586908800000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "6614":{
     "COUNTRY":"Somalia",
@@ -207,7 +216,8 @@
     "ENTRY_DATE":1587427200000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "10523":{
     "COUNTRY":"Somalia",
@@ -228,7 +238,8 @@
     "ENTRY_DATE":1589414400000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "11678":{
     "COUNTRY":"Somalia",
@@ -249,7 +260,8 @@
     "ENTRY_DATE":1590192000000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "11679":{
     "COUNTRY":"Somalia",
@@ -270,7 +282,8 @@
     "ENTRY_DATE":1590192000000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "11680":{
     "COUNTRY":"Somalia",
@@ -291,6 +304,7 @@
     "ENTRY_DATE":1590192000000,
     "Alternative source":null,
     "our_measures":"closing businesses",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   }
 }

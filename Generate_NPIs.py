@@ -6,7 +6,6 @@ from datetime import datetime
 
 import pandas as pd
 import geopandas as gpd
-import xarray as xr
 import numpy as np
 
 from utils import utils
@@ -93,13 +92,7 @@ def get_boundaries_file(country_iso3, config):
 def get_country_info(country_iso3, df_acaps, boundaries):
     logger.info(f'Getting info for {country_iso3}')
     df = df_acaps[df_acaps['ISO'] == country_iso3]
-    # Get list of admin 0, 1 and 2 regions
-    admin_regions = {
-        'admin0': boundaries['ADM0_PCODE'].unique().tolist(),
-        'admin1': boundaries['ADM1_PCODE'].unique().tolist(),
-        'admin2': boundaries['ADM2_PCODE'].unique().tolist()
-    }
-    admin1_to_2_dict = boundaries.groupby('ADM1_PCODE')['ADM2_PCODE'].apply(lambda x: x.tolist()).to_dict()
+    admin_regions = get_admin_regions(boundaries)
     # Check if JSON file already exists, if so read it in
     output_dir = os.path.join(INPUT_DIR, country_iso3, OUTPUT_DATA_DIR)
     filename = os.path.join(output_dir, OUTPUT_JSON_FILENAME.format(country_iso3))
@@ -107,65 +100,62 @@ def get_country_info(country_iso3, df_acaps, boundaries):
         df_manual = pd.read_json(filename, orient='index')
         df_manual['ID'] = df_manual.index
         # Join the pcode info
-        df = df.merge(df_manual[['ID', 'affected_pcodes']], how='left', on='ID')
+        df = df.merge(df_manual[['ID', 'affected_pcodes', 'end_date']], how='left', on='ID')
         # Warn about any empty entries
         empty_entries = df[df['affected_pcodes'].isna()]
         if not empty_entries.empty:
             logger.warning(f'The following NPIs for {country_iso3} need location info: {empty_entries["ID"].values}')
     else:
-        # If it doesn't exist, add an affected pcodes column
+        # If it doesn't exist, add empty columns
         df['affected_pcodes'] = None
+        df['end_date'] = None
     # Write out to a JSON
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     logger.info(f'Writing to {filename}')
     df.set_index('ID').to_json(filename, indent=2, orient='index')
-    # Convert all region levels to admin 2
-    # If admin 0, just add all of admin 2 directly
-    df['affected_pcodes'] = df['affected_pcodes'].apply(lambda x: admin_regions['admin2'] if x == admin_regions['admin0'] else x)
-    # For the rest, check if any items in the list are admin 1. If they are, expand them and add them back in
-    for row in df.itertuples():
-        loc_list = df.at[row.Index, 'affected_pcodes']
-        final_loc_list = []
-        try:
-            for loc in loc_list:
-                if loc in admin_regions['admin1']:
-                    final_loc_list += admin1_to_2_dict[loc]
-                elif loc in admin_regions['admin2']:
-                    final_loc_list.append(loc)
-                else:
-                    logger.error(f'Found incorrect pcode {loc}')
-        # If loc_list is not a list
-        except TypeError:
-            continue
-        df.at[row.Index, 'affected_pcodes'] = final_loc_list
     return df
 
 
-def write_country_info_to_csv(country_iso3, df, boundaries):
-    # Create 3d xarray
-    coords = {
-        'date': pd.date_range(df['ENTRY_DATE'].min(), datetime.today()),
-        'measure': sorted(df['our_measures'].unique()),
-        'admin2': sorted(boundaries['ADM2_PCODE'].unique()),
+def get_admin_regions(boundaries):
+    # Get list of admin 0, 1 and 2 regions
+    return {
+        'admin0': boundaries['ADM0_PCODE'].unique().tolist(),
+        'admin1': boundaries['ADM1_PCODE'].unique().tolist(),
+        'admin2': boundaries['ADM2_PCODE'].unique().tolist()
     }
-    da = xr.DataArray(np.zeros([len(val) for val in coords.values()], dtype=int),
-                      dims=coords.keys(), coords=coords)
-    # Only take rows with locations
-    df = df[df['affected_pcodes'].notna()]
+
+
+def write_country_info_to_csv(country_iso3, df, boundaries):
+    # Only take rows with locations, and that are NPI addtiona
+    df = df[df['affected_pcodes'].notna() & (df['LOG_TYPE'] == 'add')]
     if df.empty:
-       logger.warning(f'No location information available for {country_iso3}, output file will just have 0s')
-    # Populate it by looping through the dataframe
+        logger.warning(f'No location information available for {country_iso3}, output file will just have 0s')
+    # Make the output df
+    df_out = pd.DataFrame(columns=[
+        'npi_type',
+        'npi_category',
+        'admin_level',
+        'region_1_geotag',
+        'region_2_geotag',
+        'start_date',
+        'end_date',
+        'compliance'
+    ])
     for _, row in df.iterrows():
-        date_range = pd.date_range(row['ENTRY_DATE'], datetime.today())
-        value_to_add = 1 if row['LOG_TYPE'] == 'add' else -1
-        da.loc[date_range, row['our_measures'], row['affected_pcodes']] += value_to_add
-    # Convert to dataframe and write out
-    df_out = da.to_dataframe('result').unstack().droplevel(0, axis=1)
+        for loc in row['affected_pcodes']:
+            new_row = {
+                'npi_type': row['our_measures'],
+                'region_1_geotag': loc,
+                'start_date': row['ENTRY_DATE'],
+                'end_date': row['end_date']
+            }
+            df_out = df_out.append(new_row, ignore_index=True)
+    # Write out
     output_dir = os.path.join(OUTPUT_DIR, country_iso3, 'NPIs')
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     filename = os.path.join(output_dir, OUTPUT_CSV_FILENAME.format(country_iso3))
     logger.info(f'Writing final results to {filename}')
-    df_out.to_csv(filename)
+    df_out.to_csv(filename, index=False)
 
 
 if __name__ == '__main__':

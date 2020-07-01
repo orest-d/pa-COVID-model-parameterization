@@ -18,7 +18,8 @@
     "ENTRY_DATE":1584316800000,
     "Alternative source":"https:\/\/www.haitilibre.com\/en\/news-29955-haiti-health-surveillance-measures-are-deployed-in-the-country-s-ports-and-airports.html",
     "our_measures":"closing borders",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "1580":{
     "COUNTRY":"Haiti",
@@ -39,7 +40,8 @@
     "ENTRY_DATE":1584921600000,
     "Alternative source":"https:\/\/www.diplomatie.gouv.fr\/fr\/conseils-aux-voyageurs\/conseils-par-pays-destination\/haiti\/",
     "our_measures":"closing borders",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "1581":{
     "COUNTRY":"Haiti",
@@ -60,7 +62,8 @@
     "ENTRY_DATE":1584921600000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "1599":{
     "COUNTRY":"Haiti",
@@ -81,7 +84,8 @@
     "ENTRY_DATE":1584921600000,
     "Alternative source":"https:\/\/ht.usembassy.gov\/covid-19-information\/",
     "our_measures":"social distancing",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "1600":{
     "COUNTRY":"Haiti",
@@ -102,7 +106,8 @@
     "ENTRY_DATE":1584921600000,
     "Alternative source":null,
     "our_measures":"school closure",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "1601":{
     "COUNTRY":"Haiti",
@@ -123,7 +128,8 @@
     "ENTRY_DATE":1584921600000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "1602":{
     "COUNTRY":"Haiti",
@@ -144,7 +150,8 @@
     "ENTRY_DATE":1584921600000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "4283":{
     "COUNTRY":"Haiti",
@@ -165,7 +172,8 @@
     "ENTRY_DATE":1586217600000,
     "Alternative source":"https:\/\/www.facebook.com\/PrimatureHaitienne\/photos\/a.753740558047276\/2935153543239289\/?type=3&theater",
     "our_measures":"face mask wearing",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "5428":{
     "COUNTRY":"Haiti",
@@ -186,7 +194,8 @@
     "ENTRY_DATE":1586908800000,
     "Alternative source":null,
     "our_measures":"closing borders",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "5454":{
     "COUNTRY":"Haiti",
@@ -207,7 +216,8 @@
     "ENTRY_DATE":1586908800000,
     "Alternative source":null,
     "our_measures":"reduction of size of gatherings",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "5553":{
     "COUNTRY":"Haiti",
@@ -228,7 +238,8 @@
     "ENTRY_DATE":1586995200000,
     "Alternative source":null,
     "our_measures":"closing businesses",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "5554":{
     "COUNTRY":"Haiti",
@@ -249,7 +260,8 @@
     "ENTRY_DATE":1586995200000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "5555":{
     "COUNTRY":"Haiti",
@@ -270,7 +282,8 @@
     "ENTRY_DATE":1586995200000,
     "Alternative source":"https:\/\/www.gov.uk\/foreign-travel-advice\/haiti\/coronavirus",
     "our_measures":"partial lockdown",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "6126":{
     "COUNTRY":"Haiti",
@@ -291,7 +304,8 @@
     "ENTRY_DATE":1587081600000,
     "Alternative source":null,
     "our_measures":"partial lockdown",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "8837":{
     "COUNTRY":"Haiti",
@@ -312,7 +326,8 @@
     "ENTRY_DATE":1588550400000,
     "Alternative source":null,
     "our_measures":"social distancing",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "10529":{
     "COUNTRY":"Haiti",
@@ -333,7 +348,8 @@
     "ENTRY_DATE":1589414400000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   },
   "10530":{
     "COUNTRY":"Haiti",
@@ -354,6 +370,7 @@
     "ENTRY_DATE":1589414400000,
     "Alternative source":null,
     "our_measures":"restricting inter-regional movement",
-    "affected_pcodes":null
+    "affected_pcodes":null,
+    "end_date":null
   }
 }

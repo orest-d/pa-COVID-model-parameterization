@@ -20,7 +20,8 @@
     "our_measures":"closing borders",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "2":{
     "COUNTRY":"Afghanistan",
@@ -43,7 +44,8 @@
     "our_measures":"social distancing",
     "affected_pcodes":[
       "AF01"
-    ]
+    ],
+    "end_date":null
   },
   "3":{
     "COUNTRY":"Afghanistan",
@@ -66,7 +68,8 @@
     "our_measures":"social distancing",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "5":{
     "COUNTRY":"Afghanistan",
@@ -89,7 +92,8 @@
     "our_measures":"reduction of size of gatherings",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "6":{
     "COUNTRY":"Afghanistan",
@@ -114,7 +118,8 @@
       "AF32",
       "AF33",
       "AF34"
-    ]
+    ],
+    "end_date":null
   },
   "8":{
     "COUNTRY":"Afghanistan",
@@ -137,7 +142,8 @@
     "our_measures":"school closure",
     "affected_pcodes":[
       "AF32"
-    ]
+    ],
+    "end_date":null
   },
   "10":{
     "COUNTRY":"Afghanistan",
@@ -160,7 +166,8 @@
     "our_measures":"reduction of size of gatherings",
     "affected_pcodes":[
       "AF32"
-    ]
+    ],
+    "end_date":null
   },
   "17":{
     "COUNTRY":"Afghanistan",
@@ -183,7 +190,8 @@
     "our_measures":"closing borders",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "23":{
     "COUNTRY":"Afghanistan",
@@ -209,7 +217,8 @@
       "AF3201",
       "AF2701",
       "AF2101"
-    ]
+    ],
+    "end_date":null
   },
   "4245":{
     "COUNTRY":"Afghanistan",
@@ -232,7 +241,8 @@
     "our_measures":"social distancing",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "4246":{
     "COUNTRY":"Afghanistan",
@@ -258,7 +268,8 @@
       "AF3201",
       "AF2701",
       "AF2101"
-    ]
+    ],
+    "end_date":null
   },
   "4247":{
     "COUNTRY":"Afghanistan",
@@ -281,7 +292,8 @@
     "our_measures":"closing borders",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "4248":{
     "COUNTRY":"Afghanistan",
@@ -304,7 +316,8 @@
     "our_measures":"closing borders",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "4250":{
     "COUNTRY":"Afghanistan",
@@ -327,7 +340,8 @@
     "our_measures":"social distancing",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "4251":{
     "COUNTRY":"Afghanistan",
@@ -350,7 +364,8 @@
     "our_measures":"social distancing",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "4254":{
     "COUNTRY":"Afghanistan",
@@ -373,7 +388,8 @@
     "our_measures":"social distancing",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "4255":{
     "COUNTRY":"Afghanistan",
@@ -396,7 +412,8 @@
     "our_measures":"social distancing",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "4259":{
     "COUNTRY":"Afghanistan",
@@ -419,7 +436,8 @@
     "our_measures":"restricting inter-regional movement",
     "affected_pcodes":[
       "AF32"
-    ]
+    ],
+    "end_date":null
   },
   "4261":{
     "COUNTRY":"Afghanistan",
@@ -442,7 +460,8 @@
     "our_measures":"social distancing",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "4263":{
     "COUNTRY":"Afghanistan",
@@ -467,7 +486,8 @@
       "AF32",
       "AF33",
       "AF34"
-    ]
+    ],
+    "end_date":null
   },
   "4267":{
     "COUNTRY":"Afghanistan",
@@ -490,7 +510,8 @@
     "our_measures":"social distancing",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "4268":{
     "COUNTRY":"Afghanistan",
@@ -513,7 +534,8 @@
     "our_measures":"school closure",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "4269":{
     "COUNTRY":"Afghanistan",
@@ -536,7 +558,8 @@
     "our_measures":"closing borders",
     "affected_pcodes":[
       "AF32"
-    ]
+    ],
+    "end_date":null
   },
   "4274":{
     "COUNTRY":"Afghanistan",
@@ -559,7 +582,8 @@
     "our_measures":"reduction of size of gatherings",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "4276":{
     "COUNTRY":"Afghanistan",
@@ -582,7 +606,8 @@
     "our_measures":"partial lockdown",
     "affected_pcodes":[
       "AF0101"
-    ]
+    ],
+    "end_date":null
   },
   "9923":{
     "COUNTRY":"Afghanistan",
@@ -605,7 +630,8 @@
     "our_measures":"social distancing",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "11020":{
     "COUNTRY":"Afghanistan",
@@ -628,7 +654,8 @@
     "our_measures":"closing borders",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "11021":{
     "COUNTRY":"Afghanistan",
@@ -651,7 +678,8 @@
     "our_measures":"social distancing",
     "affected_pcodes":[
       "AF"
-    ]
+    ],
+    "end_date":null
   },
   "11022":{
     "COUNTRY":"Afghanistan",
@@ -676,6 +704,7 @@
       "AF32",
       "AF33",
       "AF34"
-    ]
+    ],
+    "end_date":null
   }
 }
