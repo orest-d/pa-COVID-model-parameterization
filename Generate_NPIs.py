@@ -82,7 +82,12 @@ def get_boundaries_file(country_iso3, config):
     input_dir = os.path.join(INPUT_DIR, country_iso3)
     input_shp = os.path.join(input_dir, SHAPEFILE_DIR, config['admin']['directory'],
                              f'{config["admin"]["directory"]}.shp')
-    return gpd.read_file(input_shp)
+    # Read in and rename columns for Somalia
+    return gpd.read_file(input_shp).rename(columns={
+        'admin0Pcod': 'ADM0_PCODE',
+        'admin1Pcod': 'ADM1_PCODE',
+        'admin2Pcod': 'ADM2_PCODE',
+    })
 
 
 def get_country_info(country_iso3, df_acaps, boundaries):
@@ -106,7 +111,7 @@ def get_country_info(country_iso3, df_acaps, boundaries):
         # Warn about any empty entries
         empty_entries = df[df['affected_pcodes'].isna()]
         if not empty_entries.empty:
-            logger.warning(f'The following NPIs need location info: {empty_entries["ID"].values}')
+            logger.warning(f'The following NPIs for {country_iso3} need location info: {empty_entries["ID"].values}')
     else:
         # If it doesn't exist, add an affected pcodes column
         df['affected_pcodes'] = None
