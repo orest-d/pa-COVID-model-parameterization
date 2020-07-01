@@ -11,7 +11,7 @@ import geopandas as gpd
 import pandas as pd
 from rasterstats import zonal_stats
 
-import utils
+from utils import utils
 
 INPUT_DIR = 'Inputs'
 SHAPEFILE_DIR = 'Shapefiles'

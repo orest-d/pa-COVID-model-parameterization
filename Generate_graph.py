@@ -8,7 +8,7 @@ import pandas as pd
 import geopandas as gpd
 import networkx as nx
 
-import utils
+from utils import utils
 
 MAIN_DIR = 'Outputs'
 OUTPUT_DIR = 'Graph'
