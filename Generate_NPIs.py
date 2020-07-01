@@ -107,7 +107,8 @@ def get_country_info(country_iso3, df_acaps, boundaries):
         df_manual = pd.read_json(filename, orient='index')
         df_manual['ID'] = df_manual.index
         # Join the pcode info
-        df = df.merge(df_manual[['ID', 'affected_pcodes', 'end_date']], how='left', on='ID')
+        df = df.merge(df_manual[['ID', 'affected_pcodes', 'end_date', 'add_npi_id', 'remove_npi_id']],
+                      how='left', on='ID')
         # Warn about any empty entries
         empty_entries = df[df['affected_pcodes'].isna()]
         if not empty_entries.empty:
@@ -116,6 +117,8 @@ def get_country_info(country_iso3, df_acaps, boundaries):
         # If it doesn't exist, add empty columns
         df['affected_pcodes'] = None
         df['end_date'] = None
+        df['add_npi_id'] = None
+        df['remove_npi_id'] = None
     # Write out to a JSON
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     logger.info(f'Writing to {filename}')

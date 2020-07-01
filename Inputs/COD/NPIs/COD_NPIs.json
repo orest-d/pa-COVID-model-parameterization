@@ -20,7 +20,9 @@
     "our_measures":"social distancing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "204":{
     "COUNTRY":"Congo DR",
@@ -43,7 +45,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "1126":{
     "COUNTRY":"Congo DR",
@@ -66,7 +70,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "1127":{
     "COUNTRY":"Congo DR",
@@ -89,7 +95,9 @@
     "our_measures":"school closure",
     "category":"contact-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "1128":{
     "COUNTRY":"Congo DR",
@@ -112,7 +120,9 @@
     "our_measures":"reduction of size of gatherings",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "1129":{
     "COUNTRY":"Congo DR",
@@ -135,7 +145,9 @@
     "our_measures":"social distancing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "1130":{
     "COUNTRY":"Congo DR",
@@ -158,7 +170,9 @@
     "our_measures":"reduction of size of gatherings",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "2704":{
     "COUNTRY":"Congo DR",
@@ -181,7 +195,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "2705":{
     "COUNTRY":"Congo DR",
@@ -204,7 +220,9 @@
     "our_measures":"restricting inter-regional movement",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "2706":{
     "COUNTRY":"Congo DR",
@@ -227,7 +245,9 @@
     "our_measures":"reduction of size of gatherings",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "2707":{
     "COUNTRY":"Congo DR",
@@ -250,7 +270,9 @@
     "our_measures":"partial lockdown",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "5046":{
     "COUNTRY":"Congo DR",
@@ -273,7 +295,9 @@
     "our_measures":"partial lockdown",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "6432":{
     "COUNTRY":"Congo DR",
@@ -296,7 +320,9 @@
     "our_measures":"reduction of size of gatherings",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "6433":{
     "COUNTRY":"Congo DR",
@@ -319,7 +345,9 @@
     "our_measures":"reduction of size of gatherings",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "6435":{
     "COUNTRY":"Congo DR",
@@ -342,7 +370,9 @@
     "our_measures":"reduction of size of gatherings",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "6436":{
     "COUNTRY":"Congo DR",
@@ -365,7 +395,9 @@
     "our_measures":"partial lockdown",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "7002":{
     "COUNTRY":"Congo DR",
@@ -388,7 +420,9 @@
     "our_measures":"face mask wearing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "7003":{
     "COUNTRY":"Congo DR",
@@ -411,7 +445,9 @@
     "our_measures":"partial lockdown",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "7004":{
     "COUNTRY":"Congo DR",
@@ -434,7 +470,9 @@
     "our_measures":"restricting inter-regional movement",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "7005":{
     "COUNTRY":"Congo DR",
@@ -457,7 +495,9 @@
     "our_measures":"partial lockdown",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "7006":{
     "COUNTRY":"Congo DR",
@@ -480,7 +520,9 @@
     "our_measures":"social distancing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "7007":{
     "COUNTRY":"Congo DR",
@@ -503,7 +545,9 @@
     "our_measures":"face mask wearing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "7008":{
     "COUNTRY":"Congo DR",
@@ -526,7 +570,9 @@
     "our_measures":"social distancing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "7009":{
     "COUNTRY":"Congo DR",
@@ -549,7 +595,9 @@
     "our_measures":"restricting inter-regional movement",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "8320":{
     "COUNTRY":"Congo DR",
@@ -572,7 +620,9 @@
     "our_measures":"partial lockdown",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "8321":{
     "COUNTRY":"Congo DR",
@@ -595,7 +645,9 @@
     "our_measures":"restricting inter-regional movement",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "8324":{
     "COUNTRY":"Congo DR",
@@ -618,7 +670,9 @@
     "our_measures":"school closure",
     "category":"contact-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "8327":{
     "COUNTRY":"Congo DR",
@@ -641,7 +695,9 @@
     "our_measures":"reduction of size of gatherings",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "8328":{
     "COUNTRY":"Congo DR",
@@ -664,7 +720,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "9728":{
     "COUNTRY":"Congo DR",
@@ -687,7 +745,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "10482":{
     "COUNTRY":"Congo DR",
@@ -710,7 +770,9 @@
     "our_measures":"face mask wearing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "10483":{
     "COUNTRY":"Congo DR",
@@ -733,7 +795,9 @@
     "our_measures":"face mask wearing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "11515":{
     "COUNTRY":"Congo DR",
@@ -756,7 +820,9 @@
     "our_measures":"partial lockdown",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "12062":{
     "COUNTRY":"Congo DR",
@@ -779,7 +845,9 @@
     "our_measures":"social distancing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "12063":{
     "COUNTRY":"Congo DR",
@@ -802,7 +870,9 @@
     "our_measures":"social distancing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "12064":{
     "COUNTRY":"Congo DR",
@@ -825,6 +895,8 @@
     "our_measures":"restricting inter-regional movement",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   }
 }

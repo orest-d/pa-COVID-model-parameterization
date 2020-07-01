@@ -22,7 +22,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "2":{
     "COUNTRY":"Afghanistan",
@@ -47,7 +49,9 @@
     "affected_pcodes":[
       "AF01"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "3":{
     "COUNTRY":"Afghanistan",
@@ -72,7 +76,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "5":{
     "COUNTRY":"Afghanistan",
@@ -97,7 +103,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "6":{
     "COUNTRY":"Afghanistan",
@@ -124,7 +132,9 @@
       "AF33",
       "AF34"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "8":{
     "COUNTRY":"Afghanistan",
@@ -149,7 +159,9 @@
     "affected_pcodes":[
       "AF32"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "10":{
     "COUNTRY":"Afghanistan",
@@ -174,7 +186,9 @@
     "affected_pcodes":[
       "AF32"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "17":{
     "COUNTRY":"Afghanistan",
@@ -199,7 +213,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "23":{
     "COUNTRY":"Afghanistan",
@@ -227,7 +243,9 @@
       "AF2701",
       "AF2101"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4245":{
     "COUNTRY":"Afghanistan",
@@ -252,7 +270,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4246":{
     "COUNTRY":"Afghanistan",
@@ -280,7 +300,9 @@
       "AF2701",
       "AF2101"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4247":{
     "COUNTRY":"Afghanistan",
@@ -305,7 +327,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4248":{
     "COUNTRY":"Afghanistan",
@@ -330,7 +354,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4250":{
     "COUNTRY":"Afghanistan",
@@ -355,7 +381,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4251":{
     "COUNTRY":"Afghanistan",
@@ -380,7 +408,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4254":{
     "COUNTRY":"Afghanistan",
@@ -405,7 +435,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4255":{
     "COUNTRY":"Afghanistan",
@@ -430,7 +462,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4259":{
     "COUNTRY":"Afghanistan",
@@ -455,7 +489,9 @@
     "affected_pcodes":[
       "AF32"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4261":{
     "COUNTRY":"Afghanistan",
@@ -480,7 +516,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4263":{
     "COUNTRY":"Afghanistan",
@@ -507,7 +545,9 @@
       "AF33",
       "AF34"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4267":{
     "COUNTRY":"Afghanistan",
@@ -532,7 +572,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4268":{
     "COUNTRY":"Afghanistan",
@@ -557,7 +599,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4269":{
     "COUNTRY":"Afghanistan",
@@ -582,7 +626,9 @@
     "affected_pcodes":[
       "AF32"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4274":{
     "COUNTRY":"Afghanistan",
@@ -607,7 +653,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "4276":{
     "COUNTRY":"Afghanistan",
@@ -632,7 +680,9 @@
     "affected_pcodes":[
       "AF0101"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "9923":{
     "COUNTRY":"Afghanistan",
@@ -657,7 +707,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "11020":{
     "COUNTRY":"Afghanistan",
@@ -682,7 +734,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "11021":{
     "COUNTRY":"Afghanistan",
@@ -707,7 +761,9 @@
     "affected_pcodes":[
       "AF"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "11022":{
     "COUNTRY":"Afghanistan",
@@ -734,6 +790,8 @@
       "AF33",
       "AF34"
     ],
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   }
 }

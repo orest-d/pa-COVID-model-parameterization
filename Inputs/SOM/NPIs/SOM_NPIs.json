@@ -20,7 +20,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "1749":{
     "COUNTRY":"Somalia",
@@ -43,7 +45,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "1751":{
     "COUNTRY":"Somalia",
@@ -66,7 +70,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "1752":{
     "COUNTRY":"Somalia",
@@ -89,7 +95,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "1753":{
     "COUNTRY":"Somalia",
@@ -112,7 +120,9 @@
     "our_measures":"social distancing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "2921":{
     "COUNTRY":"Somalia",
@@ -135,7 +145,9 @@
     "our_measures":"restricting inter-regional movement",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "2922":{
     "COUNTRY":"Somalia",
@@ -158,7 +170,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "3133":{
     "COUNTRY":"Somalia",
@@ -181,7 +195,9 @@
     "our_measures":"school closure",
     "category":"contact-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "5412":{
     "COUNTRY":"Somalia",
@@ -204,7 +220,9 @@
     "our_measures":"social distancing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "6614":{
     "COUNTRY":"Somalia",
@@ -227,7 +245,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "10523":{
     "COUNTRY":"Somalia",
@@ -250,7 +270,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "11678":{
     "COUNTRY":"Somalia",
@@ -273,7 +295,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "11679":{
     "COUNTRY":"Somalia",
@@ -296,7 +320,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "11680":{
     "COUNTRY":"Somalia",
@@ -319,6 +345,8 @@
     "our_measures":"closing businesses",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   }
 }

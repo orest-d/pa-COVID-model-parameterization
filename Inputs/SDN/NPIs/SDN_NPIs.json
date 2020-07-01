@@ -20,7 +20,9 @@
     "our_measures":"restricting inter-regional movement",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "810":{
     "COUNTRY":"Sudan",
@@ -43,7 +45,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "811":{
     "COUNTRY":"Sudan",
@@ -66,7 +70,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "818":{
     "COUNTRY":"Sudan",
@@ -89,7 +95,9 @@
     "our_measures":"school closure",
     "category":"contact-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "2994":{
     "COUNTRY":"Sudan",
@@ -112,7 +120,9 @@
     "our_measures":"social distancing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "2995":{
     "COUNTRY":"Sudan",
@@ -135,7 +145,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "2996":{
     "COUNTRY":"Sudan",
@@ -158,7 +170,9 @@
     "our_measures":"restricting inter-regional movement",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "3606":{
     "COUNTRY":"Sudan",
@@ -181,7 +195,9 @@
     "our_measures":"reduction of size of gatherings",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "3607":{
     "COUNTRY":"Sudan",
@@ -204,7 +220,9 @@
     "our_measures":"social distancing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "5337":{
     "COUNTRY":"Sudan",
@@ -227,7 +245,9 @@
     "our_measures":"partial lockdown",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "5338":{
     "COUNTRY":"Sudan",
@@ -250,7 +270,9 @@
     "our_measures":"social distancing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "6607":{
     "COUNTRY":"Sudan",
@@ -273,7 +295,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "6608":{
     "COUNTRY":"Sudan",
@@ -296,7 +320,9 @@
     "our_measures":"restricting inter-regional movement",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "8603":{
     "COUNTRY":"Sudan",
@@ -319,7 +345,9 @@
     "our_measures":"closing businesses",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "9844":{
     "COUNTRY":"Sudan",
@@ -342,7 +370,9 @@
     "our_measures":"partial lockdown",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "10043":{
     "COUNTRY":"Sudan",
@@ -365,7 +395,9 @@
     "our_measures":"reduction of size of gatherings",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "10044":{
     "COUNTRY":"Sudan",
@@ -388,7 +420,9 @@
     "our_measures":"reduction of size of gatherings",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "11301":{
     "COUNTRY":"Sudan",
@@ -411,7 +445,9 @@
     "our_measures":"partial lockdown",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "11776":{
     "COUNTRY":"Sudan",
@@ -434,7 +470,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "11777":{
     "COUNTRY":"Sudan",
@@ -457,7 +495,9 @@
     "our_measures":"restricting inter-regional movement",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "13031":{
     "COUNTRY":"Sudan",
@@ -480,7 +520,9 @@
     "our_measures":"partial lockdown",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "13032":{
     "COUNTRY":"Sudan",
@@ -503,7 +545,9 @@
     "our_measures":"closing borders",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "13033":{
     "COUNTRY":"Sudan",
@@ -526,7 +570,9 @@
     "our_measures":"restricting inter-regional movement",
     "category":"mobility-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   },
   "13034":{
     "COUNTRY":"Sudan",
@@ -549,6 +595,8 @@
     "our_measures":"social distancing",
     "category":"reproduction number-based",
     "affected_pcodes":null,
-    "end_date":null
+    "end_date":null,
+    "add_npi_id":null,
+    "remove_npi_id":null
   }
 }
