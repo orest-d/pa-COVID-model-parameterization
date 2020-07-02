@@ -103,12 +103,17 @@ def get_country_info(country_iso3, df_acaps, boundaries):
     # Check if JSON file already exists, if so read it in
     output_dir = os.path.join(INPUT_DIR, country_iso3, OUTPUT_DATA_DIR)
     filename = os.path.join(output_dir, INTERMEDIATE_OUTPUT_FILENAME.format(country_iso3))
+    new_cols = ['affected_pcodes',
+                'end_date',
+                'add_npi_id',
+                'remove_npi_id',
+                'compliance',
+                'use_in_model']
     if os.path.isfile(filename):
         logger.info(f'Reading in input file {filename}')
         df_manual = pd.read_csv(filename)
         # Join the pcode info
-        df = df.merge(df_manual[['ID', 'affected_pcodes', 'end_date', 'add_npi_id', 'remove_npi_id']],
-                      how='left', on='ID')
+        df = df.merge(df_manual[['ID'] + new_cols], how='left', on='ID')
         # Warn about any empty entries
         empty_entries = df[df['affected_pcodes'].isna()]
         if not empty_entries.empty:
@@ -116,10 +121,8 @@ def get_country_info(country_iso3, df_acaps, boundaries):
     else:
         # If it doesn't exist, add empty columns
         logger.info(f'No input file {filename} found, creating one')
-        df['affected_pcodes'] = None
-        df['end_date'] = None
-        df['add_npi_id'] = None
-        df['remove_npi_id'] = None
+        for col in new_cols:
+            df[col] = None
     # Write out to a JSON
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     logger.info(f'Writing to {filename}')
@@ -146,8 +149,7 @@ def write_country_info_to_csv(country_iso3, df, boundaries):
         'npi_type',
         'npi_category',
         'admin_level',
-        'region_1_geotag',
-        'region_2_geotag',
+        'region_geotag',
         'start_date',
         'end_date',
         'compliance'
