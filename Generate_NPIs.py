@@ -22,8 +22,8 @@ RAW_DATA_FILENAME = 'ACAPS_npis_raw_data.xlsx'
 RAW_DATA_FILEPATH = os.path.join(RAW_DATA_DIR, RAW_DATA_FILENAME)
 
 OUTPUT_DATA_DIR = 'NPIs'
-OUTPUT_JSON_FILENAME = '{}_NPIs.json'
-OUTPUT_CSV_FILENAME = '{}_NPIs.csv'
+INTERMEDIATE_OUTPUT_FILENAME = '{}_NPIs_input.csv'
+FINAL_OUTPUT_FILENAME = '{}_NPIs.csv'
 
 MEASURE_EQUIVALENCE_FILENAME = 'NPIs - ACAPS NPIs.csv'
 
@@ -102,10 +102,10 @@ def get_country_info(country_iso3, df_acaps, boundaries):
     admin_regions = get_admin_regions(boundaries)
     # Check if JSON file already exists, if so read it in
     output_dir = os.path.join(INPUT_DIR, country_iso3, OUTPUT_DATA_DIR)
-    filename = os.path.join(output_dir, OUTPUT_JSON_FILENAME.format(country_iso3))
+    filename = os.path.join(output_dir, INTERMEDIATE_OUTPUT_FILENAME.format(country_iso3))
     if os.path.isfile(filename):
-        df_manual = pd.read_json(filename, orient='index')
-        df_manual['ID'] = df_manual.index
+        logger.info(f'Reading in input file {filename}')
+        df_manual = pd.read_csv(filename)
         # Join the pcode info
         df = df.merge(df_manual[['ID', 'affected_pcodes', 'end_date', 'add_npi_id', 'remove_npi_id']],
                       how='left', on='ID')
@@ -115,6 +115,7 @@ def get_country_info(country_iso3, df_acaps, boundaries):
             logger.warning(f'The following NPIs for {country_iso3} need location info: {empty_entries["ID"].values}')
     else:
         # If it doesn't exist, add empty columns
+        logger.info(f'No input file {filename} found, creating one')
         df['affected_pcodes'] = None
         df['end_date'] = None
         df['add_npi_id'] = None
@@ -122,7 +123,7 @@ def get_country_info(country_iso3, df_acaps, boundaries):
     # Write out to a JSON
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     logger.info(f'Writing to {filename}')
-    df.set_index('ID').to_json(filename, indent=2, orient='index')
+    df.to_csv(filename, index=False)
     return df
 
 
@@ -174,7 +175,7 @@ def write_country_info_to_csv(country_iso3, df, boundaries):
     # Write out
     output_dir = os.path.join(OUTPUT_DIR, country_iso3, 'NPIs')
     Path(output_dir).mkdir(parents=True, exist_ok=True)
-    filename = os.path.join(output_dir, OUTPUT_CSV_FILENAME.format(country_iso3))
+    filename = os.path.join(output_dir, FINAL_OUTPUT_FILENAME.format(country_iso3))
     logger.info(f'Writing final results to {filename}')
     df_out.to_csv(filename, index=None)
 
