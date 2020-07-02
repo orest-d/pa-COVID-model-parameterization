@@ -1,225 +1,29 @@
-npi_type,npi_category,admin_level,region_geotag,start_date,end_date,compliance,region_1_geotag
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,[
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,'
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,S
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,D
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,0
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,1
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,0
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,0
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,7
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,'
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,","
-restricting inter-regional movement,mobility-based,,,2020-03-15,,, 
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,'
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,S
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,D
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,1
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,0
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,0
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,6
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,4
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,'
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,","
-restricting inter-regional movement,mobility-based,,,2020-03-15,,, 
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,'
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,S
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,D
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,1
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,7
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,'
-restricting inter-regional movement,mobility-based,,,2020-03-15,,,]
-closing borders,mobility-based,,,2020-03-17,,,[
-closing borders,mobility-based,,,2020-03-17,,,'
-closing borders,mobility-based,,,2020-03-17,,,S
-closing borders,mobility-based,,,2020-03-17,,,D
-closing borders,mobility-based,,,2020-03-17,,,'
-closing borders,mobility-based,,,2020-03-17,,,]
-closing borders,mobility-based,,,2020-03-17,,,[
-closing borders,mobility-based,,,2020-03-17,,,'
-closing borders,mobility-based,,,2020-03-17,,,S
-closing borders,mobility-based,,,2020-03-17,,,D
-closing borders,mobility-based,,,2020-03-17,,,'
-closing borders,mobility-based,,,2020-03-17,,,]
-school closure,contact-based,,,2020-03-17,,,[
-school closure,contact-based,,,2020-03-17,,,'
-school closure,contact-based,,,2020-03-17,,,S
-school closure,contact-based,,,2020-03-17,,,D
-school closure,contact-based,,,2020-03-17,,,'
-school closure,contact-based,,,2020-03-17,,,]
-social distancing,reproduction number-based,,,2020-03-29,,,[
-social distancing,reproduction number-based,,,2020-03-29,,,'
-social distancing,reproduction number-based,,,2020-03-29,,,S
-social distancing,reproduction number-based,,,2020-03-29,,,D
-social distancing,reproduction number-based,,,2020-03-29,,,'
-social distancing,reproduction number-based,,,2020-03-29,,,]
-closing borders,mobility-based,,,2020-03-29,,,[
-closing borders,mobility-based,,,2020-03-29,,,'
-closing borders,mobility-based,,,2020-03-29,,,S
-closing borders,mobility-based,,,2020-03-29,,,D
-closing borders,mobility-based,,,2020-03-29,,,'
-closing borders,mobility-based,,,2020-03-29,,,]
-restricting inter-regional movement,mobility-based,,,2020-03-29,,,[
-restricting inter-regional movement,mobility-based,,,2020-03-29,,,'
-restricting inter-regional movement,mobility-based,,,2020-03-29,,,S
-restricting inter-regional movement,mobility-based,,,2020-03-29,,,D
-restricting inter-regional movement,mobility-based,,,2020-03-29,,,'
-restricting inter-regional movement,mobility-based,,,2020-03-29,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-04-02,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-04-02,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-04-02,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-04-02,,,D
-reduction of size of gatherings,reproduction number-based,,,2020-04-02,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-04-02,,,]
-social distancing,reproduction number-based,,,2020-04-02,,,[
-social distancing,reproduction number-based,,,2020-04-02,,,'
-social distancing,reproduction number-based,,,2020-04-02,,,S
-social distancing,reproduction number-based,,,2020-04-02,,,D
-social distancing,reproduction number-based,,,2020-04-02,,,'
-social distancing,reproduction number-based,,,2020-04-02,,,]
-partial lockdown,reproduction number-based,,,2020-04-14,,,[
-partial lockdown,reproduction number-based,,,2020-04-14,,,'
-partial lockdown,reproduction number-based,,,2020-04-14,,,S
-partial lockdown,reproduction number-based,,,2020-04-14,,,D
-partial lockdown,reproduction number-based,,,2020-04-14,,,0
-partial lockdown,reproduction number-based,,,2020-04-14,,,1
-partial lockdown,reproduction number-based,,,2020-04-14,,,0
-partial lockdown,reproduction number-based,,,2020-04-14,,,0
-partial lockdown,reproduction number-based,,,2020-04-14,,,7
-partial lockdown,reproduction number-based,,,2020-04-14,,,'
-partial lockdown,reproduction number-based,,,2020-04-14,,,]
-social distancing,reproduction number-based,,,2020-04-14,,,[
-social distancing,reproduction number-based,,,2020-04-14,,,'
-social distancing,reproduction number-based,,,2020-04-14,,,S
-social distancing,reproduction number-based,,,2020-04-14,,,D
-social distancing,reproduction number-based,,,2020-04-14,,,0
-social distancing,reproduction number-based,,,2020-04-14,,,1
-social distancing,reproduction number-based,,,2020-04-14,,,0
-social distancing,reproduction number-based,,,2020-04-14,,,0
-social distancing,reproduction number-based,,,2020-04-14,,,7
-social distancing,reproduction number-based,,,2020-04-14,,,'
-social distancing,reproduction number-based,,,2020-04-14,,,]
-closing borders,mobility-based,,,2020-04-21,,,[
-closing borders,mobility-based,,,2020-04-21,,,'
-closing borders,mobility-based,,,2020-04-21,,,S
-closing borders,mobility-based,,,2020-04-21,,,D
-closing borders,mobility-based,,,2020-04-21,,,'
-closing borders,mobility-based,,,2020-04-21,,,]
-restricting inter-regional movement,mobility-based,,,2020-04-21,,,[
-restricting inter-regional movement,mobility-based,,,2020-04-21,,,'
-restricting inter-regional movement,mobility-based,,,2020-04-21,,,S
-restricting inter-regional movement,mobility-based,,,2020-04-21,,,D
-restricting inter-regional movement,mobility-based,,,2020-04-21,,,'
-restricting inter-regional movement,mobility-based,,,2020-04-21,,,]
-closing businesses,reproduction number-based,,,2020-05-01,,,[
-closing businesses,reproduction number-based,,,2020-05-01,,,'
-closing businesses,reproduction number-based,,,2020-05-01,,,S
-closing businesses,reproduction number-based,,,2020-05-01,,,D
-closing businesses,reproduction number-based,,,2020-05-01,,,0
-closing businesses,reproduction number-based,,,2020-05-01,,,1
-closing businesses,reproduction number-based,,,2020-05-01,,,0
-closing businesses,reproduction number-based,,,2020-05-01,,,0
-closing businesses,reproduction number-based,,,2020-05-01,,,7
-closing businesses,reproduction number-based,,,2020-05-01,,,'
-closing businesses,reproduction number-based,,,2020-05-01,,,]
-partial lockdown,reproduction number-based,,,2020-05-11,,,[
-partial lockdown,reproduction number-based,,,2020-05-11,,,'
-partial lockdown,reproduction number-based,,,2020-05-11,,,S
-partial lockdown,reproduction number-based,,,2020-05-11,,,D
-partial lockdown,reproduction number-based,,,2020-05-11,,,0
-partial lockdown,reproduction number-based,,,2020-05-11,,,1
-partial lockdown,reproduction number-based,,,2020-05-11,,,0
-partial lockdown,reproduction number-based,,,2020-05-11,,,0
-partial lockdown,reproduction number-based,,,2020-05-11,,,7
-partial lockdown,reproduction number-based,,,2020-05-11,,,'
-partial lockdown,reproduction number-based,,,2020-05-11,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,D
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,1
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,0
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,0
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,6
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,4
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,","
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,, 
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,D
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,1
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,7
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,D
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,1
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,1
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-12,,,]
-partial lockdown,reproduction number-based,,,2020-05-19,,,[
-partial lockdown,reproduction number-based,,,2020-05-19,,,'
-partial lockdown,reproduction number-based,,,2020-05-19,,,S
-partial lockdown,reproduction number-based,,,2020-05-19,,,D
-partial lockdown,reproduction number-based,,,2020-05-19,,,0
-partial lockdown,reproduction number-based,,,2020-05-19,,,1
-partial lockdown,reproduction number-based,,,2020-05-19,,,0
-partial lockdown,reproduction number-based,,,2020-05-19,,,0
-partial lockdown,reproduction number-based,,,2020-05-19,,,7
-partial lockdown,reproduction number-based,,,2020-05-19,,,'
-partial lockdown,reproduction number-based,,,2020-05-19,,,]
-closing borders,mobility-based,,,2020-05-25,,,[
-closing borders,mobility-based,,,2020-05-25,,,'
-closing borders,mobility-based,,,2020-05-25,,,S
-closing borders,mobility-based,,,2020-05-25,,,D
-closing borders,mobility-based,,,2020-05-25,,,'
-closing borders,mobility-based,,,2020-05-25,,,]
-restricting inter-regional movement,mobility-based,,,2020-05-25,,,[
-restricting inter-regional movement,mobility-based,,,2020-05-25,,,'
-restricting inter-regional movement,mobility-based,,,2020-05-25,,,S
-restricting inter-regional movement,mobility-based,,,2020-05-25,,,D
-restricting inter-regional movement,mobility-based,,,2020-05-25,,,'
-restricting inter-regional movement,mobility-based,,,2020-05-25,,,]
-partial lockdown,reproduction number-based,,,2020-06-05,,,[
-partial lockdown,reproduction number-based,,,2020-06-05,,,'
-partial lockdown,reproduction number-based,,,2020-06-05,,,S
-partial lockdown,reproduction number-based,,,2020-06-05,,,D
-partial lockdown,reproduction number-based,,,2020-06-05,,,0
-partial lockdown,reproduction number-based,,,2020-06-05,,,1
-partial lockdown,reproduction number-based,,,2020-06-05,,,0
-partial lockdown,reproduction number-based,,,2020-06-05,,,0
-partial lockdown,reproduction number-based,,,2020-06-05,,,7
-partial lockdown,reproduction number-based,,,2020-06-05,,,'
-partial lockdown,reproduction number-based,,,2020-06-05,,,]
-closing borders,mobility-based,,,2020-06-05,,,[
-closing borders,mobility-based,,,2020-06-05,,,'
-closing borders,mobility-based,,,2020-06-05,,,S
-closing borders,mobility-based,,,2020-06-05,,,D
-closing borders,mobility-based,,,2020-06-05,,,'
-closing borders,mobility-based,,,2020-06-05,,,]
-restricting inter-regional movement,mobility-based,,,2020-06-05,,,[
-restricting inter-regional movement,mobility-based,,,2020-06-05,,,'
-restricting inter-regional movement,mobility-based,,,2020-06-05,,,S
-restricting inter-regional movement,mobility-based,,,2020-06-05,,,D
-restricting inter-regional movement,mobility-based,,,2020-06-05,,,'
-restricting inter-regional movement,mobility-based,,,2020-06-05,,,]
-social distancing,reproduction number-based,,,2020-06-05,,,[
-social distancing,reproduction number-based,,,2020-06-05,,,'
-social distancing,reproduction number-based,,,2020-06-05,,,S
-social distancing,reproduction number-based,,,2020-06-05,,,D
-social distancing,reproduction number-based,,,2020-06-05,,,'
-social distancing,reproduction number-based,,,2020-06-05,,,","
-social distancing,reproduction number-based,,,2020-06-05,,, 
-social distancing,reproduction number-based,,,2020-06-05,,,'
-social distancing,reproduction number-based,,,2020-06-05,,,S
-social distancing,reproduction number-based,,,2020-06-05,,,D
-social distancing,reproduction number-based,,,2020-06-05,,,0
-social distancing,reproduction number-based,,,2020-06-05,,,1
-social distancing,reproduction number-based,,,2020-06-05,,,0
-social distancing,reproduction number-based,,,2020-06-05,,,0
-social distancing,reproduction number-based,,,2020-06-05,,,7
-social distancing,reproduction number-based,,,2020-06-05,,,'
-social distancing,reproduction number-based,,,2020-06-05,,,]
+npi_type,npi_category,admin_level,region_geotag,start_date,end_date,compliance
+restricting inter-regional movement,mobility-based,2,SD01007,2020-03-15,,
+restricting inter-regional movement,mobility-based,2,SD10064,2020-03-15,,
+restricting inter-regional movement,mobility-based,2,SD17,2020-03-15,,
+closing borders,mobility-based,0,SD,2020-03-17,,
+closing borders,mobility-based,0,SD,2020-03-17,,
+school closure,contact-based,0,SD,2020-03-17,,
+social distancing,reproduction number-based,0,SD,2020-03-29,,
+closing borders,mobility-based,0,SD,2020-03-29,,
+restricting inter-regional movement,mobility-based,0,SD,2020-03-29,,
+reduction of size of gatherings,reproduction number-based,0,SD,2020-04-02,,
+social distancing,reproduction number-based,0,SD,2020-04-02,,
+partial lockdown,reproduction number-based,2,SD01007,2020-04-14,,
+social distancing,reproduction number-based,2,SD01007,2020-04-14,,
+closing borders,mobility-based,0,SD,2020-04-21,,
+restricting inter-regional movement,mobility-based,0,SD,2020-04-21,,
+closing businesses,reproduction number-based,2,SD01007,2020-05-01,,
+partial lockdown,reproduction number-based,2,SD01007,2020-05-11,,
+reduction of size of gatherings,reproduction number-based,2,SD10064,2020-05-12,,
+reduction of size of gatherings,reproduction number-based,2,SD17,2020-05-12,,
+reduction of size of gatherings,reproduction number-based,1,SD11,2020-05-12,,
+partial lockdown,reproduction number-based,2,SD01007,2020-05-19,,
+closing borders,mobility-based,0,SD,2020-05-25,,
+restricting inter-regional movement,mobility-based,0,SD,2020-05-25,,
+partial lockdown,reproduction number-based,2,SD01007,2020-06-05,,
+closing borders,mobility-based,0,SD,2020-06-05,,
+restricting inter-regional movement,mobility-based,0,SD,2020-06-05,,
+social distancing,reproduction number-based,0,SD,2020-06-05,,
+social distancing,reproduction number-based,0,SD01007,2020-06-05,,

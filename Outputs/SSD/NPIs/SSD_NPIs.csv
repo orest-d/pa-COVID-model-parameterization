@@ -1,157 +1,27 @@
-npi_type,npi_category,admin_level,region_geotag,start_date,end_date,compliance,region_1_geotag
-closing borders,mobility-based,,,2020-03-15,,,[
-closing borders,mobility-based,,,2020-03-15,,,'
-closing borders,mobility-based,,,2020-03-15,,,S
-closing borders,mobility-based,,,2020-03-15,,,S
-closing borders,mobility-based,,,2020-03-15,,,'
-closing borders,mobility-based,,,2020-03-15,,,]
-closing borders,mobility-based,,,2020-03-15,,,[
-closing borders,mobility-based,,,2020-03-15,,,'
-closing borders,mobility-based,,,2020-03-15,,,S
-closing borders,mobility-based,,,2020-03-15,,,S
-closing borders,mobility-based,,,2020-03-15,,,'
-closing borders,mobility-based,,,2020-03-15,,,]
-social distancing,reproduction number-based,,,2020-03-15,,,[
-social distancing,reproduction number-based,,,2020-03-15,,,'
-social distancing,reproduction number-based,,,2020-03-15,,,S
-social distancing,reproduction number-based,,,2020-03-15,,,S
-social distancing,reproduction number-based,,,2020-03-15,,,'
-social distancing,reproduction number-based,,,2020-03-15,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-03-17,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-03-17,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-03-17,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-03-17,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-03-17,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-03-17,,,]
-social distancing,reproduction number-based,,,2020-03-17,,,[
-social distancing,reproduction number-based,,,2020-03-17,,,'
-social distancing,reproduction number-based,,,2020-03-17,,,S
-social distancing,reproduction number-based,,,2020-03-17,,,S
-social distancing,reproduction number-based,,,2020-03-17,,,'
-social distancing,reproduction number-based,,,2020-03-17,,,]
-school closure,contact-based,,,2020-03-23,,,[
-school closure,contact-based,,,2020-03-23,,,'
-school closure,contact-based,,,2020-03-23,,,S
-school closure,contact-based,,,2020-03-23,,,S
-school closure,contact-based,,,2020-03-23,,,'
-school closure,contact-based,,,2020-03-23,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-03-29,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-03-29,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-03-29,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-03-29,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-03-29,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-03-29,,,]
-social distancing,reproduction number-based,,,2020-04-15,,,[
-social distancing,reproduction number-based,,,2020-04-15,,,'
-social distancing,reproduction number-based,,,2020-04-15,,,S
-social distancing,reproduction number-based,,,2020-04-15,,,S
-social distancing,reproduction number-based,,,2020-04-15,,,'
-social distancing,reproduction number-based,,,2020-04-15,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-04-15,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-04-15,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-04-15,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-04-15,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-04-15,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-04-15,,,]
-restricting inter-regional movement,mobility-based,,,2020-04-15,,,[
-restricting inter-regional movement,mobility-based,,,2020-04-15,,,'
-restricting inter-regional movement,mobility-based,,,2020-04-15,,,S
-restricting inter-regional movement,mobility-based,,,2020-04-15,,,S
-restricting inter-regional movement,mobility-based,,,2020-04-15,,,'
-restricting inter-regional movement,mobility-based,,,2020-04-15,,,]
-restricting inter-regional movement,mobility-based,,,2020-04-15,,,[
-restricting inter-regional movement,mobility-based,,,2020-04-15,,,'
-restricting inter-regional movement,mobility-based,,,2020-04-15,,,S
-restricting inter-regional movement,mobility-based,,,2020-04-15,,,S
-restricting inter-regional movement,mobility-based,,,2020-04-15,,,'
-restricting inter-regional movement,mobility-based,,,2020-04-15,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-04-15,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-04-15,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-04-15,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-04-15,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-04-15,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-04-15,,,]
-social distancing,reproduction number-based,,,2020-04-21,,,[
-social distancing,reproduction number-based,,,2020-04-21,,,'
-social distancing,reproduction number-based,,,2020-04-21,,,S
-social distancing,reproduction number-based,,,2020-04-21,,,S
-social distancing,reproduction number-based,,,2020-04-21,,,'
-social distancing,reproduction number-based,,,2020-04-21,,,]
-social distancing,reproduction number-based,,,2020-04-27,,,[
-social distancing,reproduction number-based,,,2020-04-27,,,'
-social distancing,reproduction number-based,,,2020-04-27,,,S
-social distancing,reproduction number-based,,,2020-04-27,,,S
-social distancing,reproduction number-based,,,2020-04-27,,,'
-social distancing,reproduction number-based,,,2020-04-27,,,]
-social distancing,reproduction number-based,,,2020-05-01,,,[
-social distancing,reproduction number-based,,,2020-05-01,,,'
-social distancing,reproduction number-based,,,2020-05-01,,,S
-social distancing,reproduction number-based,,,2020-05-01,,,S
-social distancing,reproduction number-based,,,2020-05-01,,,'
-social distancing,reproduction number-based,,,2020-05-01,,,]
-closing businesses,reproduction number-based,,,2020-05-01,,,[
-closing businesses,reproduction number-based,,,2020-05-01,,,'
-closing businesses,reproduction number-based,,,2020-05-01,,,S
-closing businesses,reproduction number-based,,,2020-05-01,,,S
-closing businesses,reproduction number-based,,,2020-05-01,,,'
-closing businesses,reproduction number-based,,,2020-05-01,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,]
-closing businesses,reproduction number-based,,,2020-05-01,,,[
-closing businesses,reproduction number-based,,,2020-05-01,,,'
-closing businesses,reproduction number-based,,,2020-05-01,,,S
-closing businesses,reproduction number-based,,,2020-05-01,,,S
-closing businesses,reproduction number-based,,,2020-05-01,,,'
-closing businesses,reproduction number-based,,,2020-05-01,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-01,,,]
-social distancing,reproduction number-based,,,2020-05-08,,,[
-social distancing,reproduction number-based,,,2020-05-08,,,'
-social distancing,reproduction number-based,,,2020-05-08,,,S
-social distancing,reproduction number-based,,,2020-05-08,,,S
-social distancing,reproduction number-based,,,2020-05-08,,,'
-social distancing,reproduction number-based,,,2020-05-08,,,]
-closing borders,mobility-based,,,2020-05-14,,,[
-closing borders,mobility-based,,,2020-05-14,,,'
-closing borders,mobility-based,,,2020-05-14,,,S
-closing borders,mobility-based,,,2020-05-14,,,S
-closing borders,mobility-based,,,2020-05-14,,,'
-closing borders,mobility-based,,,2020-05-14,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-05-15,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-05-15,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-15,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-15,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-15,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-15,,,]
-reduction of size of gatherings,reproduction number-based,,,2020-05-15,,,[
-reduction of size of gatherings,reproduction number-based,,,2020-05-15,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-15,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-15,,,S
-reduction of size of gatherings,reproduction number-based,,,2020-05-15,,,'
-reduction of size of gatherings,reproduction number-based,,,2020-05-15,,,]
-social distancing,reproduction number-based,,,2020-05-15,,,[
-social distancing,reproduction number-based,,,2020-05-15,,,'
-social distancing,reproduction number-based,,,2020-05-15,,,S
-social distancing,reproduction number-based,,,2020-05-15,,,S
-social distancing,reproduction number-based,,,2020-05-15,,,'
-social distancing,reproduction number-based,,,2020-05-15,,,]
+npi_type,npi_category,admin_level,region_geotag,start_date,end_date,compliance
+closing borders,mobility-based,0,SS,2020-03-15,,
+closing borders,mobility-based,0,SS,2020-03-15,,
+social distancing,reproduction number-based,0,SS,2020-03-15,,
+reduction of size of gatherings,reproduction number-based,0,SS,2020-03-17,,
+social distancing,reproduction number-based,0,SS,2020-03-17,,
+school closure,contact-based,0,SS,2020-03-23,,
+reduction of size of gatherings,reproduction number-based,0,SS,2020-03-29,,
+social distancing,reproduction number-based,0,SS,2020-04-15,,
+reduction of size of gatherings,reproduction number-based,0,SS,2020-04-15,,
+restricting inter-regional movement,mobility-based,0,SS,2020-04-15,,
+restricting inter-regional movement,mobility-based,0,SS,2020-04-15,,
+reduction of size of gatherings,reproduction number-based,0,SS,2020-04-15,,
+social distancing,reproduction number-based,0,SS,2020-04-21,,
+social distancing,reproduction number-based,0,SS,2020-04-27,,
+social distancing,reproduction number-based,0,SS,2020-05-01,,
+closing businesses,reproduction number-based,0,SS,2020-05-01,,
+reduction of size of gatherings,reproduction number-based,0,SS,2020-05-01,,
+reduction of size of gatherings,reproduction number-based,0,SS,2020-05-01,,
+reduction of size of gatherings,reproduction number-based,0,SS,2020-05-01,,
+closing businesses,reproduction number-based,0,SS,2020-05-01,,
+reduction of size of gatherings,reproduction number-based,0,SS,2020-05-01,,
+social distancing,reproduction number-based,0,SS,2020-05-08,,
+closing borders,mobility-based,0,SS,2020-05-14,,
+reduction of size of gatherings,reproduction number-based,0,SS,2020-05-15,,
+reduction of size of gatherings,reproduction number-based,0,SS,2020-05-15,,
+social distancing,reproduction number-based,0,SS,2020-05-15,,

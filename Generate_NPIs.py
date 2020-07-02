@@ -2,11 +2,10 @@ import os
 import logging
 from pathlib import Path
 import argparse
-from datetime import datetime
+import ast
 
 import pandas as pd
 import geopandas as gpd
-import numpy as np
 
 from utils import utils
 from utils.hdx_api import query_api
@@ -112,6 +111,9 @@ def get_country_info(country_iso3, df_acaps, boundaries):
     if os.path.isfile(filename):
         logger.info(f'Reading in input file {filename}')
         df_manual = pd.read_csv(filename)
+        # Fix the columns that are lists
+        for col in ['affected_pcodes', 'add_npi_id','remove_npi_id']:
+            df_manual[col] = df_manual[col].apply(lambda x: literal_eval(x))
         # Join the pcode info
         df = df.merge(df_manual[['ID'] + new_cols], how='left', on='ID')
         # Warn about any empty entries
@@ -128,6 +130,13 @@ def get_country_info(country_iso3, df_acaps, boundaries):
     logger.info(f'Writing to {filename}')
     df.to_csv(filename, index=False)
     return df
+
+
+def literal_eval(val):
+    try:
+        return ast.literal_eval(val)
+    except ValueError:
+        return None
 
 
 def get_admin_regions(boundaries):
@@ -169,7 +178,7 @@ def write_country_info_to_csv(country_iso3, df, boundaries):
                 'npi_type': row['our_measures'],
                 'npi_category': row['category'],
                 'admin_level': admin_level,
-                'region_1_geotag': loc,
+                'region_geotag': loc,
                 'start_date': row['ENTRY_DATE'],
                 'end_date': row['end_date']
             }
