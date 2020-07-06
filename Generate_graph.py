@@ -25,7 +25,8 @@ VULNERABILITY_DIR = 'Vulnerability'
 VULNERABILITY_FILENAME = '{country_iso3}_Vulnerabilities.geojson'
 
 CONTACT_MATRIX_DIR = 'contact_matrices_152_countries'
-CONTACT_MATRIX_FILENAME = 'MUestimates_all_locations_{file_number}.xlsx'
+CONTACT_MATRIX_FILENAME = 'MUestimates_{contact_matrix_type}_{file_number}.xlsx'
+CONTACT_MATRIX_TYPES = ['home', 'work', 'school', 'other_locations']
 
 PSEUDO_MERCATOR_CRS = 'EPSG:3857'
 
@@ -184,17 +185,21 @@ def add_vulnerability(G, main_dir, country_iso3):
 
 
 def add_contact_matrix(G, config):
-    filename = os.path.join(CONTACT_MATRIX_DIR, CONTACT_MATRIX_FILENAME.format(file_number=config['file_number']))
-    logger.info(f'Reading in contact matrix from {filename} for country {config["country"]}')
-    if config['file_number'] == 1:
-        column_names = None
-        header = 0
-    elif config['file_number'] == 2:
-        column_names = [f'X{i}' for i in range(16)]
-        header = None
-    contact_matrix = pd.read_excel(filename, sheet_name=config['country'], header=header, names=column_names)
-    # Add as metadata
-    G.graph['contact_matrix'] = contact_matrix.values.tolist()
+    G.graph['contact_matrix'] = {}
+    logger.info(f'Reading in contact matrices for {config["country"]}')
+    for contact_matrix_type in CONTACT_MATRIX_TYPES:
+        filename = os.path.join(CONTACT_MATRIX_DIR,
+                                CONTACT_MATRIX_FILENAME.format(contact_matrix_type=contact_matrix_type,
+                                                               file_number=config['file_number']))
+        if config['file_number'] == 1:
+            column_names = None
+            header = 0
+        elif config['file_number'] == 2:
+            column_names = [f'X{i}' for i in range(16)]
+            header = None
+        contact_matrix = pd.read_excel(filename, sheet_name=config['country'], header=header, names=column_names)
+        # Add as metadata
+        G.graph['contact_matrix'][contact_matrix_type] = contact_matrix.values.tolist()
     return G
 
 
