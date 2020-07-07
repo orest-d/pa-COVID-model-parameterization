@@ -55,8 +55,10 @@ AFG:
     skiprows: 0
     cases: True
     deaths: True
+    individual_case_data: False
     cumulative: True
     admin_level: 1
+    federal_state_dict: False
     adm1_name_exp: ADM1_EN
     date_format: "%Y-%m-%d"
     replace_dict:
@@ -134,8 +136,10 @@ COD:
     skiprows: 0
     cases: True
     deaths: False
+    individual_case_data: False
     cumulative: True
     admin_level: 1
+    federal_state_dict: False
     adm1_name_exp: ADM1_FR
     date_format: "%Y-%m-%d"
     replace_dict:
@@ -199,8 +203,10 @@ SDN:
     skiprows: 0
     cases: True
     deaths: False
+    individual_case_data: False
     cumulative: True
     admin_level: 1
+    federal_state_dict: False
     adm1_name_exp: ADM1_EN
     date_format: "%m/%d/%Y"
     replace_dict:
@@ -257,17 +263,17 @@ SSD:
     skiprows: False
     cases: True
     deaths: False
+    individual_case_data: True
     cumulative: False
     admin_level: 2
+    federal_state_dict: False
     adm2_name_exp: ADM2_EN
     date_format: "%B %d, %Y"
     replace_dict:
       Abyei: Abyei Region
     hlx_dict:
-      State: "#adm1+name"
       County: "#adm2+name"
-      No. of confirmed cases: "#affected+infected+confirmed+total"
-      Confirmation date: "#date"
+      Reporting date/Notification date/Sample collection date: "#date"
   contact_matrix:
     country: Uganda
     file_number: 2
@@ -316,6 +322,7 @@ SOM:
     skiprows: 0
     cases: True
     deaths: True
+    individual_case_data: False
     cumulative: True
     admin_level: 1
     federal_state_dict:

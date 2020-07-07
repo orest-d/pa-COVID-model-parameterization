@@ -62,6 +62,10 @@ def main(country_iso3, download_covid=False):
     # convert to standard HLX
     if 'hlx_dict' in config['covid']:
         df_covid=df_covid.rename(columns=config['covid']['hlx_dict'])
+    if config['covid']['individual_case_data']:
+
+        print(df_covid.columns)
+        return
 
     # in some files we have province explicitely
     df_covid= df_covid[df_covid[HLX_TAG_ADM1_NAME]!='Total']
