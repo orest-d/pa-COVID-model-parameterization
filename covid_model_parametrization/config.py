@@ -129,6 +129,7 @@ class Config:
     #ok, use VULNERABILITY_FILENAME
 
     CONTACT_MATRIX_DIR = 'contact_matrices_152_countries'
-    CONTACT_MATRIX_FILENAME = 'MUestimates_all_locations_{file_number}.xlsx'
+    CONTACT_MATRIX_FILENAME = 'MUestimates_{contact_matrix_type}_{file_number}.xlsx'
+    CONTACT_MATRIX_TYPES = ['home', 'work', 'school', 'other_locations']
 
     PSEUDO_MERCATOR_CRS = 'EPSG:3857'

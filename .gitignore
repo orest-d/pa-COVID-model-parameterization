@@ -143,6 +143,7 @@ cython_debug/
 
 Inputs/*/GHS/*
 Inputs/*/WorldPop/*
+Inputs/ACAPS_NPIs/*
 Outputs/*/COVID
 Outputs/*/Exposure_SADD
 Outputs/*/Vulnerability
