@@ -211,22 +211,20 @@ def format_final_output(country_iso3, df, boundaries):
     R0_compliance_level = da.sel(measure='r0_reduction', quantity='compliance_level')
     da.loc[:, :, 'r0_reduction', 'reduction'] = 1 - np.vectorize(R0_reduction_dict.get)(num_R0_npis) * R0_compliance_level
     # Compute mobility reduction
-    logger.info('Adding mobility reduction')
-    indices = np.where(da.sel(measure='mobility_reduction', quantity='num_npis')>0)
-    for index in zip(indices[0], indices[1]):
-        da.loc[:, :, 'mobility_reduction', 'reduction'][index[0], index[1]] = 0.4
+    da.loc[:, :, 'mobility_reduction', 'reduction'] = np.where(
+        da.sel(measure='mobility_reduction', quantity='num_npis') > 0, 0.4,
+        da.sel(measure='mobility_reduction', quantity='reduction'))
     # Compute contact reduction for schools closing
-    logger.info('Adding school contact reduction')
     # TODO: distinguish between schools closing and elderly shielding
-    indices = np.where(da.sel(measure='school', quantity='num_npis')>0)
     school_reduction_values = {
        'home': 1.05,
        'other_locations': 0.85,
        'school': 0.05,
     }
-    for index in zip(indices[0], indices[1]):
-        for key, value in school_reduction_values.items():
-            da.loc[:, :, key, 'reduction'][index[0], index[1]] = value
+    for key, value in school_reduction_values.items():
+        da.loc[:, :, key, 'reduction'] = np.where(
+            da.sel(measure='school', quantity='num_npis') > 0, value,
+            da.sel(measure=key, quantity='reduction'))
     # Convert to dataframe and write out
     df_out = da.sel(quantity='reduction').drop('quantity').to_dataframe('result').unstack().droplevel(0, axis=1)
     output_dir = os.path.join(OUTPUT_DIR, country_iso3, 'NPIs')
