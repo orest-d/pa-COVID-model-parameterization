@@ -268,10 +268,35 @@ SSD:
     admin_level: 2
     federal_state_dict: False
     adm2_name_exp: ADM2_EN
-    date_format: "%B %d, %Y"
+    date_format: "%Y-%m-%d"
     replace_dict:
+      JUba: Juba
+      juba: Juba
+      'Juba ': Juba
+      Winjook: Aweil East
+      Nimule: Magwi
       Abyei: Abyei Region
+      Rumamer: Abyei Region
+      Roumamier: Abyei Region
+      Aniek: Abyei Region
+      Agok: Abyei Region
+      Ameit: Abyei Region
+      South Bor: Bor South
+      Bor: Bor South
+      Aweil: Aweil West
+      Aweil Center: Aweil Centre
+      Rumbek: Rumbek Centre
+      Rumbek Center: Rumbek Centre
+      Bentiu: Rubkona
+      Twich: Twic
+      Turalei: Twic
+      Kuajok: Gogrial West
+      Rajaf: Juba
+      Yirol: Yirol West
+      Lankien: Nyirol
+      Pageri: Magwi
     hlx_dict:
+      'State ': "#adm1+name"
       County: "#adm2+name"
       Reporting date/Notification date/Sample collection date: "#date"
   contact_matrix:
