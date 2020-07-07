@@ -1,3 +1,4 @@
+# module that reads WorldPop tiff files and populates the exposure file
 import os
 import datetime
 import itertools
@@ -12,10 +13,11 @@ from rasterstats import zonal_stats
 
 from covid_model_parametrization import utils
 from covid_model_parametrization.config import Config
+import logging
 
 
-utils.config_logger()
 logger = logging.getLogger(__name__)
+
 
 def exposure(country_iso3, download_worldpop=False, config=None):
 
@@ -103,21 +105,21 @@ def exposure(country_iso3, download_worldpop=False, config=None):
 
     # adding manually Kochi nomads
     if 'kochi' in parameters:
-        logger.info('Adding Kuchi')
-        ADM1_kuchi = parameters['kochi']['adm1']
+        logger.info('Adding Kochi')
+        ADM1_kochi = parameters['kochi']['adm1']
         # total population in these provinces
-        pop_in_kuchi_ADM1=ADM2boundaries[ADM2boundaries['ADM1_PCODE'].isin(ADM1_kuchi)]['tot_sad'].sum()
+        pop_in_kochi_ADM1=ADM2boundaries[ADM2boundaries['ADM1_PCODE'].isin(ADM1_kochi)]['tot_sad'].sum()
         for row_index, row in ADM2boundaries.iterrows():
-            if row['ADM1_PCODE'] in ADM1_kuchi:
-                tot_kuchi_in_ADM2=0
+            if row['ADM1_PCODE'] in ADM1_kochi:
+                tot_kochi_in_ADM2=0
                 for gender_age_group in gender_age_groups:
                     # population weighted
                     gender_age_group_name = f'{gender_age_group[0]}_{gender_age_group[1]}'
-                    kuchi_pp=parameters['kochi']['total']*(row[gender_age_group_name]/pop_in_kuchi_ADM1)
-                    ADM2boundaries.loc[row_index,gender_age_group_name]=row[gender_age_group_name]+kuchi_pp
-                    tot_kuchi_in_ADM2+=kuchi_pp
-                ADM2boundaries.loc[row_index,'kuchi']=tot_kuchi_in_ADM2
-                comment = f'Added in total {tot_kuchi_in_ADM2} Kuchi nomads to WorldPop estimates'
+                    kochi_pp=parameters['kochi']['total']*(row[gender_age_group_name]/pop_in_kochi_ADM1)
+                    ADM2boundaries.loc[row_index,gender_age_group_name]=row[gender_age_group_name]+kochi_pp
+                    tot_kochi_in_ADM2+=kochi_pp
+                ADM2boundaries.loc[row_index,'kochi']=tot_kochi_in_ADM2
+                comment = f'Added in total {tot_kochi_in_ADM2} Kochi nomads to WorldPop estimates'
                 ADM2boundaries.loc[row_index,'comment'] = comment
 
     # Write to file
@@ -144,4 +146,3 @@ def get_output_filename(country_iso3, config):
     output_dir = config.SADD_output_dir().format(country_iso3)
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     return os.path.join(output_dir, config.EXPOSURE_GEOJSON.format(country_iso3))
-
