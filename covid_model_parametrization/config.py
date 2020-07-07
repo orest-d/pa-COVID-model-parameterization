@@ -3,10 +3,14 @@ from covid_model_parametrization import utils
 
 class Config:
 
+####################### General settings section
+
     INPUT_DIR = 'Inputs'
     CONFIG_FILE = 'config.yml'
     SHAPEFILE_DIR = 'Shapefiles'
     MAIN_OUTPUT_DIR = 'Outputs'
+
+####################### SADD Exposure section
 
     SADD_OUTPUT_DIR = 'Exposure_SADD'
     VULNERABILITY_OUTPUT_DIR = 'Vulnerability'
@@ -24,9 +28,8 @@ class Config:
             self._parameters = utils.parse_yaml(self.CONFIG_FILE)
         return self._parameters
 
-### SADD config
-    #OUTPUT_GEOJSON = '{}_Exposure.geojson'
-    #Use EXPOSURE_GEOJSON
+####################### SADD section
+
     EXPOSURE_GEOJSON = '{}_Exposure.geojson'
 
     CO_DIR = 'InputsFromCOs'
@@ -49,9 +52,8 @@ class Config:
     def SADD_output_dir(self):
         return os.path.join(self.DIR_PATH, self.MAIN_OUTPUT_DIR, '{}', self.SADD_OUTPUT_DIR)
 
-### Vulnerability config
-    #OUTPUT_GEOJSON = '{country_iso3}_Vulnerabilities.geojson'
-    #use VULNERABILITY_FILENAME
+####################### Vulnerability section
+
     VULNERABILITY_FILENAME = '{country_iso3}_Vulnerabilities.geojson'
 
     # Shape stuff
@@ -79,20 +81,12 @@ class Config:
     def vulnerability_output_dir(self):
         return os.path.join(self.DIR_PATH, self.MAIN_OUTPUT_DIR, '{}', self.VULNERABILITY_OUTPUT_DIR)
 
-### COVID config
+####################### COVID section
+
     def COVID_output_dir(self):
         return os.path.join(self.DIR_PATH, self.MAIN_OUTPUT_DIR, '{}', self.COVID_OUTPUT_DIR)
 
     COVID_OUTPUT_CSV = '{}_COVID.csv'
-
-    # Exposure files
-    #EXP_DIR = os.path.join('Outputs', '{}', 'Exposure_SADD')
-    #use SADD_output_dir
-    #EXP_FILE = '{}_Exposure.geojson'
-    #Use EXPOSURE_GEOJSON
-
-    #COVID_DIR = 'COVID'
-    #use COVID_OUTPUT_DIR
 
     # maybe we can move this to the yml file?
     HLX_TAG_TOTAL_CASES = '#affected+infected+confirmed+total'
@@ -103,30 +97,9 @@ class Config:
     HLX_TAG_ADM1_PCODE = '#adm1+pcode'
     HLX_TAG_ADM2_PCODE = '#adm2+pcode'
 
-### Graph config
-    #MAIN_DIR = 'Outputs'
-    #use MAIN_OUTPUT_DIR
-    #OUTPUT_DIR = 'Graph'
-    #use GRAPH_OUTPUT_DIR
+####################### Graph section
+
     GRAPH_OUTPUT_FILE = '{}_graph.json'
-    #OUTPUT_FILE = '{}_graph.json'
-    #use GRAPH_OUTPUT_FILE
-
-    #EXPOSURE_DIR = 'Exposure_SADD'
-    #Use SADD_OUTPUT_DIR
-
-    #EXPOSURE_FILENAME = '{country_iso3}_Exposure.geojson'
-    #Use EXPOSURE_GEOJSON
-
-    #COVID_DIR = 'COVID'
-    #use COVID_OUTPUT_DIR
-    #COVID_FILENAME = '{country_iso3}_COVID.csv'
-    #use COVID_OUTPUT_CSV
-
-    #VULNERABILITY_DIR = 'Vulnerability'
-    #use VULNERABILITY_OUTPUT_DIR
-    #VULNERABILITY_FILENAME = '{country_iso3}_Vulnerabilities.geojson'
-    #ok, use VULNERABILITY_FILENAME
 
     CONTACT_MATRIX_DIR = 'contact_matrices_152_countries'
     CONTACT_MATRIX_FILENAME = 'MUestimates_{contact_matrix_type}_{file_number}.xlsx'
