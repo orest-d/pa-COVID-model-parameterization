@@ -25,31 +25,42 @@ RAW_DATA_FILEPATH = os.path.join(RAW_DATA_DIR, RAW_DATA_FILENAME)
 
 OUTPUT_DATA_DIR = 'NPIs'
 INTERMEDIATE_OUTPUT_FILENAME = '{}_NPIs_input.csv'
+TRIAGED_INTERMEDIATE_OUTPUT_FILENAME = '{}_NPIs_triaged.csv'
 FINAL_OUTPUT_FILENAME = '{}_NPIs.csv'
 
 MEASURE_EQUIVALENCE_FILENAME = 'NPIs - ACAPS NPIs.csv'
 
 SHAPEFILE_DIR = 'Shapefiles'
 
+TRIAGED_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/{body}/pub?gid={gid}&single=true&output=csv'
+
 logger = logging.getLogger()
 
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--download', action='store_true',
-                        help='Download the latest ACAPS data -- required upon first run')
+    parser.add_argument('-u', '--update-npi-list', action='store_true',
+                        help='Download the latest ACAPS data and update NPI list')
+    parser.add_argument('-c', '--create-final-list', action='store_true',
+                        help='Create the final list of NPIs')
     return parser.parse_args()
 
 
-def main(download):
+def main(update_npi_list_arg, create_final_list_arg):
     config = utils.parse_yaml(CONFIG_FILE)
     countries = list(config.keys())
-    # Get ACAPS and Natural Earth data
-    if download:
-        logger.info('Getting ACAPS data')
-        get_df_acaps()
-        logger.info('Done')
-    '''
+    countries.remove('HTI')
+    if update_npi_list_arg:
+        update_npi_list(config, countries)
+    if create_final_list_arg:
+        create_final_list(config, countries)
+
+
+def update_npi_list(config, countries):
+    # TODO: this is now very broken
+    logger.info('Getting ACAPS data')
+    get_df_acaps()
+    logger.info('Done')
     df_acaps =  pd.read_excel(RAW_DATA_FILEPATH, sheet_name='Database')
     # Take only the countries of concern
     df_acaps = df_acaps[df_acaps['ISO'].isin(countries)]
@@ -60,16 +71,10 @@ def main(download):
     df_acaps['our_measures'] = df_acaps["MEASURE"].str.lower().map(get_measures_equivalence_dictionary())
     df_acaps = df_acaps[df_acaps['our_measures'].notnull()]
     df_acaps['category'] = df_acaps['our_measures'].map(get_measures_category_dictionary())
-    '''
     # Loop through countries
-    countries = ['SDN']
     for country_iso3 in countries:
         boundaries = get_boundaries_file(country_iso3, config[country_iso3])
-        #df_country = get_country_info(country_iso3, df_acaps, boundaries)
-        df_country = pd.read_csv(os.path.join(INPUT_DIR, country_iso3, OUTPUT_DATA_DIR,
-                                              INTERMEDIATE_OUTPUT_FILENAME.format(country_iso3)))
-        df_country['affected_pcodes'] = df_country['affected_pcodes'].apply(lambda x: literal_eval(x))
-        format_final_output(country_iso3, df_country, boundaries)
+        df_country = get_country_info(country_iso3, df_acaps, boundaries)
 
 
 def get_df_acaps():
@@ -157,9 +162,28 @@ def get_admin_regions(boundaries):
     }
 
 
+def create_final_list(config, countries):
+    for country_iso3 in countries:
+        logger.info(f'Creating final NPI list for {country_iso3}')
+        boundaries = get_boundaries_file(country_iso3, config[country_iso3])
+        df_country = get_triaged_csv(config, country_iso3)
+        format_final_output(country_iso3, df_country, boundaries)
+
+
+def get_triaged_csv(config, country_iso3):
+    logger.info(f'Getting triaged csv for {country_iso3}')
+    filename = os.path.join(INPUT_DIR, country_iso3, OUTPUT_DATA_DIR,
+                            TRIAGED_INTERMEDIATE_OUTPUT_FILENAME.format(country_iso3))
+    utils.download_url(config[country_iso3]['NPIs']['url'], filename)
+    df_country = pd.read_csv(filename)
+    df_country['affected_pcodes'] = df_country['affected_pcodes'].apply(lambda x: literal_eval(x))
+    return df_country
+
+
 def format_final_output(country_iso3, df, boundaries):
+    logger.info(f'Formatting final output for {country_iso3}')
     # Only take rows with final_input is Yes
-    df = df[(df['final_input'] == 'Yes')]
+    #df = df[(df['final_input'] == 'Yes')]
     # Fill empty end dates with today's date
     df['end_date'] = df['end_date'].fillna(datetime.today())
     # Add Bucky category
@@ -257,4 +281,4 @@ def expand_admin_regions(df, boundaries):
 
 if __name__ == '__main__':
     args = parse_args()
-    main(args.download)
+    main(args.update_npi_list, args.create_final_list)
