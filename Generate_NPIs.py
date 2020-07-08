@@ -176,7 +176,7 @@ def format_final_output(country_iso3, df, boundaries):
              'mobility_reduction',
              ]
     coords = {
-        'admin2': sorted(boundaries['ADM2_PCODE'].unique()),
+        'admin2': sorted([b[2:] for b in boundaries['ADM2_PCODE'].unique()]),
         'date': pd.date_range(df['start_date'].min(), datetime.today()),
         'measure': clist,
         'quantity': ['num_npis', 'compliance_level', 'reduction']
@@ -193,7 +193,7 @@ def format_final_output(country_iso3, df, boundaries):
     }
     for _, row in df.iterrows():
         date_range = pd.date_range(row['start_date'], row['end_date'])
-        affected_pcodes = row['affected_pcodes']
+        affected_pcodes = [r[2:] for r in row['affected_pcodes']]
         measure = measures_dict[row['bucky_category']]
         # Amend the compliance level
         previous_num_npis = da.loc[affected_pcodes, date_range, measure, 'num_npis']
@@ -204,7 +204,7 @@ def format_final_output(country_iso3, df, boundaries):
         # Track the new number of NPIs
         da.loc[affected_pcodes, date_range, measure, 'num_npis'] += 1
     # Compute R0 reduction
-    R0_reduction_amounts = [1.0, 0.4, 0.2, 0.1, 0.05]
+    R0_reduction_amounts = [0.0, 0.4, 0.2, 0.1, 0.05]
     num_R0_npis = da.sel(measure='r0_reduction', quantity='num_npis').astype(int)
     R0_reduction_dict = {i: np.prod(R0_reduction_amounts[:i+1])
                         for i in range(num_R0_npis.values.max() + 1)}
