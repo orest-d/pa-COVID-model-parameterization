@@ -1,6 +1,5 @@
 # script that pulls data from several sources and generate COVID-19 breakdown for subnational SEIR model
 
-import argparse
 import datetime
 import pandas as pd
 import geopandas as gpd
