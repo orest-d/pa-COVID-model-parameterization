@@ -12,13 +12,16 @@ logger = logging.getLogger(__name__)
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('country_iso3',
-                        help='Country ISO3')
-    parser.add_argument('-d', '--download', action='store_true',
-                        help='Download the WorldPop data -- required upon first run')
+    parser.add_argument("country_iso3", help="Country ISO3")
+    parser.add_argument(
+        "-d",
+        "--download",
+        action="store_true",
+        help="Download the WorldPop data -- required upon first run",
+    )
     return parser.parse_args()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     args = parse_args()
     exposure(args.country_iso3.upper(), download_worldpop=args.download)
