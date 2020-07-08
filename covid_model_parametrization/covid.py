@@ -1,4 +1,4 @@
-# module that pulls data from several sources and generate COVID-19 breakdown for subnational SEIR model
+# script that pulls data from several sources and generate COVID-19 breakdown for subnational SEIR model
 
 import argparse
 import datetime
@@ -35,6 +35,10 @@ def covid(country_iso3, download_covid=False, config=None):
     # convert to standard HLX
     if 'hlx_dict' in parameters['covid']:
         df_covid=df_covid.rename(columns=parameters['covid']['hlx_dict'])
+    if parameters['covid']['individual_case_data'] and parameters['covid']['admin_level']==2:
+        df_covid=pd.pivot_table(df_covid,index=[config.HLX_TAG_DATE,config.HLX_TAG_ADM1_NAME,config.HLX_TAG_ADM2_NAME],aggfunc='count').reset_index()
+        df_covid=df_covid.rename(columns={'Case No.':config.HLX_TAG_TOTAL_CASES})
+        df_covid=df_covid[[config.HLX_TAG_DATE,config.HLX_TAG_ADM1_NAME,config.HLX_TAG_ADM2_NAME,config.HLX_TAG_TOTAL_CASES]]
 
     # in some files we have province explicitely
     df_covid= df_covid[df_covid[config.HLX_TAG_ADM1_NAME]!='Total']
@@ -52,7 +56,7 @@ def covid(country_iso3, download_covid=False, config=None):
     if parameters['covid']['deaths']:
         df_covid[config.HLX_TAG_TOTAL_DEATHS]=convert_to_numeric(df_covid[config.HLX_TAG_TOTAL_DEATHS])
     df_covid.fillna(0,inplace=True)
-    
+        
     # Get exposure file
     try:
         exposure_file=f'{config.SADD_output_dir().format(country_iso3)}/{config.EXPOSURE_GEOJSON.format(country_iso3)}'
@@ -74,6 +78,8 @@ def covid(country_iso3, download_covid=False, config=None):
         df_covid[config.HLX_TAG_ADM2_PCODE]= df_covid[config.HLX_TAG_ADM2_NAME].map(ADM2_names)
         if(df_covid[config.HLX_TAG_ADM2_PCODE].isnull().sum()>0):
             logger.warning('missing PCODE for the following admin units ',df_covid[df_covid[config.HLX_TAG_ADM2_PCODE].isnull()])        
+            # print(df_covid)
+            return
         df_covid[config.HLX_TAG_ADM1_PCODE]= df_covid[config.HLX_TAG_ADM2_PCODE].map(ADM2_ADM1_pcodes)
         adm1pcode=df_covid[config.HLX_TAG_ADM1_PCODE]
         adm2pcodes=df_covid[config.HLX_TAG_ADM2_PCODE]
@@ -123,7 +129,7 @@ def covid(country_iso3, download_covid=False, config=None):
     if(abs((output_df_covid[config.HLX_TAG_TOTAL_CASES].sum()-\
         df_covid[config.HLX_TAG_TOTAL_CASES].sum()))>10):
         logger.warning('The sum of input and output files don\'t match')
-    
+
     if not parameters['covid']['cumulative']:
         logger.info(f'Calculating cumulative numbers COVID data')
         groups=[config.HLX_TAG_ADM1_PCODE,config.HLX_TAG_ADM2_PCODE,config.HLX_TAG_DATE]
@@ -141,7 +147,7 @@ def covid(country_iso3, download_covid=False, config=None):
     output_df_covid['created_by'] = getpass.getuser()
     output_csv = get_output_filename(country_iso3, config)
     logger.info(f'Writing to file {output_csv}')
-    output_df_covid.to_csv(output_csv, index=False)
+    output_df_covid.to_csv(output_csv,index=False)
 
 def get_dict_pcodes(exposure,adm_unit_name,adm_unit_pcode='ADM1_PCODE'):
     pcode_dict=dict()
