@@ -62,6 +62,10 @@ def main(country_iso3, download_covid=False):
     # convert to standard HLX
     if 'hlx_dict' in config['covid']:
         df_covid=df_covid.rename(columns=config['covid']['hlx_dict'])
+    if config['covid']['individual_case_data'] and config['covid']['admin_level']==2:
+        df_covid=pd.pivot_table(df_covid,index=[HLX_TAG_DATE,HLX_TAG_ADM1_NAME,HLX_TAG_ADM2_NAME],aggfunc='count').reset_index()
+        df_covid=df_covid.rename(columns={'Case No.':HLX_TAG_TOTAL_CASES})
+        df_covid=df_covid[[HLX_TAG_DATE,HLX_TAG_ADM1_NAME,HLX_TAG_ADM2_NAME,HLX_TAG_TOTAL_CASES]]
 
     # in some files we have province explicitely
     df_covid= df_covid[df_covid[HLX_TAG_ADM1_NAME]!='Total']
@@ -79,7 +83,7 @@ def main(country_iso3, download_covid=False):
     if config['covid']['deaths']:
         df_covid[HLX_TAG_TOTAL_DEATHS]=convert_to_numeric(df_covid[HLX_TAG_TOTAL_DEATHS])
     df_covid.fillna(0,inplace=True)
-    
+        
     # Get exposure file
     try:
         exposure_file=f'{DIR_PATH}/{EXP_DIR.format(country_iso3)}/{EXP_FILE.format(country_iso3)}'
@@ -101,6 +105,8 @@ def main(country_iso3, download_covid=False):
         df_covid[HLX_TAG_ADM2_PCODE]= df_covid[HLX_TAG_ADM2_NAME].map(ADM2_names)
         if(df_covid[HLX_TAG_ADM2_PCODE].isnull().sum()>0):
             logger.warning('missing PCODE for the following admin units ',df_covid[df_covid[HLX_TAG_ADM2_PCODE].isnull()])        
+            # print(df_covid)
+            return
         df_covid[HLX_TAG_ADM1_PCODE]= df_covid[HLX_TAG_ADM2_PCODE].map(ADM2_ADM1_pcodes)
         adm1pcode=df_covid[HLX_TAG_ADM1_PCODE]
         adm2pcodes=df_covid[HLX_TAG_ADM2_PCODE]
