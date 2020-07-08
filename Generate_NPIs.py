@@ -3,9 +3,12 @@ import logging
 from pathlib import Path
 import argparse
 import ast
+from datetime import datetime
 
 import pandas as pd
 import geopandas as gpd
+import xarray as xr
+import numpy as np
 
 from covid_model_parametrization import utils
 from covid_model_parametrization.hdx_api import query_api
@@ -22,30 +25,42 @@ RAW_DATA_FILEPATH = os.path.join(RAW_DATA_DIR, RAW_DATA_FILENAME)
 
 OUTPUT_DATA_DIR = 'NPIs'
 INTERMEDIATE_OUTPUT_FILENAME = '{}_NPIs_input.csv'
+TRIAGED_INTERMEDIATE_OUTPUT_FILENAME = '{}_NPIs_triaged.csv'
 FINAL_OUTPUT_FILENAME = '{}_NPIs.csv'
 
 MEASURE_EQUIVALENCE_FILENAME = 'NPIs - ACAPS NPIs.csv'
 
 SHAPEFILE_DIR = 'Shapefiles'
 
+TRIAGED_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/{body}/pub?gid={gid}&single=true&output=csv'
+
 logger = logging.getLogger()
 
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--download', action='store_true',
-                        help='Download the latest ACAPS data -- required upon first run')
+    parser.add_argument('-u', '--update-npi-list', action='store_true',
+                        help='Download the latest ACAPS data and update NPI list')
+    parser.add_argument('-c', '--create-final-list', action='store_true',
+                        help='Create the final list of NPIs')
     return parser.parse_args()
 
 
-def main(download):
+def main(update_npi_list_arg, create_final_list_arg):
     config = utils.parse_yaml(CONFIG_FILE)
     countries = list(config.keys())
-    # Get ACAPS and Natural Earth data
-    if download:
-        logger.info('Getting ACAPS data')
-        get_df_acaps()
-        logger.info('Done')
+    countries.remove('HTI')
+    if update_npi_list_arg:
+        update_npi_list(config, countries)
+    if create_final_list_arg:
+        create_final_list(config, countries)
+
+
+def update_npi_list(config, countries):
+    # TODO: this is now very broken
+    logger.info('Getting ACAPS data')
+    get_df_acaps()
+    logger.info('Done')
     df_acaps =  pd.read_excel(RAW_DATA_FILEPATH, sheet_name='Database')
     # Take only the countries of concern
     df_acaps = df_acaps[df_acaps['ISO'].isin(countries)]
@@ -60,7 +75,6 @@ def main(download):
     for country_iso3 in countries:
         boundaries = get_boundaries_file(country_iso3, config[country_iso3])
         df_country = get_country_info(country_iso3, df_acaps, boundaries)
-        write_country_info_to_csv(country_iso3, df_country, boundaries)
 
 
 def get_df_acaps():
@@ -148,49 +162,123 @@ def get_admin_regions(boundaries):
     }
 
 
-def write_country_info_to_csv(country_iso3, df, boundaries):
-    # Only take rows with locations, and that are NPI addtiona
-    df = df[df['affected_pcodes'].notna() & (df['LOG_TYPE'] == 'add')]
-    if df.empty:
-        logger.warning(f'No location information available for {country_iso3}, output file will just have 0s')
-    # Make the output df
-    df_out = pd.DataFrame(columns=[
-        'npi_type',
-        'npi_category',
-        'admin_level',
-        'region_geotag',
-        'start_date',
-        'end_date',
-        'compliance'
-    ])
+def create_final_list(config, countries):
+    for country_iso3 in countries:
+        logger.info(f'Creating final NPI list for {country_iso3}')
+        boundaries = get_boundaries_file(country_iso3, config[country_iso3])
+        df_country = get_triaged_csv(config, country_iso3)
+        format_final_output(country_iso3, df_country, boundaries)
+
+
+def get_triaged_csv(config, country_iso3):
+    logger.info(f'Getting triaged csv for {country_iso3}')
+    filename = os.path.join(INPUT_DIR, country_iso3, OUTPUT_DATA_DIR,
+                            TRIAGED_INTERMEDIATE_OUTPUT_FILENAME.format(country_iso3))
+    utils.download_url(config[country_iso3]['NPIs']['url'], filename)
+    df_country = pd.read_csv(filename)
+    df_country['affected_pcodes'] = df_country['affected_pcodes'].apply(lambda x: literal_eval(x))
+    return df_country
+
+
+def format_final_output(country_iso3, df, boundaries):
+    logger.info(f'Formatting final output for {country_iso3}')
+    # Only take rows with final_input is Yes
+    #df = df[(df['final_input'] == 'Yes')]
+    # Fill empty end dates with today's date
+    df['end_date'] = df['end_date'].fillna(datetime.today())
+    # Add Bucky category
+    df['bucky_category'] = df['bucky_measure'].map(get_measures_category_dictionary())
+    # Convert location lists to admin 2
+    df = expand_admin_regions(df, boundaries)
+    # Create 3d xarray
+    clist = [
+             'r0_reduction',
+             'home',
+             'other_locations',
+             'school',
+             'work',
+             'mobility_reduction',
+             ]
+    coords = {
+        'admin2': sorted([b[2:] for b in boundaries['ADM2_PCODE'].unique()]),
+        'date': pd.date_range(df['start_date'].min(), datetime.today()),
+        'measure': clist,
+        'quantity': ['num_npis', 'compliance_level', 'reduction']
+    }
+    da = xr.DataArray(np.zeros([len(val) for val in coords.values()]),
+                      dims=coords.keys(), coords=coords)
+    # Set defaults for reduction and compliance
+    da.loc[:, :, :, ['reduction', 'compliance_level']] = 1.0
+    # Populate it by looping through the dataframe
+    measures_dict = {
+        'contact-based': 'school',  # works for now because only have school closures
+        'mobility-based': 'mobility_reduction',
+        'reproduction number-based': 'r0_reduction'
+    }
     for _, row in df.iterrows():
-        # Get admin level
-        admin_level = None
-        admin_regions = get_admin_regions(boundaries)
-        for level in [0, 1, 2]:
-            if row['affected_pcodes'][0] in admin_regions[f'admin{level}']:
-                admin_level = level
-                break
-        # TODO: add warning if admin level is still None
-        # Loop through locs
-        for loc in row['affected_pcodes']:
-            new_row = {
-                'npi_type': row['our_measures'],
-                'npi_category': row['category'],
-                'admin_level': admin_level,
-                'region_geotag': loc,
-                'start_date': row['ENTRY_DATE'],
-                'end_date': row['end_date']
-            }
-            df_out = df_out.append(new_row, ignore_index=True)
-    # Write out
+        date_range = pd.date_range(row['start_date'], row['end_date'])
+        affected_pcodes = [r[2:] for r in row['affected_pcodes']]
+        measure = measures_dict[row['bucky_category']]
+        # Amend the compliance level
+        previous_num_npis = da.loc[affected_pcodes, date_range, measure, 'num_npis']
+        previous_compliance_level =  da.loc[affected_pcodes, date_range, measure, 'compliance_level']
+        new_compliance_level = (previous_num_npis * previous_compliance_level + row['compliance_level']/100 ) \
+                                / (previous_num_npis + 1)
+        da.loc[affected_pcodes, date_range, measure, 'compliance_level'] = new_compliance_level
+        # Track the new number of NPIs
+        da.loc[affected_pcodes, date_range, measure, 'num_npis'] += 1
+    # Compute R0 reduction
+    R0_reduction_amounts = [0.0, 0.4, 0.2, 0.1, 0.05]
+    num_R0_npis = da.sel(measure='r0_reduction', quantity='num_npis').astype(int)
+    R0_reduction_dict = {i: np.prod(R0_reduction_amounts[:i+1])
+                        for i in range(num_R0_npis.values.max() + 1)}
+    R0_compliance_level = da.sel(measure='r0_reduction', quantity='compliance_level')
+    da.loc[:, :, 'r0_reduction', 'reduction'] = 1 - np.vectorize(R0_reduction_dict.get)(num_R0_npis) * R0_compliance_level
+    # Compute mobility reduction
+    da.loc[:, :, 'mobility_reduction', 'reduction'] = np.where(
+        da.sel(measure='mobility_reduction', quantity='num_npis') > 0, 0.4,
+        da.sel(measure='mobility_reduction', quantity='reduction'))
+    # Compute contact reduction for schools closing
+    # TODO: distinguish between schools closing and elderly shielding
+    school_reduction_values = {
+       'home': 1.05,
+       'other_locations': 0.85,
+       'school': 0.05,
+    }
+    for key, value in school_reduction_values.items():
+        da.loc[:, :, key, 'reduction'] = np.where(
+            da.sel(measure='school', quantity='num_npis') > 0, value,
+            da.sel(measure=key, quantity='reduction'))
+    # Convert to dataframe and write out
+    df_out = da.sel(quantity='reduction').drop('quantity').to_dataframe('result').unstack().droplevel(0, axis=1)
     output_dir = os.path.join(OUTPUT_DIR, country_iso3, 'NPIs')
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     filename = os.path.join(output_dir, FINAL_OUTPUT_FILENAME.format(country_iso3))
     logger.info(f'Writing final results to {filename}')
-    df_out.to_csv(filename, index=None)
+    df_out.to_csv(filename)
 
+
+def expand_admin_regions(df, boundaries):
+    # Convert all region levels to admin 2
+    # If admin 0, just add all of admin 2 directly
+    admin_regions = get_admin_regions(boundaries)
+    admin1_to_2_dict = boundaries.groupby('ADM1_PCODE')['ADM2_PCODE'].apply(lambda x: x.tolist()).to_dict()
+    df['affected_pcodes'] = df['affected_pcodes'].apply(
+        lambda x: admin_regions['admin2'] if x == admin_regions['admin0'] else x)
+    # For the rest, check if any items in the list are admin 1. If they are, expand them and add them back in
+    for row in df.itertuples():
+        loc_list = df.at[row.Index, 'affected_pcodes']
+        final_loc_list = []
+        for loc in loc_list:
+            if loc in admin_regions['admin1']:
+                final_loc_list += admin1_to_2_dict[loc]
+            elif loc in admin_regions['admin2']:
+                final_loc_list.append(loc)
+            else:
+                logger.error(f'Found incorrect pcode {loc}')
+        df.at[row.Index, 'affected_pcodes'] = final_loc_list
+    return df
 
 if __name__ == '__main__':
     args = parse_args()
-    main(args.download)
+    main(args.update_npi_list, args.create_final_list)

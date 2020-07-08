@@ -1,7 +1,7 @@
 ACAPS NPI,Our equivalent,,,,Our NPIs,Category
 additional health/documents requirements upon arrival,closing borders,,,,school closure,contact-based
 amendments to funeral and burial regulations,reduction of size of gatherings,,,,shielding elderly,contact-based
-awareness campaigns,social distancing,,,,closing borders,mobility-based
+awareness campaigns,awareness campaign,,,,closing borders,mobility-based
 border checks ,closing borders,,,,restricting inter-regional movement,mobility-based
 border closure ,closing borders,,,,social distancing,reproduction number-based
 changes in prison-related policies,social distancing,,,,face mask wearing,reproduction number-based
@@ -9,7 +9,7 @@ checkpoints within the country,restricting inter-regional movement,,,,hand washi
 closure of businesses and public services,closing businesses,,,,reduction of size of gatherings,reproduction number-based
 complete border closure,closing borders,,,,closing businesses,reproduction number-based
 curfews,social distancing,,,,partial lockdown,reproduction number-based
-domestic travel restrictions,restricting inter-regional movement,,,,,
+domestic travel restrictions,restricting inter-regional movement,,,,awareness campaign,reproduction number-based
 economic measures,,,,,,
 emergency administrative structures activated or established,,,,,,
 full lockdown,partial lockdown,,,,,

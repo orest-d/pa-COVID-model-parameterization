@@ -78,6 +78,8 @@ AFG:
   contact_matrix:
     country: Pakistan
     file_number: 2
+  NPIs:
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQcZaUnsrDX5hVTfoGfbRZZRsuQetgotXjo4f7BdzNtWlMyq9b7Stg3XmLwfI69Q5nQ_Nj217qbTPx3/pub?gid=1114937196&single=true&output=csv
 COD:
   admin:
     # https://data.humdata.org/dataset/drc-administrative-boundaries-levels-0-2
@@ -151,6 +153,9 @@ COD:
   contact_matrix:
     country: Zambia
     file_number: 2
+  NPIs:
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vSommoUZUX9Spyg3JzC2n9oKQ9SB2jO4XoeI0T3rgFlND6rMh3MvX_Ysiq-rWKJVKujwj1XyFjVquub/pub?gid=1686966978&single=true&output=csv
+
 SDN:
   admin:
     # https://data.humdata.org/dataset/sudan-administrative-boundaries-levels-0-2
@@ -216,6 +221,8 @@ SDN:
   contact_matrix:
     country: Ethiopia
     file_number: 1
+  NPIs:
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQe2N9oGZLd-oICiX2k1B2lfIdyBhZc32QmVu8q8XGVURPw8EpcnsS-XE2bqoAuoxWkcSMZ8Y-L5OGL/pub?gid=345422459&single=true&output=csv
 SSD:
   admin:
     # https://data.humdata.org/dataset/south-sudan-administrative-boundaries
@@ -302,6 +309,8 @@ SSD:
   contact_matrix:
     country: Uganda
     file_number: 2
+  NPIs:
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQSj3APyX0xsQhVLhlt3nV7SOAZPO5umf2mjrYZRHHQUgJiQ0y74jHIKy0esbAxqRjncd59wzX6hLdD/pub?gid=863998455&single=true&output=csv
 SOM:
   admin:
     # https://data.humdata.org/dataset/somalia-administrative-boundaries
@@ -381,6 +390,8 @@ SOM:
   contact_matrix:
     country: Kenya
     file_number: 1
+  NPIs:
+    url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQSwkx2eOoeQXEiyp_QjcP71mbIiMTg0Bnyd0pU113XyTP8VoQVxWQjefhM-u8Rsm2uuXZNW2w3dDeH/pub?gid=1334301503&single=true&output=csv
 HTI:
   admin:
     # https://data.humdata.org/dataset/hti-polbndl-adm1-cnigs-zip
