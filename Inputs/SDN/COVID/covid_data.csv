@@ -1,5 +1,43 @@
 Report Date,As of Date,State,Confirmed Cases,Source
 ,#date,#adm1+name,#affected+infected+confirmed+fatalities,#source+url
+07/05/2020,07/02/2020,Abyei PCA,,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,Al Jazirah,940,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,Blue Nile,27,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,Central Darfur,5,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,East Darfur,21,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,Gedaref,250,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,Kassala,123,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,Khartoum,7131,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,North Darfur,142,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,North Kordofan,181,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,Northern,96,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,Red Sea,180,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,River Nile,186,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,Sennar,189,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,South Darfur,38,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,South Kordofan,14,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,West Darfur,32,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,West Kordofan,55,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/05/2020,07/02/2020,White Nile,157,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020.pdf
+07/01/2020,06/29/2020,Abyei PCA,,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,Al Jazirah,923,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,Blue Nile,27,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,Central Darfur,5,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,East Darfur,21,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,Gedaref,249,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,Kassala,116,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,Khartoum,7034,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,North Darfur,140,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,North Kordofan,179,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,Northern,92,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,Red Sea,168,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,River Nile,144,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,Sennar,188,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,South Darfur,38,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,South Kordofan,13,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,West Darfur,32,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,West Kordofan,54,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
+07/01/2020,06/29/2020,White Nile,150,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%202%20Jul%202020%20%281%29.pdf
 06/25/2020,06/22/2020,Abyei PCA,,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%2025%20Jun%202020.pdf
 06/25/2020,06/22/2020,Al Jazirah,847,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%2025%20Jun%202020.pdf
 06/25/2020,06/22/2020,Blue Nile,26,https://reliefweb.int/sites/reliefweb.int/files/resources/Situation%20Report%20-%20Sudan%20-%2025%20Jun%202020.pdf
