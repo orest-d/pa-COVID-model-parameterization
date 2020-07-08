@@ -7,8 +7,8 @@ import ast
 import pandas as pd
 import geopandas as gpd
 
-from utils import utils
-from utils.hdx_api import query_api
+from covid_model_parametrization import utils
+from covid_model_parametrization.hdx_api import query_api
 
 CONFIG_FILE = 'config.yml'
 
