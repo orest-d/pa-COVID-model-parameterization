@@ -1,0 +1,108 @@
+digraph G{
+    subgraph cluster0{
+        shapefiles[shape=record, label="{{Inputs}|{Shapefiles}}|cpg, shp, dbf, shp.xml, prj, shx\nexpected as input", color=red];
+    }
+    worldpop[shape=record, label="{{Inputs}|{WorlPop}}|optionally downloaded | {{ <sadd> sadd | <pop> pop | <unadj> unadj }}", color=orange];
+    ghs_zip[shape=record, label="{{Inputs}|{GHS/zip}}|optionally downloaded | {{ <smod> SMOD | <pop> POP}}", color=orange];
+    ghs[shape=record, label="{{Inputs}|{GHS}} | {{ <smod> SMOD | <pop> POP}}"];
+
+    subgraph cluster1{
+        //node [style=filled];
+        label = "SADD Exposure";
+        color=blue;
+        shapefiles->ADM2boundaries
+        ADM2boundaries->total_pop;
+        shapefiles->total_pop;
+        worldpop:sadd->total_pop;
+        tot_pop_WP[label=<tot_pop_WP<br/>for crosscheck>];
+        shapefiles->tot_pop_WP;
+        worldpop:pop->tot_pop_WP;
+        shapefiles->tot_pop_UN;
+        worldpop:unadj->tot_pop_UN;
+        adjusted_total_pop[label="scaled SADD pop to match UN Adjusted pop."]
+        total_pop->adjusted_total_pop;
+        tot_pop_UN->adjusted_total_pop;
+        co[shape=record, label="{{Inputs}|{InputsFromCOs}}|expected input|xlsx", color=red];
+        co->df_operational_figures;
+        df_operational_figures->more_adjustments;
+        adjusted_total_pop->more_adjustments;
+        exposure_sadd[shape=record, label="{{Outputs}|{Exposure_SADD}}|XXX_Exposure.geojson", color=green]
+        more_adjustments->exposure_sadd;
+    }
+    subgraph cluster2{
+        label = "Vulnerability";
+        color=blue;
+        ipc[shape=record, label="{{Inputs}|{IPC}}|xlsx\nexpected as input", color=red];
+        ghs_zip:smod->ghs:smod;
+        ghs_zip:pop->ghs:pop;
+        ghs:smod->frac_urban;
+        ghs:pop->frac_urban;
+        shapefiles->frac_urban;
+        shapefiles->boundaries;
+        frac_urban->boundaries;
+
+        food_insecurity[label="food insecurity"];
+        agr_boundaries[label="boundaries - enhanced"];
+        ipc->food_insecurity;
+        boundaries->food_insecurity;
+        boundaries->agr_boundaries;
+        food_insecurity->agr_boundaries;
+        many_other_things->agr_boundaries;
+        vulnerabilities[shape=record, label="{{Outputs}|{Vulnerability}}|XXX_Vulnerabilities.geojson", color=green];
+        agr_boundaries->vulnerabilities;
+    }
+    subgraph cluster3{
+        label = "COVID";
+        color=blue;
+        covid_data[shape=record, label="{{Inputs}|{COVID}}|{optionally downloaded\nget_covid_data\ncovid_data.csv}", color=orange];
+        covid_data->df_covid;
+        fixed_df_covid[label="fixed df_covid"];
+        df_covid->fixed_df_covid;
+        exposure_sadd->exposure_gdf;
+        exposure_gdf->output_df_covid;
+        fixed_df_covid->output_df_covid;
+        covid_output[shape=record, label="{{Outputs}|{COVID}}|XXX_COVID.csv", color=green];
+        output_df_covid->covid_output;
+    }
+    subgraph cluster4{
+        label = "Graph";
+        color=blue;
+        //github_mobility_csv[shape=record, label="{github}", color=blue];
+        mobility_csv[shape=record, label="{{github}|{created by\nother script}}|{always downloaded}", color=orange];
+        //github_mobility_csv->mobility_csv;
+        g[label="graph G"];
+        mobility_csv->g[label="initialize_with_mobility"];
+        enhanced_g[label="enhanced G"];
+        g->enhanced_g;
+        exposure_sadd->enhanced_g [label="add_exposure"];
+        covid_output->enhanced_g [label="add_covid"];
+        vulnerabilities->enhanced_g [label="add_vulnerability"];
+        contact_matrix[shape=record, label="{contact_matrices_152_countries}|{MUestimates_*.xlsx\nexpected as input}|{home|work|school|other_locations}", color=red];
+        contact_matrix->enhanced_g [label="add_contact_matrix"];
+        graph_output[shape=record, label="{{Outputs}|{Graph}}|XXX_graph.json", color=green];
+        enhanced_g->graph_output;
+    }
+    subgraph cluster5{
+        label = "Visualizations";
+        color=blue;
+        visualizations_output[shape=record, label="{{Outputs}|{Figures}}|vulnerability, covid, population\n*.png", color=green];
+        exposure_sadd->visualizations_output;
+        vulnerabilities->visualizations_output;
+        covid_output->visualizations_output;
+    }
+    subgraph cluster6{
+        label = "NPIs";
+        color=blue;
+        hdx[shape=record, label="{HDX}", color=blue];
+        acaps[shape=record, label="{{Inputs}|{ACAPS_NPIs}}|{optionally downloaded\nACAPS_npis_raw_data.xlsx}", color=orange];
+        hdx->acaps;
+        acaps->df_acaps;
+        shapefiles->npis_boundaries[label="get_boundaries_file"];        
+        df_acaps->country_info[label="get_country_info"];
+        npis_boundaries->country_info[label="get_country_info"];
+        country_info[shape=record, label="{{Inputs}|{NPIs}}|{temporary file optionally created\nXXX_NPIs_input.csv}",color=green];
+        final_country_info[shape=record, label="{{Outputs}|{NPIs}}|{XXX_NPIs.csv}",color=green];
+        country_info->final_country_info[label="write_country_info_to_csv"];
+    }
+
+}
