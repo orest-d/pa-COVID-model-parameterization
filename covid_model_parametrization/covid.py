@@ -191,7 +191,16 @@ def covid(country_iso3, download_covid=False, config=None):
             "{}_{}".format(gender_age_group[0], gender_age_group[1])
             for gender_age_group in gender_age_groups
         ]
-
+        ADM0_CFR=0
+        if not parameters["covid"]["deaths"]:
+            # missing death data, getting it from WHO at the national level
+            logger.info(f"getting CFR at ADM0 from WHO for {country_iso3}")
+            who_df=pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vSe-8lf6l_ShJHvd126J-jGti992SUbNLu-kmJfx1IRkvma_r4DHi0bwEW89opArs8ZkSY5G2-Bc1yT/pub?gid=0&single=true&output=csv')
+            who_df['date_epicrv']=pd.to_datetime(who_df['date_epicrv'])
+            who_df=who_df[who_df['ISO_3_CODE']==country_iso3]
+            who_df=who_df.sort_values(by='date_epicrv').tail(1)
+            ADM0_CFR=who_df.iloc[0]['CumDeath']/who_df.iloc[0]['CumCase']
+            
         for _, row in df_covid.iterrows():
             adm2_pop_fractions = get_adm2_to_adm1_pop_frac(
                 row[config.HLX_TAG_ADM1_PCODE], exposure_gdf, gender_age_group_names
@@ -212,7 +221,9 @@ def covid(country_iso3, download_covid=False, config=None):
                 row,
                 adm2_pop_fractions,
             )
-
+            if not parameters["covid"]["deaths"]:
+                adm2deaths=[cases*ADM0_CFR for cases in adm2cases]
+               
             adm2pcodes = [v for v in adm2_pop_fractions.keys()]
             raw_data = {
                 config.HLX_TAG_ADM1_PCODE: adm1pcode,
