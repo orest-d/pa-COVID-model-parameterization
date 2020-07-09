@@ -155,7 +155,6 @@ COD:
     file_number: 2
   NPIs:
     url: https://docs.google.com/spreadsheets/d/e/2PACX-1vSommoUZUX9Spyg3JzC2n9oKQ9SB2jO4XoeI0T3rgFlND6rMh3MvX_Ysiq-rWKJVKujwj1XyFjVquub/pub?gid=1686966978&single=true&output=csv
-
 SDN:
   admin:
     # https://data.humdata.org/dataset/sudan-administrative-boundaries-levels-0-2
@@ -386,7 +385,7 @@ SOM:
     hlx_dict:
       '#affected+infected+confirmed': "#affected+infected+confirmed+total"
       '#affected+infected+dead': "#affected+infected+dead+total"
-      "Unnamed: 1": "#adm1+name"
+      "#loc+name": "#adm1+name"
   contact_matrix:
     country: Kenya
     file_number: 1

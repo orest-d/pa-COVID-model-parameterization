@@ -1,5 +1,5 @@
 Date,State,Confirmed ,Dead,Recovered,Active
-#date,,#affected+infected+confirmed,#affected+infected+dead,#affected+infected+recovered,#affected+infected+active
+#date,#loc+name,#affected+infected+confirmed,#affected+infected+dead,#affected+infected+recovered,#affected+infected+active
 07/08/2020,Banadir,1436,57,596,846
 07/08/2020,Somaliland,755,27,160,530
 07/08/2020,Puntland,304,7,56,235
@@ -98,13 +98,13 @@ Date,State,Confirmed ,Dead,Recovered,Active
 06/11/2020,South West,117,0,1,116
 06/11/2020,Galmmudug,102,0,1,101
 06/11/2020,Hir-Shabelle,23,1,0,22
-06/10/2020,Banadir,1348,342,54,952
-06/10/2020,Somaliland,466,73,24,370
-06/10/2020,Puntland,204,41,5,158
-06/10/2020,Jubaland,156,31,1,124
-06/10/2020,South West,117,1,0,116
-06/10/2020,Galmmudug,102,1,0,101
-06/10/2020,Hir-Shabelle,23,0,1,22
+06/10/2020,Banadir,1348,54,342,952
+06/10/2020,Somaliland,466,24,73,370
+06/10/2020,Puntland,204,5,41,158
+06/10/2020,Jubaland,156,1,31,124
+06/10/2020,South West,117,0,1,116
+06/10/2020,Galmmudug,102,0,1,101
+06/10/2020,Hir-Shabelle,23,1,0,22
 06/09/2020,Banadir,1329,54,330,945
 06/09/2020,Somaliland,449,23,68,358
 06/09/2020,Puntland,196,5,39,152
